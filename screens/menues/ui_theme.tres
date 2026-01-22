@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://thyhonskbeh8"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_r1qi2"]
+thickness = 2
+
+[resource]
+HSeparator/constants/separation = 25
+HSeparator/styles/separator = SubResource("StyleBoxLine_r1qi2")
+HeaderLarge/base_type = &"RichTextLabel"
+HeaderLarge/font_sizes/bold_font_size = 50
+HeaderLarge/font_sizes/bold_italics_font_size = 50
+HeaderLarge/font_sizes/italics_font_size = 50
+HeaderLarge/font_sizes/mono_font_size = 50
+HeaderLarge/font_sizes/normal_font_size = 50
