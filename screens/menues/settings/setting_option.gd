@@ -4,6 +4,7 @@ extends HBoxContainer
 @export var label_text: String :
 	set(new_value):
 		label_text = new_value
+		name = new_value.replace(" ", "")
 		if not is_node_ready():
 			await ready
 		$Label.text = new_value
@@ -24,7 +25,7 @@ func _ready() -> void:
 	)
 
 func configure(
-	possible_values: Dictionary[String, Variant],
+	possible_values: Dictionary,
 	default_value: Variant,
 	on_change_callback: Callable
 	):

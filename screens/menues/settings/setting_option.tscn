@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://brafpe0qanwrj"]
+
+[ext_resource type="Script" uid="uid://us7ivldhoytl" path="res://screens/menues/settings/setting_option.gd" id="1_6rd73"]
+
+[node name="Setting" type="HBoxContainer" unique_id=1676787377]
+size_flags_horizontal = 3
+script = ExtResource("1_6rd73")
+label_text = "Setting"
+
+[node name="Label" type="Label" parent="." unique_id=1597910082]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Setting"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=551635565]
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 3
+item_count = 4
+popup/item_0/text = "window_mode_exclusive_fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "window_mode_fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "window_mode_maximized"
+popup/item_2/id = 2
+popup/item_3/text = "window_mode_minimized"
+popup/item_3/id = 3
