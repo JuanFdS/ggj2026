@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
+	if !get_parent().is_in_group("layer"):
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

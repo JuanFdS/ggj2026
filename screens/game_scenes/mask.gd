@@ -11,6 +11,7 @@ enum State {
 
 var state = State.Playing
 @onready var preview: Sprite2D = %Preview
+@onready var layer_preview: Sprite2D = %LayerPreview
 
 func _ready() -> void:
 	_change_state(State.Playing)
@@ -19,6 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_mask"):
 		toggle_mask()
+	%LayerPreviewMask.position = %MaskSelection.position
 
 func toggle_mask():
 	match state:
@@ -44,6 +46,7 @@ func _enter_state(state):
 			self.modulate = Color(0.5,0.5,0.5)
 			mask_button.text = "Editar Máscara"
 			preview.visible = false
+			layer_preview.visible = true
 			%MaskSelection.process_mode = Node.PROCESS_MODE_DISABLED
 			%Layer.process_mode = Node.PROCESS_MODE_INHERIT
 		State.Masking:
@@ -51,5 +54,6 @@ func _enter_state(state):
 			self.modulate = Color.WHITE
 			mask_button.text = "Aplicar Máscara"
 			preview.visible = true
+			layer_preview.visible = false
 			%MaskSelection.process_mode = Node.PROCESS_MODE_INHERIT
 			%Layer.process_mode = Node.PROCESS_MODE_DISABLED

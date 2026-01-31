@@ -78,6 +78,21 @@ colors = PackedColorArray(1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_v73ld"]
 gradient = SubResource("Gradient_dg2up")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
+light_mode = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n54bx"]
+viewport_path = NodePath("CanvasLayer2/SubViewportContainer/SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_n54bx"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
+gradient = SubResource("Gradient_n54bx")
+width = 200
+height = 100
+
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
 colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
@@ -102,7 +117,7 @@ position = Vector2(680.5, 379.99997)
 scale = Vector2(22.265625, 12.874999)
 texture = SubResource("GradientTexture2D_y5ptm")
 
-[node name="Layer" type="Node2D" parent="." unique_id=105627276]
+[node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
 position = Vector2(87, 134)
 script = ExtResource("1_dg2up")
@@ -133,7 +148,7 @@ position = Vector2(-7, 74)
 shape = SubResource("WorldBoundaryShape2D_2m1qm")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Layer" unique_id=234132978]
-position = Vector2(45, 365)
+position = Vector2(59, 31)
 collision_layer = 3
 collision_mask = 2147483649
 script = ExtResource("1_jg18i")
@@ -147,7 +162,7 @@ shape = SubResource("RectangleShape2D_jg18i")
 
 [node name="Goal" type="Area2D" parent="Layer" unique_id=627322292]
 unique_name_in_owner = true
-position = Vector2(377, 271)
+position = Vector2(377, 269)
 collision_mask = 2
 script = ExtResource("4_2br0v")
 
@@ -161,6 +176,7 @@ polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1,
 
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
 unique_name_in_owner = true
+z_index = 1
 material = SubResource("CanvasItemMaterial_y5ptm")
 texture = SubResource("ViewportTexture_y5ptm")
 centered = false
@@ -191,6 +207,7 @@ focus_mode = 0
 text = "Aplicar Máscara"
 
 [node name="Mask" type="Node2D" parent="." unique_id=384021872]
+unique_name_in_owner = true
 position = Vector2(679, 144)
 script = ExtResource("3_2m1qm")
 
@@ -213,8 +230,21 @@ texture = SubResource("GradientTexture2D_2m1qm")
 scale = Vector2(1.5703118, 0.578125)
 texture = SubResource("GradientTexture2D_v73ld")
 
+[node name="LayerPreview" type="Sprite2D" parent="Mask" unique_id=1890886365]
+unique_name_in_owner = true
+z_index = 1
+material = SubResource("CanvasItemMaterial_n54bx")
+texture = SubResource("ViewportTexture_n54bx")
+centered = false
+
+[node name="LayerPreviewMask" type="PointLight2D" parent="Mask" unique_id=202915104]
+unique_name_in_owner = true
+energy = 0.0
+texture = SubResource("GradientTexture2D_gvio3")
+
 [node name="MaskSelection" type="Node2D" parent="Mask" unique_id=2110519118]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(226, 146)
 script = ExtResource("3_x4ba3")
 MOVE_SPEED = null
@@ -252,6 +282,31 @@ script = ExtResource("6_v73ld")
 [node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=2107362031]
 unique_name_in_owner = true
 offset = Vector2(679, 144)
+anchor_mode = 0
+process_callback = 0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=349716207]
+layer = -1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer2" unique_id=1951153838]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -552.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer2/SubViewportContainer" unique_id=48825315]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(400, 400)
+render_target_update_mode = 4
+script = ExtResource("6_v73ld")
+
+[node name="LayerCamera" type="Camera2D" parent="CanvasLayer2/SubViewportContainer/SubViewport" unique_id=816684468]
+unique_name_in_owner = true
+offset = Vector2(87, 134)
 anchor_mode = 0
 process_callback = 0
 
