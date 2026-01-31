@@ -164,6 +164,7 @@ texture = SubResource("ViewportTexture_y5ptm")
 centered = false
 
 [node name="PreviewMask" type="PointLight2D" parent="Layer" unique_id=2374421]
+unique_name_in_owner = true
 process_mode = 1
 z_index = 100
 position = Vector2(193, 141)
