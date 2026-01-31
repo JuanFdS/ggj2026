@@ -57,6 +57,8 @@ gradient = SubResource("Gradient_y5ptm")
 width = 200
 height = 100
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n54bx"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4ba3"]
 size = Vector2(106, 43)
 
@@ -111,6 +113,8 @@ centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Layer" unique_id=1346561349]
 position = Vector2(6, 131)
+collision_layer = 2147483648
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1852634940]
 position = Vector2(193, 264)
@@ -131,6 +135,7 @@ shape = SubResource("WorldBoundaryShape2D_2m1qm")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Layer" unique_id=234132978]
 position = Vector2(45, 365)
 collision_layer = 3
+collision_mask = 2147483649
 script = ExtResource("1_jg18i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer/CharacterBody2D" unique_id=1763260006]
@@ -140,22 +145,19 @@ texture = ExtResource("1_3elw4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/CharacterBody2D" unique_id=20194655]
 shape = SubResource("RectangleShape2D_jg18i")
 
-[node name="Goal" type="Node2D" parent="Layer" unique_id=201768106]
+[node name="Goal" type="Area2D" parent="Layer" unique_id=627322292]
 unique_name_in_owner = true
 position = Vector2(377, 271)
+collision_mask = 2
 script = ExtResource("4_2br0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/Goal" unique_id=803392067]
+shape = SubResource("RectangleShape2D_y5ptm")
 
 [node name="Polygon2D" type="Polygon2D" parent="Layer/Goal" unique_id=708507762]
 position = Vector2(0, 6)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1, -7, 4, -6, -3, -13, -9)
-
-[node name="Area2D" type="Area2D" parent="Layer/Goal" unique_id=627322292]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/Goal/Area2D" unique_id=803392067]
-shape = SubResource("RectangleShape2D_y5ptm")
 
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
 unique_name_in_owner = true
@@ -171,6 +173,22 @@ position = Vector2(193, 141)
 energy = 0.0
 texture = SubResource("GradientTexture2D_2br0v")
 script = ExtResource("4_y5ptm")
+
+[node name="PreviewArea" type="Area2D" parent="Layer/PreviewMask" unique_id=1272415802]
+unique_name_in_owner = true
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/PreviewMask/PreviewArea" unique_id=2096837403]
+shape = SubResource("RectangleShape2D_n54bx")
+
+[node name="MaskButton" type="Button" parent="." unique_id=1551359140]
+unique_name_in_owner = true
+offset_left = 519.0
+offset_top = 84.0
+offset_right = 651.0
+offset_bottom = 115.0
+focus_mode = 0
+text = "Aplicar Máscara"
 
 [node name="Mask" type="Node2D" parent="." unique_id=384021872]
 position = Vector2(679, 144)
@@ -199,6 +217,7 @@ texture = SubResource("GradientTexture2D_v73ld")
 unique_name_in_owner = true
 position = Vector2(226, 146)
 script = ExtResource("3_x4ba3")
+MOVE_SPEED = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask/MaskSelection" unique_id=26579043]
 texture = SubResource("GradientTexture2D_dg2up")
@@ -210,15 +229,6 @@ unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_2m1qm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Mask/MaskSelection" unique_id=616465055]
-
-[node name="MaskButton" type="Button" parent="Mask" unique_id=1551359140]
-unique_name_in_owner = true
-offset_left = 135.0
-offset_top = -60.0
-offset_right = 267.0
-offset_bottom = -29.0
-focus_mode = 0
-text = "Aplicar Máscara"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770220679]
 layer = -1

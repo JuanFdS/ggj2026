@@ -6,6 +6,7 @@ extends PointLight2D
 func _ready() -> void:
 	texture.width = mask_size.x
 	texture.height = mask_size.y
+	$PreviewArea/CollisionShape2D.shape.size = mask_size
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():

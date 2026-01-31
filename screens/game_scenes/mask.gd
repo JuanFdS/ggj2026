@@ -23,12 +23,15 @@ func _process(delta: float) -> void:
 func toggle_mask():
 	match state:
 		State.Playing:
+			%Layer.unapply_mask()
 			_change_state(State.Masking)
 		State.Masking:
-			var masked_bodies = %MaskSelectionArea.get_overlapping_bodies()
-			for body in masked_bodies:
-				%Layer.receive_masked_body(body)
+			var masked_things = %MaskSelectionArea.get_overlapping_bodies() + %MaskSelectionArea.get_overlapping_areas()
 			_change_state(State.Playing)
+			await get_tree().physics_frame
+			await get_tree().physics_frame
+			%Layer.apply_mask(masked_things)
+
 
 func _change_state(new_state):
 	state = new_state

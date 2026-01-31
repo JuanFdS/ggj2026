@@ -12,6 +12,7 @@ extends Node2D
 		$MaskSelectionArea/CollisionShape2D.shape.size = mask_size
 
 var dragging: bool = false
+@export var MOVE_SPEED: float = 500.0
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -21,5 +22,6 @@ func _physics_process(delta: float) -> void:
 		dragging = true
 	if Input.is_action_just_released("dragging_mask"):
 		dragging = false
+	global_position += Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * delta * MOVE_SPEED
 	if dragging:
 		global_position = get_global_mouse_position()
