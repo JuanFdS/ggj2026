@@ -1,0 +1,24 @@
+key,en,es
+window_mode_exclusive_fullscreen,Exclusive fullscreen, Pantalla completa exclusiva
+window_mode_fullscreen,Fullscreen,Pantalla completa
+window_mode_maximized,Maximized,Maximizado
+window_mode_minimized,Minimized,Minimizado
+Window Mode,Window Mode,Modo de Ventana
+Graphics,Graphics,Gráficos
+Resolution,Resolution,Resolución
+VSync,VSync,VSync
+FPS Limit,FPS Limit,Límite de FPS
+Anti-Aliasing,Anti-Aliasing,Anti-Aliasing
+Shadow Quality,Shadow Quality,Calidad de sombras
+Texture Quality,Texture Quality,Calidad de Texturas
+Graphics Preset,Graphics Preset,Ajuste preestablecido
+Sound,Sound,Sonido
+Master Volume,Master Volume,Volumen Maestro
+Music Volume,Music Volume,Volumen de Música
+SFX Volume,SFX Volume,Volumen de SFX
+Language,Language,Idioma
+Controls,Controls,Controles
+Gamepad Type,GamePad Type,Tipo de Gamepad
+Control Scheme,Control Scheme,Esquema de controles
+Disabled,Disabled,Deshabilitado
+Enabled,Enabled,Habilitado

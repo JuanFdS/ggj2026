@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://dxikjpq2durx0"]
+
+[ext_resource type="Texture2D" uid="uid://cjtetwkrbha3b" path="res://icon.svg" id="1_3elw4"]
+[ext_resource type="Script" uid="uid://x0qole3ha7y6" path="res://screens/game_scenes/layer.gd" id="1_dg2up"]
+[ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/player/player.gd" id="1_jg18i"]
+[ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/mask.gd" id="3_2m1qm"]
+[ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="3_x4ba3"]
+[ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/preview.gd" id="4_y5ptm"]
+[ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/sub_viewport.gd" id="6_v73ld"]
+
+[sub_resource type="Gradient" id="Gradient_v73ld"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y5ptm"]
+gradient = SubResource("Gradient_v73ld")
+
+[sub_resource type="Gradient" id="Gradient_jg18i"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x4ba3"]
+gradient = SubResource("Gradient_jg18i")
+width = 400
+height = 400
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jg18i"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x4ba3"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dg2up"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2m1qm"]
+normal = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg18i"]
+size = Vector2(30, 30)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y5ptm"]
+light_mode = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y5ptm"]
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_y5ptm"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2br0v"]
+gradient = SubResource("Gradient_y5ptm")
+width = 200
+height = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4ba3"]
+size = Vector2(106, 43)
+
+[sub_resource type="Gradient" id="Gradient_x4ba3"]
+offsets = PackedFloat32Array(0.045161292, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2m1qm"]
+gradient = SubResource("Gradient_x4ba3")
+width = 70
+height = 80
+
+[sub_resource type="Gradient" id="Gradient_dg2up"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v73ld"]
+gradient = SubResource("Gradient_dg2up")
+
+[sub_resource type="Gradient" id="Gradient_2m1qm"]
+offsets = PackedFloat32Array(0.58709675)
+colors = PackedColorArray(0.5294118, 0.5294118, 0.5294118, 0.6862745)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
+gradient = SubResource("Gradient_2m1qm")
+width = 200
+height = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
+size = Vector2(200, 100)
+
+[node name="Pruebita" type="Node2D" unique_id=868727410]
+physics_interpolation_mode = 1
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1668949924]
+position = Vector2(680.5, 379.99997)
+scale = Vector2(22.265625, 12.874999)
+texture = SubResource("GradientTexture2D_y5ptm")
+
+[node name="Layer" type="Node2D" parent="." unique_id=105627276]
+unique_name_in_owner = true
+position = Vector2(87, 134)
+script = ExtResource("1_dg2up")
+
+[node name="Background" type="Sprite2D" parent="Layer" unique_id=284435309]
+texture = SubResource("GradientTexture2D_x4ba3")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Layer" unique_id=1346561349]
+position = Vector2(6, 131)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1852634940]
+position = Vector2(193, 264)
+shape = SubResource("WorldBoundaryShape2D_jg18i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1366978323]
+position = Vector2(182, -132)
+shape = SubResource("WorldBoundaryShape2D_x4ba3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1225438628]
+position = Vector2(391, 63)
+shape = SubResource("WorldBoundaryShape2D_dg2up")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=662259327]
+position = Vector2(-7, 74)
+shape = SubResource("WorldBoundaryShape2D_2m1qm")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Layer" unique_id=234132978]
+position = Vector2(45, 365)
+script = ExtResource("1_jg18i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer/CharacterBody2D" unique_id=1763260006]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_3elw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/CharacterBody2D" unique_id=20194655]
+shape = SubResource("RectangleShape2D_jg18i")
+
+[node name="Goal" type="Node2D" parent="Layer" unique_id=201768106]
+position = Vector2(377, 271)
+
+[node name="Polygon2D" type="Polygon2D" parent="Layer/Goal" unique_id=708507762]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1, -7, 4, -6, -3, -13, -9)
+
+[node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_y5ptm")
+texture = SubResource("ViewportTexture_y5ptm")
+centered = false
+
+[node name="PreviewMask" type="PointLight2D" parent="Layer" unique_id=2374421]
+process_mode = 1
+z_index = 100
+position = Vector2(193, 141)
+energy = 0.0
+texture = SubResource("GradientTexture2D_2br0v")
+script = ExtResource("4_y5ptm")
+
+[node name="Mask" type="Node2D" parent="." unique_id=384021872]
+position = Vector2(679, 144)
+script = ExtResource("3_2m1qm")
+
+[node name="Background" type="Sprite2D" parent="Mask" unique_id=218631811]
+texture = SubResource("GradientTexture2D_x4ba3")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mask" unique_id=1085760542]
+position = Vector2(322, 358)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/StaticBody2D" unique_id=1684450910]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_x4ba3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Mask/StaticBody2D" unique_id=1348433681]
+scale = Vector2(1.5703118, 0.578125)
+texture = SubResource("GradientTexture2D_2m1qm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mask/StaticBody2D" unique_id=667507957]
+scale = Vector2(1.5703118, 0.578125)
+texture = SubResource("GradientTexture2D_v73ld")
+
+[node name="MaskSelection" type="Node2D" parent="Mask" unique_id=2110519118]
+unique_name_in_owner = true
+position = Vector2(226, 146)
+script = ExtResource("3_x4ba3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mask/MaskSelection" unique_id=26579043]
+texture = SubResource("GradientTexture2D_dg2up")
+
+[node name="MaskSelectionArea" type="Area2D" parent="Mask/MaskSelection" unique_id=1565263904]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/MaskSelection/MaskSelectionArea" unique_id=2010712115]
+shape = SubResource("RectangleShape2D_2m1qm")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Mask/MaskSelection" unique_id=616465055]
+
+[node name="MaskButton" type="Button" parent="Mask" unique_id=1551359140]
+unique_name_in_owner = true
+offset_left = 135.0
+offset_top = -60.0
+offset_right = 267.0
+offset_bottom = -29.0
+focus_mode = 0
+text = "Aplicar Máscara"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770220679]
+layer = -1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1640880484]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -552.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=844272332]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(400, 400)
+render_target_update_mode = 4
+script = ExtResource("6_v73ld")
+
+[node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=2107362031]
+unique_name_in_owner = true
+offset = Vector2(679, 144)
+anchor_mode = 0
+process_callback = 0

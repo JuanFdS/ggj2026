@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ccbv63ee78ofq"]
+
+[ext_resource type="Script" uid="uid://27jy1dvchw51" path="res://addons/to_do_list/task/components/task.gd" id="1_6d7qa"]
+[ext_resource type="Texture2D" uid="uid://btc21y4wog3gn" path="res://addons/to_do_list/task/components/drag_icon.tres" id="2_cbus1"]
+[ext_resource type="Script" uid="uid://bskwjeeddo8dd" path="res://addons/to_do_list/task/components/drag_button.gd" id="3_utadn"]
+
+[node name="Task" type="VBoxContainer" unique_id=92909269]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_6d7qa")
+
+[node name="HSeparatorPrevious" type="HSeparator" parent="." unique_id=233056666]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Task" type="HBoxContainer" parent="." unique_id=154165767]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="DragButton" type="Button" parent="Task" unique_id=971626959]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+disabled = true
+icon = ExtResource("2_cbus1")
+script = ExtResource("3_utadn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Task" unique_id=1346792062]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 1
+bbcode_enabled = true
+fit_content = true
+
+[node name="LineEdit" type="LineEdit" parent="Task" unique_id=1602788402]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+placeholder_text = "Terminar el juego..."
+
+[node name="CheckBox" type="CheckBox" parent="Task" unique_id=1212577178]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+
+[node name="HSeparatorNext" type="HSeparator" parent="." unique_id=1682702427]
+visible = false
+layout_mode = 2
+mouse_filter = 1

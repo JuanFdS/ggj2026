@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://g7bnk7k8vtxq"]
+
+[ext_resource type="Script" uid="uid://m6l1gmw6puky" path="res://addons/to_do_list/task_list.gd" id="1_ayfpm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayfpm"]
+content_margin_left = 0.0
+content_margin_top = 5.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[node name="ToDoList" type="Control" unique_id=1185621194]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=323196218]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer" unique_id=673434425]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ayfpm")
+
+[node name="TaskList" type="VBoxContainer" parent="PanelContainer/ScrollContainer" unique_id=1468506673]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ayfpm")

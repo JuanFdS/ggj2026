@@ -3,6 +3,9 @@
 [ext_resource type="Theme" uid="uid://thyhonskbeh8" path="res://screens/menues/ui_theme.tres" id="1_6xqwo"]
 [ext_resource type="Script" uid="uid://cvpd5mr407xlj" path="res://screens/menues/settings/graphics.gd" id="2_8dcdv"]
 [ext_resource type="PackedScene" uid="uid://brafpe0qanwrj" path="res://screens/menues/settings/setting_option.tscn" id="3_8dcdv"]
+[ext_resource type="Script" uid="uid://d1mj5b3cscm6o" path="res://screens/menues/settings/sound.gd" id="4_8dcdv"]
+[ext_resource type="Script" uid="uid://bo08v1ghmqup6" path="res://screens/menues/settings/language.gd" id="5_8dcdv"]
+[ext_resource type="Script" uid="uid://cyq5o6xb0ludj" path="res://screens/menues/settings/controls.gd" id="6_8dcdv"]
 
 [node name="Settings" type="Control" unique_id=113032518]
 layout_mode = 3
@@ -49,62 +52,133 @@ label_text = "Window Mode"
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=1679757254]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=1478570448]
+[node name="Resolution" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=1478570448 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer2" unique_id=504448029]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Window mode"
-
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer2" unique_id=2014275318]
-layout_mode = 2
-size_flags_horizontal = 10
+label_text = "Resolution"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=1484923748]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=292393617]
+[node name="VSync" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=292393617 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer3" unique_id=413568642]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Window mode"
-
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer3" unique_id=220535884]
-layout_mode = 2
-size_flags_horizontal = 10
+label_text = "VSync"
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=1319536901]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=86832890]
+[node name="FPSLimit" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=86832890 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
+label_text = "FPS Limit"
 
-[node name="Label" type="Label" parent="MarginContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer4" unique_id=540244068]
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=2014275318]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Window mode"
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer4" unique_id=868342871]
+[node name="AntiAliasing" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=504448029 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 10
+label_text = "Anti-Aliasing"
 
-[node name="Sound" type="PanelContainer" parent="MarginContainer/TabContainer" unique_id=1331333757]
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=413568642]
+layout_mode = 2
+
+[node name="ShadowQuality" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=220535884 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Shadow Quality"
+
+[node name="HSeparator6" type="HSeparator" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=540244068]
+layout_mode = 2
+
+[node name="TextureQuality" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=868342871 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Texture Quality"
+
+[node name="HSeparator7" type="HSeparator" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=2101234567]
+layout_mode = 2
+
+[node name="GraphicsPreset" parent="MarginContainer/TabContainer/Graphics/VBoxContainer" unique_id=-2093732729 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Graphics Preset"
+
+[node name="Sound" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=1331333757]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+script = ExtResource("4_8dcdv")
 metadata/_tab_index = 1
 
-[node name="Language" type="PanelContainer" parent="MarginContainer/TabContainer" unique_id=1108510643]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Sound" unique_id=-1193732729]
+layout_mode = 2
+
+[node name="MasterVolume" parent="MarginContainer/TabContainer/Sound/VBoxContainer" unique_id=-1093732729 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Master Volume"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Sound/VBoxContainer" unique_id=-993732729]
+layout_mode = 2
+
+[node name="MusicVolume" parent="MarginContainer/TabContainer/Sound/VBoxContainer" unique_id=-893732729 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Music Volume"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Sound/VBoxContainer" unique_id=-793732729]
+layout_mode = 2
+
+[node name="SFXVolume" parent="MarginContainer/TabContainer/Sound/VBoxContainer" unique_id=-693732729 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "SFX Volume"
+
+[node name="Language" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=1108510643]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+script = ExtResource("5_8dcdv")
 metadata/_tab_index = 2
 
-[node name="Controls" type="PanelContainer" parent="MarginContainer/TabContainer" unique_id=1694701872]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Language" unique_id=-193732729]
+layout_mode = 2
+
+[node name="LanguageSelection" parent="MarginContainer/TabContainer/Language/VBoxContainer" unique_id=-93732729 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Language"
+
+[node name="Controls" type="MarginContainer" parent="MarginContainer/TabContainer" unique_id=1694701872]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+script = ExtResource("6_8dcdv")
 metadata/_tab_index = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Controls" unique_id=806267271]
+layout_mode = 2
+
+[node name="GamepadType" parent="MarginContainer/TabContainer/Controls/VBoxContainer" unique_id=906267271 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Gamepad Type"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Controls/VBoxContainer" unique_id=1006267271]
+layout_mode = 2
+
+[node name="ControlScheme" parent="MarginContainer/TabContainer/Controls/VBoxContainer" unique_id=1106267271 instance=ExtResource("3_8dcdv")]
+unique_name_in_owner = true
+layout_mode = 2
+label_text = "Control Scheme"
