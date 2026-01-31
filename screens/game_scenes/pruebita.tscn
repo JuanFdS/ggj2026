@@ -23,8 +23,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_x4ba3"]
 gradient = SubResource("Gradient_jg18i")
-width = 400
-height = 400
+width = 600
+height = 600
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jg18i"]
 
@@ -46,7 +46,7 @@ size = Vector2(30, 30)
 light_mode = 2
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_y5ptm"]
-viewport_path = NodePath("CanvasLayer/SubViewportContainer/SubViewport")
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [sub_resource type="Gradient" id="Gradient_y5ptm"]
 offsets = PackedFloat32Array(0)
@@ -82,7 +82,7 @@ gradient = SubResource("Gradient_dg2up")
 light_mode = 2
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_n54bx"]
-viewport_path = NodePath("CanvasLayer2/SubViewportContainer/SubViewport")
+viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
 
 [sub_resource type="Gradient" id="Gradient_n54bx"]
 offsets = PackedFloat32Array(0)
@@ -113,16 +113,17 @@ physics_interpolation_mode = 1
 script = ExtResource("1_n54bx")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1668949924]
-position = Vector2(680.5, 379.99997)
-scale = Vector2(22.265625, 12.874999)
+position = Vector2(993, 564)
+scale = Vector2(32.03125, 18.625)
 texture = SubResource("GradientTexture2D_y5ptm")
 
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
-position = Vector2(87, 134)
+position = Vector2(263, 351)
 script = ExtResource("1_dg2up")
 
-[node name="Background" type="Sprite2D" parent="Layer" unique_id=284435309]
+[node name="LayerBackground" type="Sprite2D" parent="Layer" unique_id=284435309]
+unique_name_in_owner = true
 texture = SubResource("GradientTexture2D_x4ba3")
 centered = false
 
@@ -132,7 +133,7 @@ collision_layer = 2147483648
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1852634940]
-position = Vector2(193, 264)
+position = Vector2(281, 470)
 shape = SubResource("WorldBoundaryShape2D_jg18i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1366978323]
@@ -140,7 +141,7 @@ position = Vector2(182, -132)
 shape = SubResource("WorldBoundaryShape2D_x4ba3")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1225438628]
-position = Vector2(391, 63)
+position = Vector2(597, 162)
 shape = SubResource("WorldBoundaryShape2D_dg2up")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=662259327]
@@ -162,7 +163,7 @@ shape = SubResource("RectangleShape2D_jg18i")
 
 [node name="Goal" type="Area2D" parent="Layer" unique_id=627322292]
 unique_name_in_owner = true
-position = Vector2(377, 269)
+position = Vector2(513, 465)
 collision_mask = 2
 script = ExtResource("4_2br0v")
 
@@ -199,24 +200,25 @@ shape = SubResource("RectangleShape2D_n54bx")
 
 [node name="MaskButton" type="Button" parent="." unique_id=1551359140]
 unique_name_in_owner = true
-offset_left = 519.0
-offset_top = 84.0
-offset_right = 651.0
-offset_bottom = 115.0
+offset_left = 984.0
+offset_top = 263.0
+offset_right = 1116.0
+offset_bottom = 294.0
 focus_mode = 0
 text = "Aplicar Máscara"
 
 [node name="Mask" type="Node2D" parent="." unique_id=384021872]
 unique_name_in_owner = true
-position = Vector2(679, 144)
+position = Vector2(1212, 350)
 script = ExtResource("3_2m1qm")
 
-[node name="Background" type="Sprite2D" parent="Mask" unique_id=218631811]
+[node name="MaskBackground" type="Sprite2D" parent="Mask" unique_id=218631811]
+unique_name_in_owner = true
 texture = SubResource("GradientTexture2D_x4ba3")
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mask" unique_id=1085760542]
-position = Vector2(322, 358)
+position = Vector2(484, 539)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/StaticBody2D" unique_id=1684450910]
 position = Vector2(0, -0.5)
@@ -272,14 +274,15 @@ offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=844272332]
+[node name="MaskSubviewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=844272332]
+unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(400, 400)
 render_target_update_mode = 4
 script = ExtResource("6_v73ld")
 
-[node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=2107362031]
+[node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" unique_id=2107362031]
 unique_name_in_owner = true
 offset = Vector2(679, 144)
 anchor_mode = 0
@@ -297,14 +300,15 @@ offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer2/SubViewportContainer" unique_id=48825315]
+[node name="LayerSubviewport" type="SubViewport" parent="CanvasLayer2/SubViewportContainer" unique_id=48825315]
+unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(400, 400)
 render_target_update_mode = 4
 script = ExtResource("6_v73ld")
 
-[node name="LayerCamera" type="Camera2D" parent="CanvasLayer2/SubViewportContainer/SubViewport" unique_id=816684468]
+[node name="LayerCamera" type="Camera2D" parent="CanvasLayer2/SubViewportContainer/LayerSubviewport" unique_id=816684468]
 unique_name_in_owner = true
 offset = Vector2(87, 134)
 anchor_mode = 0
@@ -314,13 +318,15 @@ process_callback = 0
 unique_name_in_owner = true
 process_mode = 3
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 182.0
-offset_top = 246.0
-offset_right = 995.5
-offset_bottom = 416.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 643.0
+offset_top = 500.0
+offset_right = 1456.5
+offset_bottom = 670.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_2br0v")

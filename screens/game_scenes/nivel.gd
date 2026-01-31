@@ -17,3 +17,7 @@ func _ready() -> void:
 		%ganaste.visible = true
 		get_tree().paused = true
 	)
+	%MaskSubviewport.size = %LayerBackground.texture.get_size()
+	%LayerSubviewport.size = %MaskBackground.texture.get_size()
+	%MaskCamera.offset = %Mask.position
+	%LayerCamera.offset = %Layer.position
