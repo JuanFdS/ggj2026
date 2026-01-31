@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cjtetwkrbha3b" path="res://icon.svg" id="1_3elw4"]
 [ext_resource type="Script" uid="uid://x0qole3ha7y6" path="res://screens/game_scenes/layer.gd" id="1_dg2up"]
 [ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/player/player.gd" id="1_jg18i"]
+[ext_resource type="Script" uid="uid://blqrewm86hfjx" path="res://screens/game_scenes/nivel.gd" id="1_n54bx"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/mask.gd" id="3_2m1qm"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="3_x4ba3"]
+[ext_resource type="Script" uid="uid://c0nrfrhvhoem0" path="res://screens/game_scenes/goal.gd" id="4_2br0v"]
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/preview.gd" id="4_y5ptm"]
 [ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/sub_viewport.gd" id="6_v73ld"]
 
@@ -37,6 +39,8 @@ normal = Vector2(1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jg18i"]
 size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ptm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y5ptm"]
 light_mode = 2
@@ -74,7 +78,7 @@ gradient = SubResource("Gradient_dg2up")
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
-colors = PackedColorArray(0.5294118, 0.5294118, 0.5294118, 0.6862745)
+colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
@@ -84,8 +88,12 @@ height = 100
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
 size = Vector2(200, 100)
 
-[node name="Pruebita" type="Node2D" unique_id=868727410]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
+
+[node name="Nivel" type="Node2D" unique_id=868727410]
 physics_interpolation_mode = 1
+script = ExtResource("1_n54bx")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1668949924]
 position = Vector2(680.5, 379.99997)
@@ -122,6 +130,7 @@ shape = SubResource("WorldBoundaryShape2D_2m1qm")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Layer" unique_id=234132978]
 position = Vector2(45, 365)
+collision_layer = 3
 script = ExtResource("1_jg18i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer/CharacterBody2D" unique_id=1763260006]
@@ -132,11 +141,21 @@ texture = ExtResource("1_3elw4")
 shape = SubResource("RectangleShape2D_jg18i")
 
 [node name="Goal" type="Node2D" parent="Layer" unique_id=201768106]
+unique_name_in_owner = true
 position = Vector2(377, 271)
+script = ExtResource("4_2br0v")
 
 [node name="Polygon2D" type="Polygon2D" parent="Layer/Goal" unique_id=708507762]
+position = Vector2(0, 6)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1, -7, 4, -6, -3, -13, -9)
+
+[node name="Area2D" type="Area2D" parent="Layer/Goal" unique_id=627322292]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/Goal/Area2D" unique_id=803392067]
+shape = SubResource("RectangleShape2D_y5ptm")
 
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
 unique_name_in_owner = true
@@ -224,3 +243,21 @@ unique_name_in_owner = true
 offset = Vector2(679, 144)
 anchor_mode = 0
 process_callback = 0
+
+[node name="ganaste" type="RichTextLabel" parent="." unique_id=214663392]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 182.0
+offset_top = 246.0
+offset_right = 995.5
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_2br0v")
+bbcode_enabled = true
+text = "[font_size=100][rainbow]FELICITACIONES[/rainbow][/font_size]
+[center]...mas juego proximamente[/center]"

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var mask_button: Button = %MaskButton
 @onready var mask_selection: Node2D = %MaskSelection
+@onready var layer: Node2D = %Layer
 
 enum State {
 	Playing,
@@ -36,11 +37,15 @@ func _change_state(new_state):
 func _enter_state(state):
 	match state:
 		State.Playing:
+			layer.modulate = Color.WHITE
+			self.modulate = Color(0.5,0.5,0.5)
 			mask_button.text = "Editar Máscara"
 			preview.visible = false
 			%MaskSelection.process_mode = Node.PROCESS_MODE_DISABLED
 			%Layer.process_mode = Node.PROCESS_MODE_INHERIT
 		State.Masking:
+			layer.modulate = Color(0.5,0.5,0.5)
+			self.modulate = Color.WHITE
 			mask_button.text = "Aplicar Máscara"
 			preview.visible = true
 			%MaskSelection.process_mode = Node.PROCESS_MODE_INHERIT

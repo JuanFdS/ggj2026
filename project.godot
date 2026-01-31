@@ -61,3 +61,7 @@ toggle_mask={
 
 locale/translations=PackedStringArray("res://resources/translations/translations.en.translation", "res://resources/translations/translations.es.translation")
 locale/translations_pot_files=PackedStringArray("res://screens/menues/settings/settings.tscn")
+
+[layer_names]
+
+2d_physics/layer_2="player"
