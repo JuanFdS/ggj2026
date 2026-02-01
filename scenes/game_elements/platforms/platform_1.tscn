@@ -16,6 +16,10 @@ height = 32
 [node name="Platform" type="StaticBody2D" unique_id=121207750]
 script = ExtResource("1_vhsgx")
 size_in_cells = Vector2i(3, 1)
+texture = SubResource("GradientTexture2D_v73ld")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1195296732]
+polygon = PackedVector2Array(0, 0, 96, 0, 96, 32, 0, 32)
 
 [node name="Mask" type="Polygon2D" parent="." unique_id=105858329]
 clip_children = 1
@@ -23,6 +27,3 @@ clip_children = 1
 [node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=851624041]
 texture = SubResource("GradientTexture2D_v73ld")
 centered = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1195296732]
-polygon = PackedVector2Array(0, 0, 96, 0, 96, 32, 0, 32)
