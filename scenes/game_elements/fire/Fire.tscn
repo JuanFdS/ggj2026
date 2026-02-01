@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://bfee3ym77dcq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydwga"]
-size = Vector2(32, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_540mm"]
 size = Vector2(32, 64)
 
@@ -32,12 +29,10 @@ colors = PackedColorArray(1, 0.38351256, 0, 1, 1, 1, 0, 1)
 
 [node name="Fire" type="Area2D" unique_id=240002621]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254380064]
-position = Vector2(16, 64)
-shape = SubResource("RectangleShape2D_ydwga")
-
 [node name="KillZone" type="Area2D" parent="." unique_id=980638087]
 position = Vector2(16, 32)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1429369091]
 shape = SubResource("RectangleShape2D_540mm")
@@ -58,3 +53,6 @@ scale_amount_max = 3.5
 scale_amount_curve = SubResource("Curve_540mm")
 color_ramp = SubResource("Gradient_8dau5")
 color_initial_ramp = SubResource("Gradient_g38vg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=299129611]
+polygon = PackedVector2Array(0, 63, 32, 63, 32, 64, 0, 64)
