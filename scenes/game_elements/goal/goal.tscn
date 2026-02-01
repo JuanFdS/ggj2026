@@ -16,3 +16,6 @@ centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=22604500]
 polygon = PackedVector2Array(0, 0, 0, 128, 92, 128, 92, 0)
+
+[node name="Stairs" type="Marker2D" parent="." unique_id=1033441466]
+position = Vector2(1, 2)

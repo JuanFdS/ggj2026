@@ -1,7 +1,20 @@
 @tool
 extends Node2D
 
-var dying: bool = false
+enum PlayState {
+	Playing,
+	Won,
+	Dying
+}
+
+var play_state = PlayState.Playing
+
+func completed() -> bool:
+	return play_state in [PlayState.Won, PlayState.Dying]
+
+func player_died():
+	play_state = PlayState.Dying
+
 @export var mask_size: Vector2i = Vector2i(200, 100):
 	set(new_value):
 		mask_size = new_value
@@ -35,8 +48,10 @@ func _ready() -> void:
 	add_to_group("level")
 
 func win():
+	play_state = PlayState.Won
+
+func go_to_next_level():
 	LevelManager.advance_to_next_level()
-	%ganaste.visible = true
 
 func _process(delta):
 	if Engine.is_editor_hint():
