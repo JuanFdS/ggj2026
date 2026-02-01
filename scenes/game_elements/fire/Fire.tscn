@@ -78,4 +78,3 @@ polygon = PackedVector2Array(0, 63, 32, 63, 32, 64, 0, 64)
 [node name="fuego_sfx" type="AudioStreamPlayer" parent="." unique_id=1183629125]
 stream = ExtResource("2_8dau5")
 autoplay = true
-max_polyphony = 3

@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://cytj3045sqqfl" path="res://sonidos/pegado hoja/sp_2_NO.wav" id="17_4in1o"]
 [ext_resource type="AudioStream" uid="uid://jdqpnxejx3u8" path="res://sonidos/golpe_caja/salto 3.wav" id="18_hlbuw"]
 [ext_resource type="AudioStream" uid="uid://c82llyb18wcbu" path="res://sonidos/golpe_caja/salto 6.wav" id="19_7mb7c"]
+[ext_resource type="AudioStream" uid="uid://cbcp6ia1pl8rr" path="res://sonidos/click.wav" id="20_7mb7c"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rg8ox"]
 streams_count = 6
@@ -92,3 +93,6 @@ stream = SubResource("AudioStreamRandomizer_hlbuw")
 
 [node name="golpe_caja" type="AudioStreamPlayer" parent="." unique_id=2061975541]
 stream = SubResource("AudioStreamRandomizer_vkow4")
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=576889709]
+stream = ExtResource("20_7mb7c")

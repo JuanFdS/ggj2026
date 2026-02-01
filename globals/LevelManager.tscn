@@ -5,7 +5,7 @@
 
 [node name="LevelManager" type="Node" unique_id=279347259]
 script = ExtResource("1_sbx32")
-levels = Array[String](["uid://bqmwvjjbps7w1", "uid://ce3d6dyofmwfr", "uid://dtpk2ayp7efqw", "uid://drefjf74nk5jl", "uid://dg0cl1v8nr23l", "uid://by456phyrdv26", "uid://b3ya2scb7cxwe", "uid://buvw1hptrmo26"])
+levels = Array[String](["uid://bqmwvjjbps7w1", "uid://ce3d6dyofmwfr", "uid://dtpk2ayp7efqw", "uid://drefjf74nk5jl", "uid://dg0cl1v8nr23l", "uid://by456phyrdv26", "uid://b3ya2scb7cxwe", "uid://buvw1hptrmo26", "uid://bxc3alchv8h7s"])
 
 [node name="sfx" parent="." unique_id=403339373 instance=ExtResource("2_efog1")]
 
