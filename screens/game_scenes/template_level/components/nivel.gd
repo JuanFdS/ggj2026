@@ -40,6 +40,8 @@ func win():
 	%ganaste.visible = true
 
 func _process(delta):
+	if Engine.is_editor_hint():
+		return
 	if Input.is_action_just_pressed("Reset"):
 		get_tree().reload_current_scene()
 
