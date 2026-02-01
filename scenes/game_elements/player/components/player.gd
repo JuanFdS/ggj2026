@@ -6,7 +6,8 @@ var SPEED = 300.0
 const JUMP_VELOCITY = -450.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@export var COYOTE_TIME: float = 0.15
+@onready var coyote_time_left: float = COYOTE_TIME
 
 func _physics_process(delta: float) -> void:
 	var is_in_layer = GameElementUtils.is_in_layer(self)
@@ -16,9 +17,12 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	else:
+		coyote_time_left = COYOTE_TIME
 
+	coyote_time_left = move_toward(coyote_time_left, 0.0, delta)
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or coyote_time_left > 0.0):
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
