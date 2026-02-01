@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cc2d1sdbnbglq"]
+
+[ext_resource type="Script" uid="uid://06w8g6pckiv" path="res://addons/level_maker_helper/level_maker_helper_panel.gd" id="1_dy8dj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy8dj"]
+font_size = 20
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vwdkd"]
+thickness = 10
+
+[node name="LevelMakerHelper" type="Control" unique_id=605092975]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dy8dj")
+
+[node name="NoLevelOpenMessage" type="MarginContainer" parent="." unique_id=1354800314]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 15
+
+[node name="NoLevelOpenMessage" type="Label" parent="NoLevelOpenMessage" unique_id=1797325720]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Seleccioná una escena de nivel para usar esto"
+label_settings = SubResource("LabelSettings_dy8dj")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons" type="PanelContainer" parent="." unique_id=1898823113]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Buttons" unique_id=1722638620]
+layout_mode = 2
+
+[node name="ButtonGrid" type="GridContainer" parent="Buttons/ScrollContainer" unique_id=1578263648]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="GoToLayer" type="Button" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=2093269674]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Go to layer"
+
+[node name="GoToMask" type="Button" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=1038933050]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Go to mask"
+
+[node name="HSeparator" type="HSeparator" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=1762354401]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxLine_vwdkd")
+
+[node name="HSeparator2" type="HSeparator" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=2065153355]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxLine_vwdkd")
+
+[node name="AddPlatform" type="Button" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=302108359]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Add platform"
+
+[node name="AddFire" type="Button" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=803809130]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Add fire"
+
+[node name="AddBox" type="Button" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=1849812172]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Add box"
+
+[node name="AddPlayer" type="Button" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=1528333600]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Add player"
+
+[node name="AddGoal" type="Button" parent="Buttons/ScrollContainer/ButtonGrid" unique_id=2097145639]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Add Goal"

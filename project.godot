@@ -35,7 +35,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ruake/plugin.cfg")
+enabled=PackedStringArray("res://addons/level_maker_helper/plugin.cfg", "res://addons/ruake/plugin.cfg")
 
 [file_customization]
 
