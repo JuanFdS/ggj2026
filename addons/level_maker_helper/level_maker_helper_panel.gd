@@ -16,7 +16,7 @@ func _ready():
 func on_new_selection():
 	if not get_tree().edited_scene_root:
 		return
-	if not get_tree().edited_scene_root.is_in_group("level"):
+	if not is_level(get_tree().edited_scene_root):
 		return
 	var in_any_game_elements: bool = !!current_game_elements()
 	for button in [%AddPlatform, %AddFire, %AddBox, %AddPlayer, %AddGoal]:
@@ -37,12 +37,17 @@ func current_game_elements():
 		return mask_game_elements
 	return null
 
+func is_level(scene):
+	return !!scene and scene.name == "Nivel" or scene.is_in_group("level")
+
 func scene_changed(new_scene):
-	%NoLevelOpenMessage.visible = not new_scene.is_in_group("level")
-	%Buttons.visible = new_scene.is_in_group("level")
+	if not new_scene:
+		return
+	%NoLevelOpenMessage.visible = not is_level(new_scene)
+	%Buttons.visible = is_level(new_scene)
 
 func on_go_to_layer():
-	if not get_tree().edited_scene_root.is_in_group("level"):
+	if not is_level(get_tree().edited_scene_root):
 		return
 	var game_elements = get_tree().edited_scene_root.get_node("Layer/GameElements")
 	EditorInterface.get_selection().clear()

@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://ps2ayfxa8vhk" path="res://screens/game_scenes/template_level/components/mask_cutout.gd" id="3_7w6s3"]
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/template_level/components/preview.gd" id="4_hkp1i"]
 [ext_resource type="Texture2D" uid="uid://csbttg3e4garl" path="res://screens/game_scenes/template_level/components/fondo_canvas_1.png" id="4_tr3vn"]
-[ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/game_elements.gd" id="5_3eck2"]
+[ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/components/game_elements.gd" id="5_3eck2"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
-[ext_resource type="Script" uid="uid://chflmo6al3wyn" path="res://screens/game_scenes/template_level/mask_cut_out_for_animation.gd" id="7_cubxh"]
+[ext_resource type="Script" uid="uid://chflmo6al3wyn" path="res://screens/game_scenes/template_level/components/mask_cut_out_for_animation.gd" id="7_cubxh"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="7_pub7v"]
 [ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/template_level/components/sub_viewport.gd" id="8_cubxh"]
 [ext_resource type="Texture2D" uid="uid://qge5rog7jtpb" path="res://screens/game_scenes/template_level/components/fondo_canvas_2.png" id="9_bqir4"]
@@ -179,26 +179,26 @@ metadata/_edit_lock_ = true
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Layer" unique_id=1346561349]
+[node name="ScenarioBorders" type="StaticBody2D" parent="Layer" unique_id=1346561349]
 collision_layer = 2147483648
 collision_mask = 0
 metadata/_edit_lock_ = true
 
-[node name="Bottom" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1852634940]
+[node name="Bottom" type="CollisionShape2D" parent="Layer/ScenarioBorders" unique_id=1852634940]
 position = Vector2(768, 960)
 shape = SubResource("WorldBoundaryShape2D_jg18i")
 metadata/_edit_lock_ = true
 
-[node name="Top" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1366978323]
+[node name="Top" type="CollisionShape2D" parent="Layer/ScenarioBorders" unique_id=1366978323]
 shape = SubResource("WorldBoundaryShape2D_x4ba3")
 metadata/_edit_lock_ = true
 
-[node name="Right" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1225438628]
+[node name="Right" type="CollisionShape2D" parent="Layer/ScenarioBorders" unique_id=1225438628]
 position = Vector2(768, 960)
 shape = SubResource("WorldBoundaryShape2D_dg2up")
 metadata/_edit_lock_ = true
 
-[node name="Left" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1856295708]
+[node name="Left" type="CollisionShape2D" parent="Layer/ScenarioBorders" unique_id=1856295708]
 position = Vector2(1, 485.5)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_pub7v")

@@ -55,11 +55,18 @@ func toggle_mask():
 	%sfx/pegado_hoja.play()
 	match state:
 		State.Playing:
+			# Estaría bueno mover esto a otro lado...
+			var original_texture = $"../MaskCutOutForAnimation/MaskBackground".texture
+			var screenshot = %MaskSubviewport.get_texture().get_image()
+			$"../MaskCutOutForAnimation/MaskBackground".texture = ImageTexture.create_from_image(screenshot)
+			
+			%Layer.unapply_mask()
+			%MaskCutOut.visible = false
 			get_tree().paused = true
 			await %MaskCutOutForAnimation.play_unmask_animation()
 			get_tree().paused = false
-			%Layer.unapply_mask()
 			_change_state(State.Masking)
+			$"../MaskCutOutForAnimation/MaskBackground".texture = original_texture
 		State.Masking:
 			get_tree().paused = true
 			await %MaskCutOutForAnimation.play_mask_animation()
@@ -72,6 +79,7 @@ func toggle_mask():
 			await get_tree().physics_frame
 			await get_tree().physics_frame
 			%Layer.apply_mask(things_with_intersections)
+			%MaskCutOutForAnimation.visible = false
 
 
 func _change_state(new_state):
@@ -82,6 +90,8 @@ func _enter_state(new_state):
 	match new_state:
 		State.Playing:
 			%MaskCutOut.visible = true
+			# Esto quedó duplicado en mask_cut_out_for_animation
+			# (se lo necesita aquí para que el estado inicial esté bien)
 			layer.modulate = Color.WHITE
 			self.modulate = Color(0.8,0.8,0.8)
 			mask_button.text = "Editar Máscara"
@@ -94,7 +104,11 @@ func _enter_state(new_state):
 			layer.modulate = Color(0.8,0.8,0.8)
 			self.modulate = Color.WHITE
 			mask_button.text = "Aplicar Máscara"
+			preview.self_modulate.a = 0
 			preview.visible = true
 			layer_preview.visible = false
 			%MaskSelection.process_mode = Node.PROCESS_MODE_INHERIT
 			%Layer.process_mode = Node.PROCESS_MODE_DISABLED
+			await create_tween().tween_property(preview, "self_modulate:a", 1, 0.5).from(0)\
+				.set_trans(Tween.TRANS_QUAD)\
+				.set_ease(Tween.EASE_IN_OUT).finished
