@@ -9,13 +9,6 @@
 [ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/sub_viewport.gd" id="6_v73ld"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/reset_button.gd" id="7_gvio3"]
 
-[sub_resource type="Gradient" id="Gradient_v73ld"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_y5ptm"]
-gradient = SubResource("Gradient_v73ld")
-
 [sub_resource type="Gradient" id="Gradient_jg18i"]
 offsets = PackedFloat32Array(0.33639145, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -111,15 +104,17 @@ bg_color = Color(0.5306541, 0.53065413, 0.53065395, 1)
 font_size = 40
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_kjhe3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1m11a"]
+gradient = SubResource("Gradient_kjhe3")
+
 [node name="Nivel" type="Node2D" unique_id=868727410]
 physics_interpolation_mode = 1
 script = ExtResource("1_n54bx")
 mask_size = Vector2i(300, 150)
-
-[node name="Background" type="Sprite2D" parent="." unique_id=1668949924]
-position = Vector2(993, 564)
-scale = Vector2(32.03125, 18.625)
-texture = SubResource("GradientTexture2D_y5ptm")
 
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
@@ -254,7 +249,7 @@ shape = SubResource("RectangleShape2D_2m1qm")
 [node name="GameElements" type="Node2D" parent="Mask" unique_id=1295757892]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770220679]
-layer = -1
+layer = -2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1640880484]
 anchors_preset = 15
@@ -264,6 +259,7 @@ offset_right = -552.0
 offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="MaskSubviewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=844272332]
 unique_name_in_owner = true
@@ -276,12 +272,12 @@ script = ExtResource("6_v73ld")
 [node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" unique_id=2107362031]
 unique_name_in_owner = true
 rotation = 0.2617994
-offset = Vector2(981, 320)
+offset = Vector2(955.00006, 289.99997)
 anchor_mode = 0
 process_callback = 0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=349716207]
-layer = -1
+layer = -2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer2" unique_id=1951153838]
 anchors_preset = 15
@@ -291,6 +287,7 @@ offset_right = -552.0
 offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="LayerSubviewport" type="SubViewport" parent="CanvasLayer2/SubViewportContainer" unique_id=48825315]
 unique_name_in_owner = true
@@ -415,3 +412,15 @@ label_settings = SubResource("LabelSettings_n54bx")
 
 [node name="HSeparator3" type="HSeparator" parent="CanvasLayer3/MarginContainer/PanelContainer/VBoxContainer" unique_id=778838162]
 layout_mode = 2
+
+[node name="Fondo" type="CanvasLayer" parent="." unique_id=1355953562]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=1046836254]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_1m11a")
+metadata/_edit_lock_ = true
