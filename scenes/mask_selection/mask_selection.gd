@@ -10,6 +10,8 @@ extends Node2D
 		$Sprite2D.texture.width = mask_size.x
 		$Sprite2D.texture.height = mask_size.y
 		$MaskSelectionArea/CollisionShape2D.shape.size = mask_size
+		%LayerPreviewMask.texture.width = mask_size.x
+		%LayerPreviewMask.texture.height = mask_size.y
 
 var dragging: bool = false
 @export var MOVE_SPEED: float = 500.0

@@ -11,13 +11,14 @@ extends Node2D
 @onready var goal: Node2D = %Goal
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		return
-	goal.achieved.connect(func():
-		%ganaste.visible = true
-		get_tree().paused = true
-	)
 	%MaskSubviewport.size = %LayerBackground.texture.get_size()
 	%LayerSubviewport.size = %MaskBackground.texture.get_size()
 	%MaskCamera.offset = %Mask.position
 	%LayerCamera.offset = %Layer.position
+	if Engine.is_editor_hint():
+		return
+	add_to_group("level")
+
+func win():
+	%ganaste.visible = true
+	get_tree().paused = true

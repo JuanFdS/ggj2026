@@ -62,23 +62,17 @@ height = 100
 size = Vector2(200, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4ba3"]
-size = Vector2(106, 43)
-
-[sub_resource type="Gradient" id="Gradient_x4ba3"]
-offsets = PackedFloat32Array(0.045161292, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2m1qm"]
-gradient = SubResource("Gradient_x4ba3")
-width = 70
-height = 80
+size = Vector2(100, 50)
 
 [sub_resource type="Gradient" id="Gradient_dg2up"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_v73ld"]
 gradient = SubResource("Gradient_dg2up")
+width = 100
+height = 50
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
 light_mode = 2
@@ -101,11 +95,11 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
-width = 200
+width = 50
 height = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(200, 100)
+size = Vector2(50, 100)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
@@ -120,6 +114,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="Nivel" type="Node2D" unique_id=868727410]
 physics_interpolation_mode = 1
 script = ExtResource("1_n54bx")
+mask_size = Vector2i(50, 100)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1668949924]
 position = Vector2(993, 564)
@@ -163,8 +158,10 @@ collision_layer = 3
 collision_mask = 2147483649
 script = ExtResource("1_jg18i")
 
-[node name="Sprite2D" type="Sprite2D" parent="Layer/CharacterBody2D" unique_id=1763260006]
-scale = Vector2(0.25, 0.25)
+[node name="Mask" type="Polygon2D" parent="Layer/CharacterBody2D" unique_id=1327263323]
+clip_children = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer/CharacterBody2D/Mask" unique_id=1763260006]
 texture = ExtResource("1_3elw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/CharacterBody2D" unique_id=20194655]
@@ -186,6 +183,7 @@ polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1,
 
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
 unique_name_in_owner = true
+light_mask = 2
 z_index = 1
 material = SubResource("CanvasItemMaterial_y5ptm")
 texture = SubResource("ViewportTexture_y5ptm")
@@ -197,8 +195,10 @@ process_mode = 1
 z_index = 100
 position = Vector2(193, 141)
 energy = 0.0
+range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_2br0v")
 script = ExtResource("4_y5ptm")
+mask_size = Vector2i(50, 100)
 
 [node name="PreviewArea" type="Area2D" parent="Layer/PreviewMask" unique_id=1272415802]
 unique_name_in_owner = true
@@ -240,19 +240,19 @@ centered = false
 position = Vector2(484, 539)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/StaticBody2D" unique_id=1684450910]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_x4ba3")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Mask/StaticBody2D" unique_id=1348433681]
-scale = Vector2(1.5703118, 0.578125)
-texture = SubResource("GradientTexture2D_2m1qm")
+[node name="Mask" type="Polygon2D" parent="Mask/StaticBody2D" unique_id=1420664570]
+clip_children = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Mask/StaticBody2D" unique_id=667507957]
-scale = Vector2(1.5703118, 0.578125)
+[node name="Sprite2D" type="Sprite2D" parent="Mask/StaticBody2D/Mask" unique_id=667507957]
 texture = SubResource("GradientTexture2D_v73ld")
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 50)
 
 [node name="LayerPreview" type="Sprite2D" parent="Mask" unique_id=1890886365]
 unique_name_in_owner = true
+light_mask = 2
 z_index = 1
 material = SubResource("CanvasItemMaterial_n54bx")
 texture = SubResource("ViewportTexture_n54bx")
@@ -261,6 +261,7 @@ centered = false
 [node name="LayerPreviewMask" type="PointLight2D" parent="Mask" unique_id=202915104]
 unique_name_in_owner = true
 energy = 0.0
+range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_gvio3")
 
 [node name="MaskSelection" type="Node2D" parent="Mask" unique_id=2110519118]
@@ -268,6 +269,7 @@ unique_name_in_owner = true
 z_index = 1
 position = Vector2(226, 146)
 script = ExtResource("3_x4ba3")
+mask_size = Vector2i(50, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask/MaskSelection" unique_id=26579043]
 texture = SubResource("GradientTexture2D_dg2up")
@@ -279,6 +281,20 @@ unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_2m1qm")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Mask/MaskSelection" unique_id=616465055]
+
+[node name="Goal2" type="Area2D" parent="Mask" unique_id=1010649471]
+unique_name_in_owner = true
+position = Vector2(154, 547)
+collision_mask = 2
+script = ExtResource("4_2br0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/Goal2" unique_id=874928238]
+shape = SubResource("RectangleShape2D_y5ptm")
+
+[node name="Polygon2D" type="Polygon2D" parent="Mask/Goal2" unique_id=747893369]
+position = Vector2(0, 6)
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1, -7, 4, -6, -3, -13, -9)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770220679]
 layer = -1
@@ -296,13 +312,13 @@ grow_vertical = 2
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(400, 400)
+size = Vector2i(600, 600)
 render_target_update_mode = 4
 script = ExtResource("6_v73ld")
 
 [node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" unique_id=2107362031]
 unique_name_in_owner = true
-offset = Vector2(679, 144)
+offset = Vector2(981, 320)
 anchor_mode = 0
 process_callback = 0
 
@@ -322,13 +338,13 @@ grow_vertical = 2
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(400, 400)
+size = Vector2i(600, 600)
 render_target_update_mode = 4
 script = ExtResource("6_v73ld")
 
 [node name="LayerCamera" type="Camera2D" parent="CanvasLayer2/SubViewportContainer/LayerSubviewport" unique_id=816684468]
 unique_name_in_owner = true
-offset = Vector2(87, 134)
+offset = Vector2(157, 318)
 anchor_mode = 0
 process_callback = 0
 

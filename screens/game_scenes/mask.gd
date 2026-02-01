@@ -28,11 +28,14 @@ func toggle_mask():
 			%Layer.unapply_mask()
 			_change_state(State.Masking)
 		State.Masking:
+			var things_with_intersections = {}
 			var masked_things = %MaskSelectionArea.get_overlapping_bodies() + %MaskSelectionArea.get_overlapping_areas()
+			for thing in masked_things:
+				things_with_intersections[thing] = %Layer.cut_into_shapes(%MaskSelectionArea, thing)
 			_change_state(State.Playing)
 			await get_tree().physics_frame
 			await get_tree().physics_frame
-			%Layer.apply_mask(masked_things)
+			%Layer.apply_mask(things_with_intersections)
 
 
 func _change_state(new_state):
