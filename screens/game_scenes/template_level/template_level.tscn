@@ -16,8 +16,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_x4ba3"]
 gradient = SubResource("Gradient_jg18i")
-width = 518
-height = 600
+width = 768
+height = 960
 
 [sub_resource type="Gradient" id="Gradient_0npbb"]
 offsets = PackedFloat32Array(1)
@@ -34,8 +34,8 @@ colors = PackedColorArray(0, 0.61960787, 0.81960785, 1, 0, 1, 1, 1, 0.78039217, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0npbb"]
 gradient = SubResource("Gradient_gvio3")
-width = 518
-height = 600
+width = 768
+height = 960
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 
@@ -109,33 +109,46 @@ gradient = SubResource("Gradient_kjhe3")
 physics_interpolation_mode = 1
 script = ExtResource("1_746gp")
 mask_size = Vector2i(300, 150)
-canvas_size = Vector2i(518, 600)
+canvas_size = Vector2i(768, 960)
 metadata/_edit_lock_ = true
 
-[node name="MaskButton" type="Button" parent="." unique_id=1551359140]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2113149104]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=902006675]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" unique_id=210780470]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="MaskButton" type="Button" parent="UI/MarginContainer/VBoxContainer" unique_id=1551359140]
 unique_name_in_owner = true
-offset_left = 805.0
-offset_top = 211.0
-offset_right = 937.0
-offset_bottom = 242.0
+layout_mode = 2
+size_flags_vertical = 6
 focus_mode = 0
 text = "Aplicar Máscara"
-metadata/_edit_lock_ = true
 
-[node name="ResetButton" type="Button" parent="." unique_id=916187850]
+[node name="ResetButton" type="Button" parent="UI/MarginContainer/VBoxContainer" unique_id=916187850]
 unique_name_in_owner = true
-offset_left = 805.0
-offset_top = 557.0
-offset_right = 937.0
-offset_bottom = 588.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 focus_mode = 0
 text = "Resetear"
 script = ExtResource("5_tr3vn")
-metadata/_edit_lock_ = true
 
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
-position = Vector2(78, 78)
+position = Vector2(60, 60)
 script = ExtResource("2_3eck2")
 
 [node name="LayerBackground" type="Sprite2D" parent="Layer" unique_id=284435309]
@@ -164,7 +177,7 @@ collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="Bottom" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1852634940]
-position = Vector2(518, 600)
+position = Vector2(768, 960)
 shape = SubResource("WorldBoundaryShape2D_jg18i")
 metadata/_edit_lock_ = true
 
@@ -173,7 +186,7 @@ shape = SubResource("WorldBoundaryShape2D_x4ba3")
 metadata/_edit_lock_ = true
 
 [node name="Right" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1225438628]
-position = Vector2(518, 600)
+position = Vector2(768, 960)
 shape = SubResource("WorldBoundaryShape2D_dg2up")
 metadata/_edit_lock_ = true
 
@@ -217,7 +230,7 @@ metadata/_edit_lock_ = true
 
 [node name="Mask" type="Node2D" parent="." unique_id=384021872]
 unique_name_in_owner = true
-position = Vector2(1341, 462)
+position = Vector2(1100, 60)
 script = ExtResource("6_bqir4")
 
 [node name="MaskBackground" type="Sprite2D" parent="Mask" unique_id=218631811]
@@ -285,7 +298,7 @@ unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
 canvas_cull_mask = 4293918721
-size = Vector2i(518, 600)
+size = Vector2i(768, 960)
 render_target_update_mode = 4
 script = ExtResource("8_cubxh")
 camera = NodePath("MaskCamera")
@@ -316,7 +329,7 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(518, 600)
+size = Vector2i(768, 960)
 render_target_update_mode = 4
 script = ExtResource("8_cubxh")
 camera = NodePath("LayerCamera")
