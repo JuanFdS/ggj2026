@@ -32,3 +32,7 @@ func _ready() -> void:
 func toggle_fire(is_on: bool):
 	kill_zone.set_deferred("monitoring", is_on)
 	particles.emitting = is_on
+	if is_on:
+		$fuego_sfx.play()
+	else:
+		$fuego_sfx.stop()
