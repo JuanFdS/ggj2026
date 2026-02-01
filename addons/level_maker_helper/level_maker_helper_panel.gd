@@ -14,6 +14,8 @@ func _ready():
 	EditorInterface.get_selection().selection_changed.connect(on_new_selection)
 	
 func on_new_selection():
+	if not get_tree().edited_scene_root:
+		return
 	if not get_tree().edited_scene_root.is_in_group("level"):
 		return
 	var in_any_game_elements: bool = !!current_game_elements()
