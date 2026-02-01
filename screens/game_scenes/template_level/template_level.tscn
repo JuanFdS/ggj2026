@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/game_elements.gd" id="5_3eck2"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
-[ext_resource type="Script" uid="uid://chflmo6al3wyn" path="res://screens/game_scenes/template_level/mask_cut_out_for_animation.gd" id="7_cubxh"]
+[ext_resource type="Script" path="res://screens/game_scenes/template_level/mask_cut_out_for_animation.gd" id="7_cubxh"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="7_pub7v"]
 [ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/template_level/components/sub_viewport.gd" id="8_cubxh"]
 [ext_resource type="Texture2D" uid="uid://qge5rog7jtpb" path="res://screens/game_scenes/template_level/components/fondo_canvas_2.png" id="9_bqir4"]
@@ -32,8 +32,7 @@ normal = Vector2(0, 1)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dg2up"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr3vn"]
-size = Vector2(100, 991)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pub7v"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y5ptm"]
 light_mode = 2
@@ -200,8 +199,9 @@ shape = SubResource("WorldBoundaryShape2D_dg2up")
 metadata/_edit_lock_ = true
 
 [node name="Left" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1856295708]
-position = Vector2(-24, 485.5)
-shape = SubResource("RectangleShape2D_tr3vn")
+position = Vector2(1, 485.5)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_pub7v")
 metadata/_edit_lock_ = true
 
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
@@ -308,6 +308,7 @@ z_index = 200
 texture = SubResource("GradientTexture2D_kjhe3")
 centered = false
 region_enabled = true
+metadata/_edit_lock_ = true
 
 [node name="FondoTexture" type="Sprite2D" parent="MaskHole" unique_id=7921866]
 scale = Vector2(1.7284344, 1.7284346)
