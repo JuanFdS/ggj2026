@@ -1,7 +1,12 @@
 extends Node2D
 
 func _ready() -> void:
-	rotation_degrees = -1
+	pass
+	# Descomentar solo si arreglamos que la comparacion entre mascara y colision de objetos
+	# se haga NO usando su global position, si no una posicion relativa a algun nodo padre.
+	# Ya que al usar global position hay rotacion y eso hace muuucho mas facil que se generen
+	# cortes con errores.
+	#rotation_degrees = -1
 
 var occluded_bodies: Array[Node] = []
 

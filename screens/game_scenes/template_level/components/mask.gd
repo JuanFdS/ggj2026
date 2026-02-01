@@ -17,7 +17,11 @@ var state = State.Playing
 func _ready() -> void:
 	_change_state(State.Masking)
 	mask_button.pressed.connect(toggle_mask)
-	rotation_degrees = 1
+	# Descomentar solo si arreglamos que la comparacion entre mascara y colision de objetos
+	# se haga NO usando su global position, si no una posicion relativa a algun nodo padre.
+	# Ya que al usar global position hay rotacion y eso hace muuucho mas facil que se generen
+	# cortes con errores.
+	#rotation_degrees = 1
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_mask"):
