@@ -34,23 +34,27 @@ func intersected_body(body: Node2D, polygon: PackedVector2Array) -> Node2D:
 	var new_body = body.duplicate()
 	var mask: Polygon2D = new_body.get_node("Mask")
 	mask.polygon = polygon
-	var collision_shape: CollisionShape2D = new_body.find_children("", "CollisionShape2D", true, false).front()
-	var new_shape := ConvexPolygonShape2D.new()
-	collision_shape.shape = new_shape
-	new_shape.points = polygon
+	var collision_polygon_2d: CollisionPolygon2D = new_body.find_children("", "CollisionPolygon2D", true, false).front()
+	collision_polygon_2d.polygon = polygon
 
 	return new_body
 
+func translate_polygon(polygon: PackedVector2Array, delta_position: Vector2) -> PackedVector2Array:
+	var new_polygon := PackedVector2Array()
+	for point in polygon:
+		new_polygon.push_back(point + delta_position)
+	return new_polygon
+
 func cut_into_shapes(mask_area: Area2D, thing: Node2D) -> IntersectionResult:
-	var thing_collision_shape: CollisionShape2D = thing.find_children("", "CollisionShape2D", false, false).front()
-	var thing_shape: Shape2D = thing_collision_shape.shape
+	var thing_collision_shape: CollisionPolygon2D = thing.find_children("", "CollisionPolygon2D", false, false).front()
 	var mask_shape: Shape2D = mask_area.find_children("", "CollisionShape2D", false, false).front().shape
-	var thing_rect := thing_shape.get_rect()
-	thing_rect.position += thing_collision_shape.global_position
 	var mask_rect := mask_shape.get_rect()
 	mask_rect.position += mask_area.global_position
 	
-	var thing_polygon: PackedVector2Array = rect_to_polygon(thing_rect)
+	var thing_polygon: PackedVector2Array = translate_polygon(
+		thing_collision_shape.polygon,
+		thing_collision_shape.global_position
+	)
 	var mask_polygon: PackedVector2Array = rect_to_polygon(mask_rect)
 	
 	var base_intersection_polygons := Geometry2D.intersect_polygons(thing_polygon, mask_polygon)

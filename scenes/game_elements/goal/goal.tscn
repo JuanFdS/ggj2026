@@ -3,21 +3,16 @@
 [ext_resource type="Script" uid="uid://c0nrfrhvhoem0" path="res://scenes/game_elements/goal/components/goal.gd" id="1_ee6xh"]
 [ext_resource type="Texture2D" uid="uid://doe8jxfy2vip2" path="res://scenes/game_elements/goal/components/proviescaleras.png" id="2_6gaqg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ptm"]
-size = Vector2(96, 128)
-
 [node name="Goal" type="Area2D" unique_id=1003504178]
 collision_mask = 2
 script = ExtResource("1_ee6xh")
 
 [node name="Mask" type="Polygon2D" parent="." unique_id=1844102148]
 clip_children = 1
-position = Vector2(32, 32)
 
 [node name="Polygon2D" type="Sprite2D" parent="Mask" unique_id=946546174]
-position = Vector2(14, 33)
 texture = ExtResource("2_6gaqg")
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466517454]
-position = Vector2(48, 64)
-shape = SubResource("RectangleShape2D_y5ptm")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=22604500]
+polygon = PackedVector2Array(0, 0, 0, 128, 92, 128, 92, 0)
