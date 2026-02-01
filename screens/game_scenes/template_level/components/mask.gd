@@ -64,15 +64,15 @@ func toggle_mask():
 			%MaskCutOut.visible = false
 			get_tree().paused = true
 			await %MaskCutOutForAnimation.play_unmask_animation()
-			get_tree().paused = false
 			_change_state(State.Masking)
+			get_tree().paused = false
+
 			$"../MaskCutOutForAnimation/MaskBackground".texture = original_texture
 		State.Masking:
 			get_tree().paused = true
 			preview.create_tween()\
 				.tween_property(preview, "self_modulate:a", 0, 0.3).from(1)
 			await %MaskCutOutForAnimation.play_mask_animation()
-			get_tree().paused = false
 			var things_with_intersections = {}
 			var masked_things = %MaskSelectionArea.get_overlapping_bodies() + %MaskSelectionArea.get_overlapping_areas()
 			for thing in masked_things:
@@ -82,6 +82,8 @@ func toggle_mask():
 			await get_tree().physics_frame
 			%Layer.apply_mask(things_with_intersections)
 			%MaskCutOutForAnimation.visible = false
+			get_tree().paused = false
+
 
 
 func _change_state(new_state):
