@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cxtgkwjdb1ow8"]
+
+[ext_resource type="AudioStream" uid="uid://bo0egqu4gmqko" path="res://sonidos/pasar hoja/pasar_hoja_1.mp3" id="1_avxbl"]
+[ext_resource type="AudioStream" uid="uid://8flyf2meb17y" path="res://sonidos/pasar hoja/pasar_hoja_2.mp3" id="2_4gs0g"]
+[ext_resource type="AudioStream" uid="uid://cigbwix14itfy" path="res://sonidos/pasar hoja/pasar_hoja_3.mp3" id="3_4r6ej"]
+[ext_resource type="AudioStream" uid="uid://c2xabuyolp4vj" path="res://sonidos/pasar hoja/pasar_hoja_4.mp3" id="4_lp0rb"]
+[ext_resource type="AudioStream" uid="uid://b2vrvyf0x3twe" path="res://sonidos/pasar hoja/pasar_hoja_5.mp3" id="5_m6fp4"]
+[ext_resource type="AudioStream" uid="uid://baw3i231cv2m6" path="res://sonidos/pasar hoja/pasar_hoja_6.mp3" id="6_l4a0u"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rg8ox"]
+streams_count = 6
+stream_0/stream = ExtResource("1_avxbl")
+stream_1/stream = ExtResource("2_4gs0g")
+stream_2/stream = ExtResource("3_4r6ej")
+stream_3/stream = ExtResource("4_lp0rb")
+stream_4/stream = ExtResource("5_m6fp4")
+stream_5/stream = ExtResource("6_l4a0u")
+
+[node name="sfx" type="Node" unique_id=403339373]
+
+[node name="cambio_hoja" type="AudioStreamPlayer" parent="." unique_id=113780850]
+stream = SubResource("AudioStreamRandomizer_rg8ox")

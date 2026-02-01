@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 RuakeLayer="*uid://dn8rjsyxnwqmi"
 LevelManager="*uid://bw3he4hq4vxtk"
+Musica="*uid://rdpv23r2lkfi"
 
 [display]
 
