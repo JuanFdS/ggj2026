@@ -13,7 +13,7 @@ extends Node2D
 		%LayerPreviewMask.texture.width = mask_size.x
 		%LayerPreviewMask.texture.height = mask_size.y
 		
-@export var MOVE_SPEED: float = 500.0
+@export var MOVE_SPEED: float = 350.0
 
 var last_dragging_position: Vector2 = Vector2.INF
 
