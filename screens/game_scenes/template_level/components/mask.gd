@@ -23,6 +23,8 @@ func _process(_delta: float) -> void:
 	%LayerPreviewMask.position = %MaskSelection.position
 
 func toggle_mask():
+	if get_tree().get_first_node_in_group("level").dying:
+		return
 	match state:
 		State.Playing:
 			%Layer.unapply_mask()

@@ -1,6 +1,7 @@
 @tool
 extends Node2D
 
+var dying: bool = false
 @export var mask_size: Vector2i = Vector2i(200, 100):
 	set(new_value):
 		mask_size = new_value
@@ -37,3 +38,6 @@ func _ready() -> void:
 func win():
 	LevelManager.advance_to_next_level()
 	%ganaste.visible = true
+
+func lose():
+	pass

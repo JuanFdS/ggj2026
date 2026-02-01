@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bfee3ym77dcq"]
 
+[ext_resource type="Script" uid="uid://bk7by14awyd1" path="res://scenes/game_elements/fire/components/fire.gd" id="1_540mm"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_540mm"]
 size = Vector2(32, 64)
 
@@ -28,6 +30,7 @@ offsets = PackedFloat32Array(0.38351256, 0.75268817)
 colors = PackedColorArray(1, 0.38351256, 0, 1, 1, 1, 0, 1)
 
 [node name="Fire" type="Area2D" unique_id=240002621]
+script = ExtResource("1_540mm")
 
 [node name="KillZone" type="Area2D" parent="." unique_id=980638087]
 position = Vector2(16, 32)
