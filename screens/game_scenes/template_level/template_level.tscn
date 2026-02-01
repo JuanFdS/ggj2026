@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://x0qole3ha7y6" path="res://screens/game_scenes/template_level/components/layer.gd" id="2_3eck2"]
 [ext_resource type="Script" uid="uid://ps2ayfxa8vhk" path="res://screens/game_scenes/template_level/components/mask_cutout.gd" id="3_7w6s3"]
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/template_level/components/preview.gd" id="4_hkp1i"]
-[ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/game_elements.gd" id="5_3eck2"]
+[ext_resource type="Script" path="res://screens/game_scenes/template_level/game_elements.gd" id="5_3eck2"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="7_pub7v"]
@@ -255,6 +255,7 @@ mask_size = Vector2i(300, 150)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask/MaskSelection" unique_id=26579043]
+visibility_layer = 2
 texture = SubResource("GradientTexture2D_dg2up")
 metadata/_edit_lock_ = true
 
@@ -287,6 +288,7 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
+canvas_cull_mask = 4293918721
 size = Vector2i(600, 600)
 render_target_update_mode = 4
 script = ExtResource("8_cubxh")
@@ -296,7 +298,6 @@ unique_name_in_owner = true
 rotation = 0.2617994
 offset = Vector2(955.00006, 289.99997)
 anchor_mode = 0
-process_callback = 0
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=349716207]
@@ -324,7 +325,6 @@ script = ExtResource("8_cubxh")
 unique_name_in_owner = true
 offset = Vector2(157, 318)
 anchor_mode = 0
-process_callback = 0
 metadata/_edit_lock_ = true
 
 [node name="ganaste" type="RichTextLabel" parent="." unique_id=214663392]
