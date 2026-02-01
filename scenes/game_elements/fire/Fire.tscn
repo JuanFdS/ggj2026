@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfee3ym77dcq"]
 
 [ext_resource type="Script" uid="uid://bk7by14awyd1" path="res://scenes/game_elements/fire/components/fire.gd" id="1_540mm"]
+[ext_resource type="AudioStream" uid="uid://b8ury30f5j1m6" path="res://sonidos/fuego.mp3" id="2_8dau5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dau5"]
 size = Vector2(32, 2)
@@ -73,3 +74,8 @@ clip_children = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=299129611]
 polygon = PackedVector2Array(0, 63, 32, 63, 32, 64, 0, 64)
+
+[node name="fuego_sfx" type="AudioStreamPlayer" parent="." unique_id=1183629125]
+stream = ExtResource("2_8dau5")
+autoplay = true
+max_polyphony = 3

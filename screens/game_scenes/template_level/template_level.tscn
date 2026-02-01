@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blqrewm86hfjx" path="res://screens/game_scenes/template_level/components/nivel.gd" id="1_746gp"]
 [ext_resource type="Script" uid="uid://x0qole3ha7y6" path="res://screens/game_scenes/template_level/components/layer.gd" id="2_3eck2"]
+[ext_resource type="PackedScene" uid="uid://cxtgkwjdb1ow8" path="res://scenes/sound/sfx.tscn" id="2_bqir4"]
 [ext_resource type="Script" uid="uid://ps2ayfxa8vhk" path="res://screens/game_scenes/template_level/components/mask_cutout.gd" id="3_7w6s3"]
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/template_level/components/preview.gd" id="4_hkp1i"]
 [ext_resource type="Texture2D" uid="uid://csbttg3e4garl" path="res://screens/game_scenes/template_level/components/fondo_canvas_1.png" id="4_tr3vn"]
@@ -87,6 +88,9 @@ script = ExtResource("1_746gp")
 mask_size = Vector2i(300, 150)
 canvas_size = Vector2i(768, 960)
 metadata/_edit_lock_ = true
+
+[node name="sfx" parent="." unique_id=403339373 instance=ExtResource("2_bqir4")]
+unique_name_in_owner = true
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2113149104]
 
@@ -382,3 +386,5 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_pub7v")
 metadata/_edit_lock_ = true
+
+[editable path="sfx"]
