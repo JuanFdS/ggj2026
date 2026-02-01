@@ -88,7 +88,7 @@ viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
 
-[node name="Nivel" type="Node2D" unique_id=868727410]
+[node name="Nivel" type="Node2D" unique_id=868727410 groups=["level"]]
 physics_interpolation_mode = 1
 script = ExtResource("1_746gp")
 mask_size = Vector2i(300, 150)

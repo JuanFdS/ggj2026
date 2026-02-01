@@ -9,12 +9,14 @@ func _ready():
 	%AddBox.pressed.connect(on_add_box)
 	%AddPlayer.pressed.connect(on_add_player)
 	%AddGoal.pressed.connect(on_add_goal)
+	%NoLevelOpenMessage.visible = false
+	%Buttons.visible = false
 	EditorInterface.get_selection().selection_changed.connect(on_new_selection)
 	
 func on_new_selection():
 	if not get_tree().edited_scene_root.is_in_group("level"):
 		return
-	var in_any_game_elements: bool = !!current_game_elements
+	var in_any_game_elements: bool = !!current_game_elements()
 	for button in [%AddPlatform, %AddFire, %AddBox, %AddPlayer, %AddGoal]:
 		button.disabled = not in_any_game_elements
 
