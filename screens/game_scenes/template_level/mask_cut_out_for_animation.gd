@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 func play_mask_animation():
 	# Seguro hay mejores maneras de encadenar tweens
+	$sfx/recorte_hoja.play()
 	%MaskHole.visible = true
 	visible = true
 	var duration_in_seconds: float = 1.0
@@ -46,6 +47,7 @@ func play_mask_animation():
 
 
 func play_unmask_animation():
+	$sfx/arranco_pedazo.play()
 	visible = true
 	var duration_in_seconds: float = 0.5
 	create_tween().tween_property(
