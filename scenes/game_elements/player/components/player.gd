@@ -16,6 +16,7 @@ func is_in_layer() -> bool:
 	return false
 
 func _physics_process(delta: float) -> void:
+	$Sprite2D.process_mode = Node.PROCESS_MODE_DISABLED if !is_in_layer() else Node.PROCESS_MODE_INHERIT
 	if !is_in_layer():
 		return
 	# Add the gravity.

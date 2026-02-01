@@ -25,18 +25,19 @@ func _process(_delta: float) -> void:
 	%LayerPreviewMask.position = %MaskSelection.position
 	%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
 	%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+	%MaskCutOut.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
 
 func would_split_player_in_half() -> bool:
 	var player = get_tree().get_first_node_in_group("player")
-	var player_intersection
-	match state:
-		State.Masking:
-			player_intersection = %Layer.cut_into_shapes(%PreviewArea, player)
-		State.Playing:
-			player_intersection = %Layer.cut_into_shapes(%MaskSelectionArea, player)
-	return (not player_intersection.polygon_intersections.is_empty()) and (not player_intersection.polygon_complements.is_empty())
+	var preview_area_player_intersection = %Layer.cut_into_shapes(%PreviewArea, player)
+	var mask_area_player_intersection = %Layer.cut_into_shapes(%MaskSelectionArea, player)
+	return (not preview_area_player_intersection.polygon_intersections.is_empty() and not preview_area_player_intersection.polygon_complements.is_empty()) or (
+		not mask_area_player_intersection.polygon_intersections.is_empty() and not mask_area_player_intersection.polygon_complements.is_empty()
+	)
 
 func _physics_process(delta: float) -> void:
+	if get_tree().get_first_node_in_group("level").dying:
+		return
 	is_splitting_player_with_mask = would_split_player_in_half()
 
 func toggle_mask():
