@@ -38,6 +38,8 @@ func current_game_elements():
 	return null
 
 func scene_changed(new_scene):
+	if not new_scene:
+		return
 	%NoLevelOpenMessage.visible = not new_scene.is_in_group("level")
 	%Buttons.visible = new_scene.is_in_group("level")
 
