@@ -16,6 +16,7 @@ var state = State.Playing
 func _ready() -> void:
 	_change_state(State.Masking)
 	mask_button.pressed.connect(toggle_mask)
+	rotation_degrees = 1
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_mask"):

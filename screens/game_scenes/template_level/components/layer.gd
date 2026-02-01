@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready() -> void:
+	rotation_degrees = -1
+
 var occluded_bodies: Array[Node] = []
 
 func apply_mask(bodies_with_intersections):

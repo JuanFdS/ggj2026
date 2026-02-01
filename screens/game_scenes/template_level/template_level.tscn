@@ -45,11 +45,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2br0v"]
 gradient = SubResource("Gradient_y5ptm")
-width = 300
-height = 150
+width = 160
+height = 96
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n54bx"]
-size = Vector2(300, 150)
+size = Vector2(160, 96)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
 light_mode = 2
@@ -126,7 +126,6 @@ script = ExtResource("5_tr3vn")
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
 position = Vector2(60, 60)
-rotation = -0.017453292
 script = ExtResource("2_3eck2")
 metadata/_edit_lock_ = true
 
@@ -227,7 +226,6 @@ metadata/_edit_lock_ = true
 [node name="Mask" type="Node2D" parent="." unique_id=384021872]
 unique_name_in_owner = true
 position = Vector2(1084, 60)
-rotation = 0.017453292
 script = ExtResource("6_bqir4")
 metadata/_edit_lock_ = true
 
