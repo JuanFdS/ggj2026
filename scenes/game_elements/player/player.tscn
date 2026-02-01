@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://wohqnype4xyh"]
+
+[ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/game_elements/player/components/player.gd" id="1_07anl"]
+[ext_resource type="Texture2D" uid="uid://cjtetwkrbha3b" path="res://icon.svg" id="2_gpndl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg18i"]
+size = Vector2(30, 30)
+
+[node name="Player" type="CharacterBody2D" unique_id=1672557778]
+collision_layer = 3
+collision_mask = 2147483649
+script = ExtResource("1_07anl")
+
+[node name="Mask" type="Polygon2D" parent="." unique_id=1872795804]
+clip_children = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=2115816401]
+texture = ExtResource("2_gpndl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1343837330]
+shape = SubResource("RectangleShape2D_jg18i")

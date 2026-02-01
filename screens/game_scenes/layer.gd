@@ -11,11 +11,11 @@ func apply_mask(bodies_with_intersections):
 		var intersection_result: IntersectionResult = bodies_with_intersections[body]
 		for intersection in intersection_result.polygon_intersections:
 			var new_body = intersected_body(body, intersection)
-			add_child(new_body)
+			$GameElements.add_child(new_body)
 			new_body.position = body.position
 		for intersection in intersection_result.polygon_complements:
 			var new_body = intersected_body(body, intersection)
-			%Mask.add_child(new_body)
+			%Mask/GameElements.add_child(new_body)
 			new_body.position = body.position
 		body.queue_free()
 
@@ -84,6 +84,6 @@ func unapply_mask():
 
 	for thing: Node in (%PreviewArea.get_overlapping_bodies() + %PreviewArea.get_overlapping_areas()):
 		var duplicated_thing = thing.duplicate()
-		%Mask.add_child(duplicated_thing)
+		%Mask/GameElements.add_child(duplicated_thing)
 		duplicated_thing.position = thing.position
 		thing.queue_free()

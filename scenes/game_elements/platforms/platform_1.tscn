@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://una1tx2kpxxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4ba3"]
+size = Vector2(100, 50)
+
+[sub_resource type="Gradient" id="Gradient_dg2up"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v73ld"]
+gradient = SubResource("Gradient_dg2up")
+width = 100
+height = 50
+
+[node name="Platform" type="StaticBody2D" unique_id=121207750]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356471593]
+shape = SubResource("RectangleShape2D_x4ba3")
+
+[node name="Mask" type="Polygon2D" parent="." unique_id=105858329]
+clip_children = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=851624041]
+texture = SubResource("GradientTexture2D_v73ld")
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 50)

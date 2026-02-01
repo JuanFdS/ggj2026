@@ -45,7 +45,7 @@ func _change_state(new_state):
 func _enter_state(new_state):
 	match new_state:
 		State.Playing:
-			%Sarlompa.visible = true
+			%MaskCutOut.visible = true
 			layer.modulate = Color.WHITE
 			self.modulate = Color(0.5,0.5,0.5)
 			mask_button.text = "Editar Máscara"
@@ -54,7 +54,7 @@ func _enter_state(new_state):
 			%MaskSelection.process_mode = Node.PROCESS_MODE_DISABLED
 			%Layer.process_mode = Node.PROCESS_MODE_INHERIT
 		State.Masking:
-			%Sarlompa.visible = false
+			%MaskCutOut.visible = false
 			layer.modulate = Color(0.5,0.5,0.5)
 			self.modulate = Color.WHITE
 			mask_button.text = "Aplicar Máscara"
