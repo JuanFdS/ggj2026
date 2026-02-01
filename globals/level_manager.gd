@@ -13,5 +13,12 @@ func _ready() -> void:
 
 func advance_to_next_level():
 	current_level_idx = (current_level_idx + 1) % levels.size()
-	var next_level_path = levels[current_level_idx]
-	get_tree().change_scene_to_file.call_deferred(next_level_path)
+	go_to_level()
+
+func start_from_first_level():
+	current_level_idx = 0
+	go_to_level()
+
+func go_to_level():
+	var level_file_path = levels[current_level_idx]
+	get_tree().change_scene_to_file.call_deferred(levels[current_level_idx])

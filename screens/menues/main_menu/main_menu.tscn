@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://cgyih2g4idb5g"]
 
 [ext_resource type="Theme" uid="uid://thyhonskbeh8" path="res://screens/menues/ui_theme.tres" id="1_mjkmc"]
-[ext_resource type="Texture2D" uid="uid://cjtetwkrbha3b" path="res://icon.svg" id="2_h5oly"]
+[ext_resource type="Texture2D" uid="uid://c2ymwgoe2ila4" path="res://screens/menues/main_menu/components/main_menu_berreta.jpg" id="2_ip7hk"]
+[ext_resource type="Script" uid="uid://b0t3ndfn83kmv" path="res://screens/menues/main_menu/main_menu.gd" id="2_w7w1m"]
+[ext_resource type="Script" uid="uid://b87gjfcitarsd" path="res://screens/menues/main_menu/opcion.gd" id="4_w7w1m"]
+[ext_resource type="PackedScene" uid="uid://d3gd1pjmwct66" path="res://screens/menues/main_menu/pointer.tscn" id="5_w7w1m"]
+
+[sub_resource type="Curve" id="Curve_ip7hk"]
+_data = [Vector2(0, 0.11635959), 0.0, 0.0, 0, 0, Vector2(0.47172242, 0.94009227), 0.0, 0.0, 0, 0, Vector2(0.8856042, 0.8951614), 0.0, 0.0, 0, 0, Vector2(1, 0.45084494), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="MainMenu" type="Control" unique_id=1943553645]
 layout_mode = 3
@@ -11,67 +18,99 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_mjkmc")
+script = ExtResource("2_w7w1m")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2041654618]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 200
-theme_override_constants/margin_bottom = 50
+[node name="TextureRect" type="TextureRect" parent="." unique_id=387549080]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ip7hk")
+expand_mode = 3
+stretch_mode = 6
 
-[node name="VBoxContainer" type="GridContainer" parent="MarginContainer" unique_id=94016892]
-layout_mode = 2
-theme_override_constants/v_separation = 20
+[node name="Posiciones" type="Control" parent="." unique_id=1508798771]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1793559819]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
-theme_type_variation = &"HeaderLarge"
-bbcode_enabled = true
-text = "Titulo"
-fit_content = true
-horizontal_alignment = 1
+[node name="Jugar" type="Control" parent="Posiciones" unique_id=580927833]
+anchors_preset = 0
+offset_left = 1194.0
+offset_top = 500.0
+offset_right = 1234.0
+offset_bottom = 540.0
+script = ExtResource("4_w7w1m")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1199030237]
-layout_mode = 2
-size_flags_vertical = 6
-texture = ExtResource("2_h5oly")
-stretch_mode = 5
+[node name="Focus" type="Line2D" parent="Posiciones/Jugar" unique_id=882269906]
+position = Vector2(-255, 48)
+points = PackedVector2Array(-1, 4, 73, -4, 158, -2, 232, 1)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
+antialiased = true
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=2103596266]
-layout_mode = 2
-size_flags_vertical = 6
-theme_override_constants/margin_left = 150
-theme_override_constants/margin_right = 150
+[node name="ElegirNivel" type="Control" parent="Posiciones" unique_id=1149447818]
+anchors_preset = 0
+offset_left = 1297.0
+offset_top = 613.0
+offset_right = 1337.0
+offset_bottom = 653.0
+script = ExtResource("4_w7w1m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=725679249]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
-theme_override_constants/separation = 7
+[node name="Focus" type="Line2D" parent="Posiciones/ElegirNivel" unique_id=1229644711]
+position = Vector2(-376, 53)
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 369, 4)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
+antialiased = true
 
-[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=728797478]
-layout_mode = 2
-text = "Nuevo juego"
+[node name="Configuracion" type="Control" parent="Posiciones" unique_id=451550451]
+anchors_preset = 0
+offset_left = 1335.0
+offset_top = 744.0
+offset_right = 1375.0
+offset_bottom = 784.0
+script = ExtResource("4_w7w1m")
 
-[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1371432155]
-layout_mode = 2
-text = "Continuar"
+[node name="Focus" type="Line2D" parent="Posiciones/Configuracion" unique_id=1801776741]
+position = Vector2(-410, 57)
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
+antialiased = true
 
-[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=506500886]
-layout_mode = 2
-text = "Configuración"
+[node name="Creditos" type="Control" parent="Posiciones" unique_id=484923801]
+anchors_preset = 0
+offset_left = 1246.0
+offset_top = 873.0
+offset_right = 1286.0
+offset_bottom = 913.0
+script = ExtResource("4_w7w1m")
 
-[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=2071198873]
-layout_mode = 2
-text = "Credits"
+[node name="Focus" type="Line2D" parent="Posiciones/Creditos" unique_id=497709796]
+position = Vector2(-356, 62)
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
+antialiased = true
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1652648742]
-layout_mode = 2
-text = "Salir"
+[node name="Salir" type="Control" parent="Posiciones" unique_id=582237663]
+anchors_preset = 0
+offset_left = 1215.0
+offset_top = 988.0
+offset_right = 1255.0
+offset_bottom = 1028.0
+script = ExtResource("4_w7w1m")
+
+[node name="Focus" type="Line2D" parent="Posiciones/Salir" unique_id=1883557794]
+position = Vector2(-326, 59)
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
+antialiased = true
+
+[node name="Pointer" parent="." unique_id=109723511 instance=ExtResource("5_w7w1m")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1204.0
+offset_right = 1244.0
