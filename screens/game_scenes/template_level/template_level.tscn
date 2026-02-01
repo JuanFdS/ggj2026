@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/game_elements.gd" id="5_3eck2"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
+[ext_resource type="Script" uid="uid://chflmo6al3wyn" path="res://screens/game_scenes/template_level/mask_cut_out_for_animation.gd" id="7_cubxh"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="7_pub7v"]
 [ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/template_level/components/sub_viewport.gd" id="8_cubxh"]
 [ext_resource type="Texture2D" uid="uid://qge5rog7jtpb" path="res://screens/game_scenes/template_level/components/fondo_canvas_2.png" id="9_bqir4"]
@@ -46,11 +47,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2br0v"]
 gradient = SubResource("Gradient_y5ptm")
-width = 300
-height = 150
+width = 160
+height = 96
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n54bx"]
-size = Vector2(300, 150)
+size = Vector2(160, 96)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
 light_mode = 2
@@ -64,8 +65,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
 gradient = SubResource("Gradient_n54bx")
-width = 300
-height = 150
+width = 160
+height = 96
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
@@ -73,11 +74,17 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
-width = 300
-height = 150
+width = 160
+height = 96
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(300, 150)
+size = Vector2(160, 96)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pub7v"]
+load_path = "res://.godot/imported/fondo.jpg-a33336dc9cf7cfc4f4a6abb7633b7059.ctex"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pub7v"]
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
@@ -91,6 +98,9 @@ metadata/_edit_lock_ = true
 
 [node name="sfx" parent="." unique_id=403339373 instance=ExtResource("2_bqir4")]
 unique_name_in_owner = true
+
+[node name="fuh" parent="sfx" index="4" unique_id=1723191634]
+bus = &"Master"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2113149104]
 
@@ -197,7 +207,7 @@ metadata/_edit_lock_ = true
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
 unique_name_in_owner = true
 light_mask = 2
-z_index = 1
+z_index = 5
 material = SubResource("CanvasItemMaterial_y5ptm")
 texture = SubResource("ViewportTexture_y5ptm")
 centered = false
@@ -290,6 +300,37 @@ metadata/_edit_lock_ = true
 script = ExtResource("5_3eck2")
 metadata/_edit_lock_ = true
 
+[node name="MaskHole" type="Sprite2D" parent="." unique_id=751834744]
+unique_name_in_owner = true
+clip_children = 1
+visibility_layer = 2
+z_index = 200
+texture = SubResource("GradientTexture2D_kjhe3")
+centered = false
+region_enabled = true
+
+[node name="FondoTexture" type="Sprite2D" parent="MaskHole" unique_id=7921866]
+scale = Vector2(1.7284344, 1.7284346)
+texture = SubResource("CompressedTexture2D_pub7v")
+centered = false
+
+[node name="MaskCutOutForAnimation" type="Sprite2D" parent="." unique_id=1193114252]
+unique_name_in_owner = true
+process_mode = 3
+clip_children = 1
+visibility_layer = 2
+z_index = 250
+position = Vector2(60, 60)
+texture = SubResource("GradientTexture2D_kjhe3")
+centered = false
+region_enabled = true
+script = ExtResource("7_cubxh")
+
+[node name="MaskBackground" type="Sprite2D" parent="MaskCutOutForAnimation" unique_id=943261374]
+texture = SubResource("ViewportTexture_pub7v")
+centered = false
+metadata/_edit_lock_ = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770220679]
 layer = -2
 
@@ -378,7 +419,8 @@ metadata/_edit_lock_ = true
 [node name="Fondo" type="CanvasLayer" parent="." unique_id=1355953562]
 layer = -1
 
-[node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=1046836254]
+[node name="Fondo" type="TextureRect" parent="Fondo" unique_id=1046836254]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

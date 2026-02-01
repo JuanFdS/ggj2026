@@ -55,9 +55,15 @@ func toggle_mask():
 	%sfx/recorte_hoja.play()
 	match state:
 		State.Playing:
+			get_tree().paused = true
+			await %MaskCutOutForAnimation.play_unmask_animation()
+			get_tree().paused = false
 			%Layer.unapply_mask()
 			_change_state(State.Masking)
 		State.Masking:
+			get_tree().paused = true
+			await %MaskCutOutForAnimation.play_mask_animation()
+			get_tree().paused = false
 			var things_with_intersections = {}
 			var masked_things = %MaskSelectionArea.get_overlapping_bodies() + %MaskSelectionArea.get_overlapping_areas()
 			for thing in masked_things:
