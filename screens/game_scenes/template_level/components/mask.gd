@@ -69,6 +69,8 @@ func toggle_mask():
 			$"../MaskCutOutForAnimation/MaskBackground".texture = original_texture
 		State.Masking:
 			get_tree().paused = true
+			preview.create_tween()\
+				.tween_property(preview, "self_modulate:a", 0, 0.3).from(1)
 			await %MaskCutOutForAnimation.play_mask_animation()
 			get_tree().paused = false
 			var things_with_intersections = {}
@@ -89,6 +91,7 @@ func _change_state(new_state):
 func _enter_state(new_state):
 	match new_state:
 		State.Playing:
+			%MaskCutOut.update_size_and_offset()
 			%MaskCutOut.visible = true
 			# Esto quedó duplicado en mask_cut_out_for_animation
 			# (se lo necesita aquí para que el estado inicial esté bien)

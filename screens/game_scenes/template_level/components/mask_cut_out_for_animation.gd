@@ -35,7 +35,7 @@ func play_mask_animation():
 			.tween_property(self, "rotation", 0.0, duration_in_seconds / 2.0)\
 			.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT))
 	
-	create_tween().tween_property(%Layer, "modulate", Color.WHITE, duration_in_seconds)
+	#create_tween().tween_property(%Layer, "modulate", Color.WHITE, duration_in_seconds)
 	create_tween().tween_property(%Mask, "modulate", Color(0.8,0.8,0.8), duration_in_seconds)
 
 	await create_tween().tween_property(
@@ -65,7 +65,7 @@ func play_unmask_animation():
 	)
 	
 	create_tween().tween_property(%Layer, "modulate", Color(0.8,0.8,0.8), duration_in_seconds)
-	create_tween().tween_property(%Mask, "modulate", Color.WHITE, duration_in_seconds)
+	#create_tween().tween_property(%Mask, "modulate", Color.WHITE, duration_in_seconds)
 	
 	await create_tween().tween_property(
 			self, "global_position", %MaskSelection.global_position - %MaskSelection.position, duration_in_seconds
