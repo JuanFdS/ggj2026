@@ -13,31 +13,28 @@ viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_leai1")]
-mask_size = Vector2i(120, 60)
+mask_size = Vector2i(120, 100)
 
 [node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="3" unique_id=1110395595]
 texture = SubResource("ViewportTexture_br4a0")
 
 [node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="4" unique_id=2374421]
-mask_size = Vector2i(120, 60)
+mask_size = Vector2i(120, 100)
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_img7x")]
-position = Vector2(116, 388)
+position = Vector2(640, 800)
 
 [node name="Fire" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=240002621 instance=ExtResource("4_br4a0")]
 position = Vector2(320, 896)
 
 [node name="Goal" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="2" unique_id=1003504178 instance=ExtResource("3_br4a0")]
-position = Vector2(608, 832)
+position = Vector2(64, 864)
 
 [node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
 texture = SubResource("ViewportTexture_urdbu")
 
 [node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
-mask_size = Vector2i(120, 60)
+mask_size = Vector2i(120, 100)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=121207750 instance=ExtResource("4_urdbu")]
 position = Vector2(527.99994, 864)
-
-[node name="Goal2" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="1" unique_id=841304925 instance=ExtResource("3_br4a0")]
-position = Vector2(368, 704)

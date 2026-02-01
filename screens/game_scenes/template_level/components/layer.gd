@@ -4,9 +4,20 @@ var occluded_bodies: Array[Node] = []
 
 func apply_mask(bodies_with_intersections):
 	for thing: Node in (%PreviewArea.get_overlapping_bodies() + %PreviewArea.get_overlapping_areas()):
-		occluded_bodies.push_back(thing)
-		thing.process_mode = Node.PROCESS_MODE_DISABLED
-		thing.visible = false
+		var intersection_result: IntersectionResult = cut_into_shapes(%PreviewArea, thing)
+		for intersection in intersection_result.polygon_intersections:
+			var occluded_thing = intersected_body(thing, intersection)
+			occluded_bodies.push_back(occluded_thing)
+			occluded_thing.position = thing.position
+			occluded_thing.process_mode = Node.PROCESS_MODE_DISABLED
+			occluded_thing.visible = false
+			$GameElements.add_child(occluded_thing, true)
+		for intersection in intersection_result.polygon_complements:
+			var leftover_piece = intersected_body(thing, intersection)
+			$GameElements.add_child(leftover_piece, true)
+			leftover_piece.position = thing.position
+		thing.queue_free()
+			
 	for body in bodies_with_intersections:
 		var intersection_result: IntersectionResult = bodies_with_intersections[body]
 		for intersection in intersection_result.polygon_intersections:
@@ -77,13 +88,24 @@ class IntersectionResult:
 	var polygon_complements: Array
 
 func unapply_mask():
+	for thing: Node in (%PreviewArea.get_overlapping_bodies() + %PreviewArea.get_overlapping_areas()):
+		if occluded_bodies.has(thing):
+			pass
+
+		var intersection_result: IntersectionResult = cut_into_shapes(%PreviewArea, thing)
+		for intersection in intersection_result.polygon_intersections:
+			var new_thing = intersected_body(thing, intersection)
+			%Mask/GameElements.add_child(new_thing, true)
+			new_thing.position = thing.position
+		for intersection in intersection_result.polygon_complements:
+			var new_thing = intersected_body(thing, intersection)
+			$GameElements.add_child(new_thing, true)
+			new_thing.position = thing.position
+		
+		thing.queue_free()
+
+	var just_occluded_bodies = occluded_bodies.duplicate()
 	for body: Node in occluded_bodies:
 		body.process_mode = Node.PROCESS_MODE_INHERIT
 		body.visible = true
 	occluded_bodies.clear()
-
-	for thing: Node in (%PreviewArea.get_overlapping_bodies() + %PreviewArea.get_overlapping_areas()):
-		var duplicated_thing = thing.duplicate()
-		%Mask/GameElements.add_child(duplicated_thing)
-		duplicated_thing.position = thing.position
-		thing.queue_free()
