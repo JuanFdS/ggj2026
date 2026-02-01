@@ -10,8 +10,10 @@ gradient = SubResource("Gradient_i0l8l")
 width = 96
 height = 32
 
-[node name="Box" type="CharacterBody2D" unique_id=797266116]
+[node name="Box" type="CharacterBody2D" unique_id=797266116 groups=["box"]]
+collision_layer = 5
 collision_mask = 2147483649
+safe_margin = 0.001
 script = ExtResource("1_37hoe")
 size_in_cells = Vector2i(3, 1)
 texture = SubResource("GradientTexture2D_1f7j7")
