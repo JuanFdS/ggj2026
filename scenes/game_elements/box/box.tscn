@@ -20,6 +20,7 @@ texture = SubResource("GradientTexture2D_1f7j7")
 metadata/_edit_vertical_guides_ = [-198.0]
 
 [node name="BoxLogic" type="Node2D" parent="." unique_id=1473442202]
+process_mode = 3
 script = ExtResource("2_1f7j7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1195296732]
