@@ -9,6 +9,7 @@ enum State {
 	Masking
 }
 
+var is_splitting_player_with_mask: bool = false
 var state = State.Playing
 @onready var preview: Sprite2D = %Preview
 @onready var layer_preview: Sprite2D = %LayerPreview
@@ -22,9 +23,26 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_mask"):
 		toggle_mask()
 	%LayerPreviewMask.position = %MaskSelection.position
+	%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+	%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+
+func would_split_player_in_half() -> bool:
+	var player = get_tree().get_first_node_in_group("player")
+	var player_intersection
+	match state:
+		State.Masking:
+			player_intersection = %Layer.cut_into_shapes(%PreviewArea, player)
+		State.Playing:
+			player_intersection = %Layer.cut_into_shapes(%MaskSelectionArea, player)
+	return (not player_intersection.polygon_intersections.is_empty()) and (not player_intersection.polygon_complements.is_empty())
+
+func _physics_process(delta: float) -> void:
+	is_splitting_player_with_mask = would_split_player_in_half()
 
 func toggle_mask():
 	if get_tree().get_first_node_in_group("level").dying:
+		return
+	if would_split_player_in_half():
 		return
 	match state:
 		State.Playing:

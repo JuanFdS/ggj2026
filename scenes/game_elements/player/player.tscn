@@ -26,7 +26,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mask/Sprite2D:modulate")
+tracks/0/path = NodePath("Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,7 +50,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Mask/Sprite2D:rotation")
+tracks/2/path = NodePath("Sprite2D:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -62,7 +62,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Mask/Sprite2D:position")
+tracks/3/path = NodePath("Sprite2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -78,7 +78,7 @@ length = 0.85
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mask/Sprite2D:modulate")
+tracks/0/path = NodePath("Sprite2D:modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -102,7 +102,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Mask/Sprite2D:rotation")
+tracks/2/path = NodePath("Sprite2D:rotation")
 tracks/2/interp = 4
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -114,7 +114,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Mask/Sprite2D:position")
+tracks/3/path = NodePath("Sprite2D:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -134,23 +134,23 @@ _data = {
 &"die": SubResource("Animation_epjya")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1672557778]
+[node name="Player" type="CharacterBody2D" unique_id=1672557778 groups=["player"]]
 collision_layer = 3
 collision_mask = 2147483649
 script = ExtResource("1_07anl")
 
-[node name="Mask" type="Polygon2D" parent="." unique_id=1872795804]
-clip_children = 1
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Mask" unique_id=675582281]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=675582281]
 sprite_frames = SubResource("SpriteFrames_wleqg")
 autoplay = "default"
 frame = 1
 frame_progress = 0.2655824
 centered = false
 
+[node name="Mask" type="Polygon2D" parent="." unique_id=1872795804]
+clip_children = 1
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=242131612]
-polygon = PackedVector2Array(24, 24, 24, 115, 50, 115, 50, 24)
+polygon = PackedVector2Array(15, 11, 18, 114, 56, 116, 58, 12)
 
 [node name="BurnParticles" type="CPUParticles2D" parent="." unique_id=1542915422]
 position = Vector2(37, 54)

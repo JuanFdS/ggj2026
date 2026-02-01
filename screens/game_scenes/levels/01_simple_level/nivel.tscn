@@ -35,13 +35,13 @@ width = 128
 height = 32
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_leai1")]
-mask_size = Vector2i(120, 100)
+mask_size = Vector2i(250, 250)
 
 [node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="3" unique_id=1110395595]
 texture = SubResource("ViewportTexture_br4a0")
 
 [node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="4" unique_id=2374421]
-mask_size = Vector2i(120, 100)
+mask_size = Vector2i(250, 250)
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_img7x")]
 position = Vector2(640, 800)
@@ -66,7 +66,7 @@ position = Vector2(96, 832)
 texture = SubResource("ViewportTexture_w43mr")
 
 [node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
-mask_size = Vector2i(120, 100)
+mask_size = Vector2i(250, 250)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=721814089 instance=ExtResource("4_urdbu")]
 position = Vector2(496, 864)
