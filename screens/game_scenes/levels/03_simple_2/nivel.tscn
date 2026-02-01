@@ -46,13 +46,13 @@ height = 32
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_i416h")]
-mask_size = Vector2i(160, 96)
+mask_size = Vector2i(160, 200)
 
 [node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="5" unique_id=1110395595]
 texture = SubResource("ViewportTexture_0dfhe")
 
 [node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=2374421]
-mask_size = Vector2i(160, 96)
+mask_size = Vector2i(160, 200)
 
 [node name="Platform" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=121207750 instance=ExtResource("3_0dfhe")]
 position = Vector2(64, 544)
@@ -86,7 +86,7 @@ position = Vector2(576, 416)
 texture = SubResource("ViewportTexture_a2f2v")
 
 [node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="4" unique_id=2110519118]
-mask_size = Vector2i(160, 96)
+mask_size = Vector2i(160, 200)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=1040882320 instance=ExtResource("3_0dfhe")]
 position = Vector2(224, 576)
