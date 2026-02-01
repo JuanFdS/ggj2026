@@ -46,11 +46,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2br0v"]
 gradient = SubResource("Gradient_y5ptm")
-width = 300
-height = 150
+width = 160
+height = 128
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n54bx"]
-size = Vector2(300, 150)
+size = Vector2(160, 128)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
 light_mode = 2
@@ -64,8 +64,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
 gradient = SubResource("Gradient_n54bx")
-width = 300
-height = 150
+width = 160
+height = 128
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
@@ -73,11 +73,11 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
-width = 300
-height = 150
+width = 160
+height = 128
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(300, 150)
+size = Vector2(160, 128)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pub7v"]
 load_path = "res://.godot/imported/fondo.jpg-a33336dc9cf7cfc4f4a6abb7633b7059.ctex"
