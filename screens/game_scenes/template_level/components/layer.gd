@@ -1,9 +1,26 @@
 extends Node2D
 
 func _ready() -> void:
-	rotation_degrees = -1
+	pass
+	# Descomentar solo si arreglamos que la comparacion entre mascara y colision de objetos
+	# se haga NO usando su global position, si no una posicion relativa a algun nodo padre.
+	# Ya que al usar global position hay rotacion y eso hace muuucho mas facil que se generen
+	# cortes con errores.
+	#rotation_degrees = -1
 
 var occluded_bodies: Array[Node] = []
+
+func game_elements_from_node(node: Node2D):
+	var parent_node = node.get_parent()
+	while parent_node:
+		if parent_node.name == "GameElements":
+			return parent_node
+		parent_node = parent_node.get_parent()
+	return null
+
+func position_relative_to_game_elements(node: Node2D):
+	var game_elements: Node2D = game_elements_from_node(node)
+	return game_elements.to_local(node.global_position)
 
 func apply_mask(bodies_with_intersections):
 	for thing: Node in (%PreviewArea.get_overlapping_bodies() + %PreviewArea.get_overlapping_areas()):
@@ -11,14 +28,14 @@ func apply_mask(bodies_with_intersections):
 		for intersection in intersection_result.polygon_intersections:
 			var occluded_thing = intersected_body(thing, intersection)
 			occluded_bodies.push_back(occluded_thing)
-			occluded_thing.position = thing.position
+			occluded_thing.position = position_relative_to_game_elements(thing)
 			occluded_thing.process_mode = Node.PROCESS_MODE_DISABLED
 			occluded_thing.visible = false
 			$GameElements.add_child(occluded_thing, true)
 		for intersection in intersection_result.polygon_complements:
 			var leftover_piece = intersected_body(thing, intersection)
 			$GameElements.add_child(leftover_piece, true)
-			leftover_piece.position = thing.position
+			leftover_piece.position = position_relative_to_game_elements(thing)
 		thing.queue_free()
 			
 	for body in bodies_with_intersections:
@@ -26,11 +43,11 @@ func apply_mask(bodies_with_intersections):
 		for intersection in intersection_result.polygon_intersections:
 			var new_body = intersected_body(body, intersection)
 			$GameElements.add_child(new_body)
-			new_body.position = body.position
+			new_body.position = position_relative_to_game_elements(body)
 		for intersection in intersection_result.polygon_complements:
 			var new_body = intersected_body(body, intersection)
 			%Mask/GameElements.add_child(new_body)
-			new_body.position = body.position
+			new_body.position = position_relative_to_game_elements(body)
 		body.queue_free()
 
 func intersected_body(body: Node2D, polygon: PackedVector2Array) -> Node2D:
@@ -99,11 +116,11 @@ func unapply_mask():
 		for intersection in intersection_result.polygon_intersections:
 			var new_thing = intersected_body(thing, intersection)
 			%Mask/GameElements.add_child(new_thing, true)
-			new_thing.position = thing.position
+			new_thing.position = position_relative_to_game_elements(thing)
 		for intersection in intersection_result.polygon_complements:
 			var new_thing = intersected_body(thing, intersection)
 			$GameElements.add_child(new_thing, true)
-			new_thing.position = thing.position
+			new_thing.position = position_relative_to_game_elements(thing)
 		
 		thing.queue_free()
 

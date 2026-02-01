@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brdjxej8nxecc"]
+
+[ext_resource type="Script" path="res://scenes/game_elements/fire/components/multiple_fire.gd" id="1_mius5"]
+
+[node name="MultipleFire" type="Node2D" unique_id=992309916]
+script = ExtResource("1_mius5")

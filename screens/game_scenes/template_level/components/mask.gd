@@ -9,6 +9,7 @@ enum State {
 	Masking
 }
 
+var is_splitting_player_with_mask: bool = false
 var state = State.Playing
 @onready var preview: Sprite2D = %Preview
 @onready var layer_preview: Sprite2D = %LayerPreview
@@ -16,15 +17,39 @@ var state = State.Playing
 func _ready() -> void:
 	_change_state(State.Masking)
 	mask_button.pressed.connect(toggle_mask)
-	rotation_degrees = 1
+	# Descomentar solo si arreglamos que la comparacion entre mascara y colision de objetos
+	# se haga NO usando su global position, si no una posicion relativa a algun nodo padre.
+	# Ya que al usar global position hay rotacion y eso hace muuucho mas facil que se generen
+	# cortes con errores.
+	#rotation_degrees = 1
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_mask"):
 		toggle_mask()
 	%LayerPreviewMask.position = %MaskSelection.position
+	%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+	%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+	%MaskCutOut.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+
+func would_split_player_in_half() -> bool:
+	var player = get_tree().get_first_node_in_group("player")
+	if not player:
+		return false
+	var preview_area_player_intersection = %Layer.cut_into_shapes(%PreviewArea, player)
+	var mask_area_player_intersection = %Layer.cut_into_shapes(%MaskSelectionArea, player)
+	return (not preview_area_player_intersection.polygon_intersections.is_empty() and not preview_area_player_intersection.polygon_complements.is_empty()) or (
+		not mask_area_player_intersection.polygon_intersections.is_empty() and not mask_area_player_intersection.polygon_complements.is_empty()
+	)
+
+func _physics_process(delta: float) -> void:
+	if get_tree().get_first_node_in_group("level").dying:
+		return
+	is_splitting_player_with_mask = would_split_player_in_half()
 
 func toggle_mask():
 	if get_tree().get_first_node_in_group("level").dying:
+		return
+	if would_split_player_in_half():
 		return
 	match state:
 		State.Playing:
