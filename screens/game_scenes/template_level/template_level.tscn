@@ -63,8 +63,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
 gradient = SubResource("Gradient_n54bx")
-width = 300
-height = 150
+width = 160
+height = 96
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
@@ -72,11 +72,11 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
-width = 300
-height = 150
+width = 160
+height = 96
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(300, 150)
+size = Vector2(160, 96)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
@@ -126,7 +126,26 @@ script = ExtResource("5_tr3vn")
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
 position = Vector2(60, 60)
+rotation = -0.017453292
 script = ExtResource("2_3eck2")
+metadata/_edit_lock_ = true
+
+[node name="LayerBackground3" type="Sprite2D" parent="Layer" unique_id=1182094189]
+unique_name_in_owner = true
+modulate = Color(0.6583396, 0.6583401, 0.65833956, 1)
+position = Vector2(-22, 2)
+rotation = 0.010471975
+texture = ExtResource("4_tr3vn")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="LayerBackground2" type="Sprite2D" parent="Layer" unique_id=1727705017]
+unique_name_in_owner = true
+modulate = Color(0.851769, 0.8517689, 0.85176885, 1)
+position = Vector2(-3, -16.000004)
+rotation = 0.03490658
+texture = ExtResource("4_tr3vn")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="LayerBackground" type="Sprite2D" parent="Layer" unique_id=284435309]
@@ -208,7 +227,17 @@ metadata/_edit_lock_ = true
 [node name="Mask" type="Node2D" parent="." unique_id=384021872]
 unique_name_in_owner = true
 position = Vector2(1084, 60)
+rotation = 0.017453292
 script = ExtResource("6_bqir4")
+metadata/_edit_lock_ = true
+
+[node name="MaskBackground2" type="Sprite2D" parent="Mask" unique_id=290333682]
+unique_name_in_owner = true
+modulate = Color(0.851769, 0.8517689, 0.85176885, 1)
+position = Vector2(-10, -3)
+rotation = -0.017453292
+texture = ExtResource("9_bqir4")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="MaskBackground" type="Sprite2D" parent="Mask" unique_id=218631811]
@@ -285,7 +314,7 @@ canvas = NodePath("../../../Mask")
 [node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" unique_id=2107362031]
 unique_name_in_owner = true
 rotation = 0.2617994
-offset = Vector2(1100, 60)
+offset = Vector2(1084, 60)
 anchor_mode = 0
 ignore_rotation = false
 metadata/_edit_lock_ = true
