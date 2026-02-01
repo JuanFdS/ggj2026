@@ -25,5 +25,6 @@ polygon = PackedVector2Array(0, 0, 96, 0, 96, 32, 0, 32)
 clip_children = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=851624041]
+texture_repeat = 2
 texture = SubResource("GradientTexture2D_v73ld")
 centered = false

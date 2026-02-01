@@ -9,4 +9,7 @@ levels = Array[String](["uid://bqmwvjjbps7w1", "uid://ce3d6dyofmwfr", "uid://dtp
 
 [node name="sfx" parent="." unique_id=403339373 instance=ExtResource("2_efog1")]
 
+[node name="fuh" parent="sfx" index="4" unique_id=1723191634]
+bus = &"Master"
+
 [editable path="sfx"]
