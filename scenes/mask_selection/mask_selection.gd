@@ -12,18 +12,34 @@ extends Node2D
 		$MaskSelectionArea/CollisionShape2D.shape.size = mask_size
 		%LayerPreviewMask.texture.width = mask_size.x
 		%LayerPreviewMask.texture.height = mask_size.y
-
-var dragging: bool = false
+		
 @export var MOVE_SPEED: float = 500.0
+
+var last_dragging_position: Vector2 = Vector2.INF
+
+func start_dragging():
+	last_dragging_position = get_global_mouse_position()
+
+func process_drag() -> Vector2:
+	var mouse_position = get_global_mouse_position()
+	var delta = mouse_position - last_dragging_position
+	last_dragging_position = mouse_position
+	return delta
+
+func stop_dragging():
+	last_dragging_position = Vector2.INF
+
+func is_dragging() -> bool:
+	return last_dragging_position != Vector2.INF
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	var mouse_is_hovering = sprite_2d.get_rect().has_point(sprite_2d.get_local_mouse_position())
 	if Input.is_action_just_pressed("dragging_mask") and mouse_is_hovering:
-		dragging = true
+		start_dragging()
 	if Input.is_action_just_released("dragging_mask"):
-		dragging = false
+		stop_dragging()
 	global_position += Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * delta * MOVE_SPEED
-	if dragging:
-		global_position = get_global_mouse_position()
+	if is_dragging():
+		global_position = global_position + process_drag()
