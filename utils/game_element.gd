@@ -8,3 +8,9 @@ static func is_in_layer(node: Node) -> bool:
 			return true
 		parent_node = parent_node.get_parent()
 	return false
+
+static func is_dying() -> bool:
+	var level = LevelManager.get_tree().get_first_node_in_group("level")
+	if not level:
+		return false
+	return level.dying
