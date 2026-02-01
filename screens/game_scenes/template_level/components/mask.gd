@@ -29,6 +29,8 @@ func _process(_delta: float) -> void:
 
 func would_split_player_in_half() -> bool:
 	var player = get_tree().get_first_node_in_group("player")
+	if not player:
+		return false
 	var preview_area_player_intersection = %Layer.cut_into_shapes(%PreviewArea, player)
 	var mask_area_player_intersection = %Layer.cut_into_shapes(%MaskSelectionArea, player)
 	return (not preview_area_player_intersection.polygon_intersections.is_empty() and not preview_area_player_intersection.polygon_complements.is_empty()) or (
