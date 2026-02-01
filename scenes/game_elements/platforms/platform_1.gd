@@ -8,7 +8,9 @@ extends StaticBody2D
 			await ready
 		if not Engine.is_editor_hint():
 			return
-		owner.set_editable_instance(self, true)
+			
+		if owner != null:
+			owner.set_editable_instance(self, true)
 		
 		var size = 32 * Vector2(size_in_cells)
 		$Mask/Sprite2D.texture.width = size.x
