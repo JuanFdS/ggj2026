@@ -62,17 +62,13 @@ func cut_into_shapes(mask_area: Area2D, thing: Node2D) -> IntersectionResult:
 	var intersection_polygons := []
 	var exclusion_polygons := []
 	for base_polygon in base_intersection_polygons:
-		var new_polygon = PackedVector2Array()
-		for point in base_polygon:
-			var new_point = point - thing_collision_shape.global_position
-			new_polygon.push_back(new_point)
-		intersection_polygons.push_back(new_polygon)
+		intersection_polygons.push_back(
+			translate_polygon(base_polygon, -thing_collision_shape.global_position)
+		)
 	for base_polygon in base_exclusion_polygons:
-		var new_polygon = PackedVector2Array()
-		for point in base_polygon:
-			var new_point = point - thing_collision_shape.global_position
-			new_polygon.push_back(new_point)
-		exclusion_polygons.push_back(new_polygon)
+		exclusion_polygons.push_back(
+			translate_polygon(base_polygon, -thing_collision_shape.global_position)
+		)
 
 	var intersection_result = IntersectionResult.new()
 	intersection_result.polygon_intersections = intersection_polygons
