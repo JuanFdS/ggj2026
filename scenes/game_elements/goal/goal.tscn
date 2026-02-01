@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://frcdjlt2d2ad"]
 
 [ext_resource type="Script" uid="uid://c0nrfrhvhoem0" path="res://scenes/game_elements/goal/components/goal.gd" id="1_ee6xh"]
+[ext_resource type="Texture2D" uid="uid://doe8jxfy2vip2" path="res://scenes/game_elements/goal/components/proviescaleras.png" id="2_6gaqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ptm"]
-size = Vector2(64, 64)
+size = Vector2(96, 128)
 
 [node name="Goal" type="Area2D" unique_id=1003504178]
 collision_mask = 2
@@ -13,12 +14,10 @@ script = ExtResource("1_ee6xh")
 clip_children = 1
 position = Vector2(32, 32)
 
-[node name="Polygon2D" type="Polygon2D" parent="Mask" unique_id=2051777488]
-position = Vector2(0, 13)
-scale = Vector2(2, 2)
-color = Color(1, 1, 0, 1)
-polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1, -7, 4, -6, -3, -13, -9)
+[node name="Polygon2D" type="Sprite2D" parent="Mask" unique_id=946546174]
+position = Vector2(14, 33)
+texture = ExtResource("2_6gaqg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466517454]
-position = Vector2(32, 32)
+position = Vector2(48, 64)
 shape = SubResource("RectangleShape2D_y5ptm")

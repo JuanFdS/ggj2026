@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://wohqnype4xyh"]
 
 [ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/game_elements/player/components/player.gd" id="1_07anl"]
+[ext_resource type="Texture2D" uid="uid://dqmrbmusktbr7" path="res://scenes/game_elements/player/components/provinejo_1.png" id="2_fkgod"]
+[ext_resource type="Texture2D" uid="uid://booxoqxrc3t52" path="res://scenes/game_elements/player/components/provinejo_2.png" id="3_epjya"]
 
-[sub_resource type="Gradient" id="Gradient_0d5dq"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_oqaka"]
-gradient = SubResource("Gradient_0d5dq")
-width = 96
-height = 128
+[sub_resource type="SpriteFrames" id="SpriteFrames_wleqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fkgod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_epjya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jg18i"]
-size = Vector2(96, 128)
+size = Vector2(37, 96)
 
 [node name="Player" type="CharacterBody2D" unique_id=1672557778]
 collision_layer = 3
@@ -20,10 +29,13 @@ script = ExtResource("1_07anl")
 [node name="Mask" type="Polygon2D" parent="." unique_id=1872795804]
 clip_children = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=2115816401]
-texture = SubResource("GradientTexture2D_oqaka")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Mask" unique_id=675582281]
+sprite_frames = SubResource("SpriteFrames_wleqg")
+autoplay = "default"
+frame = 1
+frame_progress = 0.2655824
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1343837330]
-position = Vector2(48, 64)
+position = Vector2(39.5, 63)
 shape = SubResource("RectangleShape2D_jg18i")
