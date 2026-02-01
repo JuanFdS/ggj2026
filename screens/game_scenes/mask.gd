@@ -17,7 +17,7 @@ func _ready() -> void:
 	_change_state(State.Masking)
 	mask_button.pressed.connect(toggle_mask)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_mask"):
 		toggle_mask()
 	%LayerPreviewMask.position = %MaskSelection.position
@@ -42,8 +42,8 @@ func _change_state(new_state):
 	state = new_state
 	_enter_state(new_state)
 
-func _enter_state(state):
-	match state:
+func _enter_state(new_state):
+	match new_state:
 		State.Playing:
 			%Sarlompa.visible = true
 			layer.modulate = Color.WHITE

@@ -8,7 +8,7 @@ func _ready() -> void:
 	texture.height = mask_size.y
 	$PreviewArea/CollisionShape2D.shape.size = mask_size
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	position = %MaskSelection.position

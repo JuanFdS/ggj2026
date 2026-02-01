@@ -8,7 +8,6 @@ extends Node2D
 			await ready
 		%PreviewMask.mask_size = mask_size
 		%MaskSelection.mask_size = mask_size
-@onready var goal: Node2D = %Goal
 
 func _ready() -> void:
 	%MaskSubviewport.size = %LayerBackground.texture.get_size()
