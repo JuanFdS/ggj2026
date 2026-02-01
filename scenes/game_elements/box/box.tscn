@@ -6,6 +6,7 @@
 [sub_resource type="Gradient" id="Gradient_i0l8l"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1f7j7"]
+resource_local_to_scene = true
 gradient = SubResource("Gradient_i0l8l")
 width = 96
 height = 32
