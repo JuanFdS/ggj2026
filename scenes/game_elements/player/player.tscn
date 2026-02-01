@@ -18,9 +18,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg18i"]
-size = Vector2(37, 96)
-
 [node name="Player" type="CharacterBody2D" unique_id=1672557778]
 collision_layer = 3
 collision_mask = 2147483649
@@ -36,6 +33,5 @@ frame = 1
 frame_progress = 0.2655824
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1343837330]
-position = Vector2(39.5, 63)
-shape = SubResource("RectangleShape2D_jg18i")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=242131612]
+polygon = PackedVector2Array(24, 24, 24, 115, 50, 115, 50, 24)
