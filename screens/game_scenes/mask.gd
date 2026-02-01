@@ -14,7 +14,7 @@ var state = State.Playing
 @onready var layer_preview: Sprite2D = %LayerPreview
 
 func _ready() -> void:
-	_change_state(State.Playing)
+	_change_state(State.Masking)
 	mask_button.pressed.connect(toggle_mask)
 
 func _process(delta: float) -> void:
@@ -45,6 +45,7 @@ func _change_state(new_state):
 func _enter_state(state):
 	match state:
 		State.Playing:
+			%Sarlompa.visible = true
 			layer.modulate = Color.WHITE
 			self.modulate = Color(0.5,0.5,0.5)
 			mask_button.text = "Editar Máscara"
@@ -53,6 +54,7 @@ func _enter_state(state):
 			%MaskSelection.process_mode = Node.PROCESS_MODE_DISABLED
 			%Layer.process_mode = Node.PROCESS_MODE_INHERIT
 		State.Masking:
+			%Sarlompa.visible = false
 			layer.modulate = Color(0.5,0.5,0.5)
 			self.modulate = Color.WHITE
 			mask_button.text = "Aplicar Máscara"

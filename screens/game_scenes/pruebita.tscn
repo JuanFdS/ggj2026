@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://x0qole3ha7y6" path="res://screens/game_scenes/layer.gd" id="1_dg2up"]
 [ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/player/player.gd" id="1_jg18i"]
 [ext_resource type="Script" uid="uid://blqrewm86hfjx" path="res://screens/game_scenes/nivel.gd" id="1_n54bx"]
+[ext_resource type="Script" uid="uid://ps2ayfxa8vhk" path="res://screens/game_scenes/sarlompa.gd" id="3_0npbb"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/mask.gd" id="3_2m1qm"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="3_x4ba3"]
 [ext_resource type="Script" uid="uid://c0nrfrhvhoem0" path="res://screens/game_scenes/goal.gd" id="4_2br0v"]
@@ -19,13 +20,33 @@ colors = PackedColorArray(0, 0, 0, 1)
 gradient = SubResource("Gradient_v73ld")
 
 [sub_resource type="Gradient" id="Gradient_jg18i"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
+offsets = PackedFloat32Array(0.33639145, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_x4ba3"]
 gradient = SubResource("Gradient_jg18i")
 width = 600
 height = 600
+
+[sub_resource type="Gradient" id="Gradient_0npbb"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kjhe3"]
+gradient = SubResource("Gradient_0npbb")
+width = 400
+height = 400
+
+[sub_resource type="Gradient" id="Gradient_gvio3"]
+offsets = PackedFloat32Array(0.055045873, 0.33639145, 0.853211, 1)
+colors = PackedColorArray(0, 0.61960787, 0.81960785, 1, 0, 1, 1, 1, 0.78039217, 0.2509804, 0.14117648, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0npbb"]
+gradient = SubResource("Gradient_gvio3")
+width = 600
+height = 600
+fill = 2
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jg18i"]
 
@@ -86,8 +107,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
 gradient = SubResource("Gradient_n54bx")
-width = 200
-height = 100
+width = 300
+height = 150
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
@@ -95,11 +116,11 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
-width = 50
-height = 100
+width = 300
+height = 150
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(50, 100)
+size = Vector2(300, 150)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
@@ -114,7 +135,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="Nivel" type="Node2D" unique_id=868727410]
 physics_interpolation_mode = 1
 script = ExtResource("1_n54bx")
-mask_size = Vector2i(50, 100)
+mask_size = Vector2i(300, 150)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1668949924]
 position = Vector2(993, 564)
@@ -129,6 +150,18 @@ script = ExtResource("1_dg2up")
 [node name="LayerBackground" type="Sprite2D" parent="Layer" unique_id=284435309]
 unique_name_in_owner = true
 texture = SubResource("GradientTexture2D_x4ba3")
+centered = false
+
+[node name="Sarlompa" type="Sprite2D" parent="Layer" unique_id=717492432]
+unique_name_in_owner = true
+clip_children = 1
+texture = SubResource("GradientTexture2D_kjhe3")
+centered = false
+region_enabled = true
+script = ExtResource("3_0npbb")
+
+[node name="MaskBackground" type="Sprite2D" parent="Layer/Sarlompa" unique_id=1819708292]
+texture = SubResource("GradientTexture2D_0npbb")
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Layer" unique_id=1346561349]
@@ -176,7 +209,10 @@ script = ExtResource("4_2br0v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layer/Goal" unique_id=803392067]
 shape = SubResource("RectangleShape2D_y5ptm")
 
-[node name="Polygon2D" type="Polygon2D" parent="Layer/Goal" unique_id=708507762]
+[node name="Mask" type="Polygon2D" parent="Layer/Goal" unique_id=433590568]
+clip_children = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Layer/Goal/Mask" unique_id=273368178]
 position = Vector2(0, 6)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1, -7, 4, -6, -3, -13, -9)
@@ -198,7 +234,7 @@ energy = 0.0
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_2br0v")
 script = ExtResource("4_y5ptm")
-mask_size = Vector2i(50, 100)
+mask_size = Vector2i(300, 150)
 
 [node name="PreviewArea" type="Area2D" parent="Layer/PreviewMask" unique_id=1272415802]
 unique_name_in_owner = true
@@ -233,7 +269,7 @@ script = ExtResource("3_2m1qm")
 
 [node name="MaskBackground" type="Sprite2D" parent="Mask" unique_id=218631811]
 unique_name_in_owner = true
-texture = SubResource("GradientTexture2D_x4ba3")
+texture = SubResource("GradientTexture2D_0npbb")
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mask" unique_id=1085760542]
@@ -269,7 +305,7 @@ unique_name_in_owner = true
 z_index = 1
 position = Vector2(226, 146)
 script = ExtResource("3_x4ba3")
-mask_size = Vector2i(50, 100)
+mask_size = Vector2i(300, 150)
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask/MaskSelection" unique_id=26579043]
 texture = SubResource("GradientTexture2D_dg2up")
@@ -280,8 +316,6 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/MaskSelection/MaskSelectionArea" unique_id=2010712115]
 shape = SubResource("RectangleShape2D_2m1qm")
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Mask/MaskSelection" unique_id=616465055]
-
 [node name="Goal2" type="Area2D" parent="Mask" unique_id=1010649471]
 unique_name_in_owner = true
 position = Vector2(154, 547)
@@ -291,7 +325,10 @@ script = ExtResource("4_2br0v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/Goal2" unique_id=874928238]
 shape = SubResource("RectangleShape2D_y5ptm")
 
-[node name="Polygon2D" type="Polygon2D" parent="Mask/Goal2" unique_id=747893369]
+[node name="Mask" type="Polygon2D" parent="Mask/Goal2" unique_id=149369341]
+clip_children = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Mask/Goal2/Mask" unique_id=747893369]
 position = Vector2(0, 6)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-4, -9, 0, -19, 5, -9, 13, -7, 6, -3, 10, 5, 1, -1, -7, 4, -6, -3, -13, -9)
