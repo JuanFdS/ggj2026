@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://wohqnype4xyh"]
 
 [ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/game_elements/player/components/player.gd" id="1_07anl"]
-[ext_resource type="Texture2D" uid="uid://dqmrbmusktbr7" path="res://scenes/game_elements/player/provinejo_1.png" id="2_fkgod"]
-[ext_resource type="Texture2D" uid="uid://booxoqxrc3t52" path="res://scenes/game_elements/player/provinejo_2.png" id="3_epjya"]
+[ext_resource type="Texture2D" uid="uid://dqmrbmusktbr7" path="res://scenes/game_elements/player/components/provinejo_1.png" id="2_fkgod"]
+[ext_resource type="Texture2D" uid="uid://booxoqxrc3t52" path="res://scenes/game_elements/player/components/provinejo_2.png" id="3_epjya"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wleqg"]
 animations = [{
