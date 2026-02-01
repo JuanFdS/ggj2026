@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bk7by14awyd1" path="res://scenes/game_elements/fire/components/fire.gd" id="1_540mm"]
 [ext_resource type="AudioStream" uid="uid://b8ury30f5j1m6" path="res://sonidos/fuego.mp3" id="2_8dau5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dau5"]
+size = Vector2(32, 2)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_540mm"]
 size = Vector2(32, 64)
 
@@ -32,6 +35,14 @@ colors = PackedColorArray(1, 0.38351256, 0, 1, 1, 1, 0, 1)
 
 [node name="Fire" type="Area2D" unique_id=240002621]
 script = ExtResource("1_540mm")
+
+[node name="BoxDetectionArea" type="Area2D" parent="." unique_id=38847438]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxDetectionArea" unique_id=1632000444]
+position = Vector2(16, 63)
+shape = SubResource("RectangleShape2D_8dau5")
 
 [node name="KillZone" type="Area2D" parent="." unique_id=980638087]
 position = Vector2(16, 32)
