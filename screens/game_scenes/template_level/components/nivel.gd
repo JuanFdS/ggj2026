@@ -17,7 +17,6 @@ var dying: bool = false
 			await ready
 		
 		%LayerBackground.scale = Vector2(canvas_size) / %LayerBackground.texture.get_size()
-		$Layer/ScenarioBorders/Bottom.position = canvas_size
 		$Layer/ScenarioBorders/Right.position = canvas_size
 		
 		%MaskBackground.scale = Vector2(canvas_size) / %MaskBackground.texture.get_size()
