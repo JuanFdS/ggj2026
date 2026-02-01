@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bfee3ym77dcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydwga"]
-size = Vector2(1, 1)
+size = Vector2(32, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_540mm"]
-size = Vector2(30, 16)
+size = Vector2(32, 64)
 
 [sub_resource type="Gradient" id="Gradient_540mm"]
 interpolation_mode = 2
@@ -33,26 +33,28 @@ colors = PackedColorArray(1, 0.38351256, 0, 1, 1, 1, 0, 1)
 [node name="Fire" type="Area2D" unique_id=240002621]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254380064]
+position = Vector2(16, 64)
 shape = SubResource("RectangleShape2D_ydwga")
 
 [node name="KillZone" type="Area2D" parent="." unique_id=980638087]
+position = Vector2(16, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1429369091]
-position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_540mm")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=376539652]
+position = Vector2(16, 64)
 amount = 80
 texture = SubResource("GradientTexture2D_8dau5")
 lifetime = 0.65
 preprocess = 0.65
 emission_shape = 3
-emission_rect_extents = Vector2(15, 1)
-gravity = Vector2(0, -200)
+emission_rect_extents = Vector2(16, 1)
+gravity = Vector2(0, -600)
 angular_velocity_min = -258.46
 angular_velocity_max = 246.15
-scale_amount_min = 1.4
-scale_amount_max = 2.2
+scale_amount_min = 2.0
+scale_amount_max = 3.5
 scale_amount_curve = SubResource("Curve_540mm")
 color_ramp = SubResource("Gradient_8dau5")
 color_initial_ramp = SubResource("Gradient_g38vg")

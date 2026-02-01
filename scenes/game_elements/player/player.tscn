@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://wohqnype4xyh"]
 
 [ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/game_elements/player/components/player.gd" id="1_07anl"]
-[ext_resource type="Texture2D" uid="uid://cjtetwkrbha3b" path="res://icon.svg" id="2_gpndl"]
+
+[sub_resource type="Gradient" id="Gradient_0d5dq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oqaka"]
+gradient = SubResource("Gradient_0d5dq")
+width = 96
+height = 128
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jg18i"]
-size = Vector2(30, 30)
+size = Vector2(96, 128)
 
 [node name="Player" type="CharacterBody2D" unique_id=1672557778]
 collision_layer = 3
@@ -15,7 +21,9 @@ script = ExtResource("1_07anl")
 clip_children = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=2115816401]
-texture = ExtResource("2_gpndl")
+texture = SubResource("GradientTexture2D_oqaka")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1343837330]
+position = Vector2(48, 64)
 shape = SubResource("RectangleShape2D_jg18i")

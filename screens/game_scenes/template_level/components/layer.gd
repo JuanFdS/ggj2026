@@ -31,11 +31,11 @@ func intersected_body(body: Node2D, polygon: PackedVector2Array) -> Node2D:
 	return new_body
 
 func cut_into_shapes(mask_area: Area2D, thing: Node2D) -> IntersectionResult:
-	var collision_shape: CollisionShape2D = thing.find_children("", "CollisionShape2D", false, false).front()
-	var thing_shape: Shape2D = collision_shape.shape
+	var thing_collision_shape: CollisionShape2D = thing.find_children("", "CollisionShape2D", false, false).front()
+	var thing_shape: Shape2D = thing_collision_shape.shape
 	var mask_shape: Shape2D = mask_area.find_children("", "CollisionShape2D", false, false).front().shape
 	var thing_rect := thing_shape.get_rect()
-	thing_rect.position += thing.global_position
+	thing_rect.position += thing_collision_shape.global_position
 	var mask_rect := mask_shape.get_rect()
 	mask_rect.position += mask_area.global_position
 	
@@ -49,13 +49,13 @@ func cut_into_shapes(mask_area: Area2D, thing: Node2D) -> IntersectionResult:
 	for base_polygon in base_intersection_polygons:
 		var new_polygon = PackedVector2Array()
 		for point in base_polygon:
-			var new_point = point - thing.global_position
+			var new_point = point - thing_collision_shape.global_position
 			new_polygon.push_back(new_point)
 		intersection_polygons.push_back(new_polygon)
 	for base_polygon in base_exclusion_polygons:
 		var new_polygon = PackedVector2Array()
 		for point in base_polygon:
-			var new_point = point - thing.global_position
+			var new_point = point - thing_collision_shape.global_position
 			new_polygon.push_back(new_point)
 		exclusion_polygons.push_back(new_polygon)
 

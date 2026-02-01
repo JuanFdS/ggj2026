@@ -22,13 +22,13 @@ texture = SubResource("ViewportTexture_br4a0")
 mask_size = Vector2i(120, 60)
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_img7x")]
-position = Vector2(133, 557)
+position = Vector2(116, 388)
 
 [node name="Fire" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=240002621 instance=ExtResource("4_br4a0")]
-position = Vector2(290, 940)
+position = Vector2(320, 896)
 
 [node name="Goal" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="2" unique_id=1003504178 instance=ExtResource("3_br4a0")]
-position = Vector2(473, 474)
+position = Vector2(608, 832)
 
 [node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
 texture = SubResource("ViewportTexture_urdbu")
@@ -37,10 +37,7 @@ texture = SubResource("ViewportTexture_urdbu")
 mask_size = Vector2i(120, 60)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=121207750 instance=ExtResource("4_urdbu")]
-position = Vector2(476.99994, 552)
+position = Vector2(527.99994, 864)
 
-[node name="MaskCamera" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" parent_id_path=PackedInt32Array(844272332) index="0" unique_id=2107362031]
-offset = Vector2(1100, 60)
-
-[node name="LayerCamera" parent="CanvasLayer2/SubViewportContainer/LayerSubviewport" parent_id_path=PackedInt32Array(48825315) index="0" unique_id=816684468]
-offset = Vector2(60, 60)
+[node name="Goal2" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="1" unique_id=841304925 instance=ExtResource("3_br4a0")]
+position = Vector2(368, 704)

@@ -4,9 +4,16 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func is_in_layer() -> bool:
+	var parent_node = get_parent()
+	while parent_node:
+		if parent_node.is_in_group("layer"):
+			return true
+		parent_node = parent_node.get_parent()
+	return false
 
 func _physics_process(delta: float) -> void:
-	if !%Layer.is_ancestor_of(self):
+	if !is_in_layer():
 		return
 	# Add the gravity.
 	if not is_on_floor():

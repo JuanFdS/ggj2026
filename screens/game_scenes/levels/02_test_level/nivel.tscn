@@ -3,23 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://dxikjpq2durx0" path="res://screens/game_scenes/template_level/template_level.tscn" id="1_3st6h"]
 [ext_resource type="PackedScene" uid="uid://wohqnype4xyh" path="res://scenes/game_elements/player/player.tscn" id="2_fqg14"]
 [ext_resource type="PackedScene" uid="uid://frcdjlt2d2ad" path="res://scenes/game_elements/goal/goal.tscn" id="3_vo4oi"]
+[ext_resource type="PackedScene" uid="uid://bfee3ym77dcq" path="res://scenes/game_elements/fire/Fire.tscn" id="4_vo4oi"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_qhvdn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vo4oi"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fqg14"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yes17"]
 viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_3st6h")]
 
 [node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="3" unique_id=1110395595]
-texture = SubResource("ViewportTexture_qhvdn")
+texture = SubResource("ViewportTexture_vo4oi")
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_fqg14")]
-position = Vector2(200, 549)
+position = Vector2(96, 832)
 
 [node name="Goal" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=1003504178 instance=ExtResource("3_vo4oi")]
-position = Vector2(329, 559)
+position = Vector2(640, 768)
+
+[node name="Fire" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="2" unique_id=240002621 instance=ExtResource("4_vo4oi")]
+position = Vector2(352, 896)
 
 [node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
-texture = SubResource("ViewportTexture_fqg14")
+texture = SubResource("ViewportTexture_yes17")
