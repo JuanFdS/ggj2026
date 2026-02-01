@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jacb04evgs2r"
+path="res://.godot/imported/arrancar_hoja_2.mp3-e6f2c7a218110e6675608dad57c38478.mp3str"
+
+[deps]
+
+source_file="res://sonidos/arrancar hoja/arrancar_hoja_2.mp3"
+dest_files=["res://.godot/imported/arrancar_hoja_2.mp3-e6f2c7a218110e6675608dad57c38478.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

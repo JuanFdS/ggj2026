@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://baw3i231cv2m6"
+path="res://.godot/imported/pasar_hoja_6.mp3-a4a00e88ccd6f21dddbbbf731aed2a3e.mp3str"
+
+[deps]
+
+source_file="res://sonidos/pasar hoja/pasar_hoja_6.mp3"
+dest_files=["res://.godot/imported/pasar_hoja_6.mp3-a4a00e88ccd6f21dddbbbf731aed2a3e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
