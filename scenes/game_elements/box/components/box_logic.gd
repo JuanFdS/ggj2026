@@ -9,16 +9,9 @@ func _ready():
 func _box_can_process():
 	return get_parent().can_process()
 
-func is_in_layer() -> bool:
-	var parent_node = get_parent()
-	while parent_node:
-		if parent_node.is_in_group("layer"):
-			return true
-		parent_node = parent_node.get_parent()
-	return false
 
 func _physics_process(delta: float) -> void:
-	if !is_in_layer():
+	if !GameElementUtils.is_in_layer(self):
 		return
 	if !_box_can_process():
 		time_until_process = cooldown_to_process

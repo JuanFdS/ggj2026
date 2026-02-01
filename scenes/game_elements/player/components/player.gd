@@ -7,17 +7,11 @@ const JUMP_VELOCITY = -450.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func is_in_layer() -> bool:
-	var parent_node = get_parent()
-	while parent_node:
-		if parent_node.is_in_group("layer"):
-			return true
-		parent_node = parent_node.get_parent()
-	return false
 
 func _physics_process(delta: float) -> void:
-	$Sprite2D.process_mode = Node.PROCESS_MODE_DISABLED if !is_in_layer() else Node.PROCESS_MODE_INHERIT
-	if !is_in_layer():
+	var is_in_layer = GameElementUtils.is_in_layer(self)
+	$Sprite2D.process_mode = Node.PROCESS_MODE_DISABLED if !is_in_layer else Node.PROCESS_MODE_INHERIT
+	if !is_in_layer:
 		return
 	# Add the gravity.
 	if not is_on_floor():
