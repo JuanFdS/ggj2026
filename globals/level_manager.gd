@@ -20,5 +20,6 @@ func start_from_first_level():
 	go_to_level()
 
 func go_to_level():
+	$sfx/cambio_hoja.play()
 	var level_file_path = levels[current_level_idx]
 	get_tree().change_scene_to_file.call_deferred(levels[current_level_idx])

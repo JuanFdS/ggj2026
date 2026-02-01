@@ -51,6 +51,8 @@ func toggle_mask():
 		return
 	if would_split_player_in_half():
 		return
+	
+	%sfx/recorte_hoja.play()
 	match state:
 		State.Playing:
 			%Layer.unapply_mask()
