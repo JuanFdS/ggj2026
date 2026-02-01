@@ -15,6 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://dj63uujacj0eu" path="res://sonidos/chasquido/chasquido_2.mp3" id="14_buso6"]
 [ext_resource type="AudioStream" uid="uid://h6bxwuu2fye2" path="res://sonidos/camina.mp3" id="15_buso6"]
 [ext_resource type="AudioStream" uid="uid://bu6mc836lbujm" path="res://sonidos/fuh.mp3" id="16_qcyqu"]
+[ext_resource type="AudioStream" uid="uid://brohj6ntcqwth" path="res://sonidos/pegado hoja/sp_1.wav" id="16_urnqg"]
+[ext_resource type="AudioStream" uid="uid://cytj3045sqqfl" path="res://sonidos/pegado hoja/sp_2_NO.wav" id="17_4in1o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rg8ox"]
 streams_count = 6
@@ -46,6 +48,11 @@ stream_0/volume = 0.0
 stream_1/stream = ExtResource("10_k2b04")
 stream_1/volume = 0.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlbuw"]
+streams_count = 2
+stream_0/stream = ExtResource("16_urnqg")
+stream_1/stream = ExtResource("17_4in1o")
+
 [node name="sfx" type="Node" unique_id=403339373]
 
 [node name="cambio_hoja" type="AudioStreamPlayer" parent="." unique_id=113780850]
@@ -72,3 +79,6 @@ bus = &"reverb"
 [node name="arranco_pedazo" type="AudioStreamPlayer" parent="." unique_id=1978719108]
 stream = SubResource("AudioStreamSynchronized_buso6")
 pitch_scale = 0.82
+
+[node name="pegado_hoja" type="AudioStreamPlayer" parent="." unique_id=787708871]
+stream = SubResource("AudioStreamRandomizer_hlbuw")

@@ -110,3 +110,4 @@ texture = SubResource("ViewportTexture_ypcx8")
 [editable path="Layer/GameElements/Platform"]
 [editable path="Layer/GameElements/Platform2"]
 [editable path="Mask/GameElements/Platform"]
+[editable path="MaskCutOutForAnimation/sfx"]
