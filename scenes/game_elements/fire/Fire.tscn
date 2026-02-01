@@ -54,5 +54,8 @@ scale_amount_curve = SubResource("Curve_540mm")
 color_ramp = SubResource("Gradient_8dau5")
 color_initial_ramp = SubResource("Gradient_g38vg")
 
+[node name="Mask" type="Polygon2D" parent="." unique_id=1210049534]
+clip_children = 1
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=299129611]
 polygon = PackedVector2Array(0, 63, 32, 63, 32, 64, 0, 64)

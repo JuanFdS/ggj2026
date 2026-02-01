@@ -9,8 +9,30 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_br4a0"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_urdbu"]
+[sub_resource type="Gradient" id="Gradient_urdbu"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yfm2f"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_urdbu")
+width = 160
+height = 128
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w43mr"]
 viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
+
+[sub_resource type="Gradient" id="Gradient_7hd0k"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nhiac"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_7hd0k")
+width = 128
+height = 32
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_leai1")]
 mask_size = Vector2i(120, 100)
@@ -28,6 +50,12 @@ position = Vector2(640, 800)
 position = Vector2(320, 608)
 size_in_cells = Vector2i(5, 4)
 
+[node name="Sprite2D" parent="Layer/GameElements/Platform2/Mask" parent_id_path=PackedInt32Array(121207750, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_yfm2f")
+
+[node name="CollisionPolygon2D" parent="Layer/GameElements/Platform2" index="1" unique_id=1195296732]
+polygon = PackedVector2Array(0, 0, 160, 0, 160, 128, 0, 128)
+
 [node name="Fire" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="2" unique_id=240002621 instance=ExtResource("4_br4a0")]
 position = Vector2(320, 896)
 
@@ -35,10 +63,23 @@ position = Vector2(320, 896)
 position = Vector2(96, 832)
 
 [node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
-texture = SubResource("ViewportTexture_urdbu")
+texture = SubResource("ViewportTexture_w43mr")
 
 [node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
 mask_size = Vector2i(120, 100)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=721814089 instance=ExtResource("4_urdbu")]
 position = Vector2(496, 864)
+size_in_cells = Vector2i(4, 1)
+
+[node name="Sprite2D" parent="Mask/GameElements/Platform/Mask" parent_id_path=PackedInt32Array(721814089, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_nhiac")
+
+[node name="CollisionPolygon2D" parent="Mask/GameElements/Platform" index="1" unique_id=1195296732]
+polygon = PackedVector2Array(0, 0, 128, 0, 128, 32, 0, 32)
+
+[node name="MaskCamera" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" parent_id_path=PackedInt32Array(844272332) index="0" unique_id=2107362031]
+offset = Vector2(1084, 60)
+
+[editable path="Layer/GameElements/Platform2"]
+[editable path="Mask/GameElements/Platform"]
