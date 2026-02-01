@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 		toggle_mask()
 	%LayerPreviewMask.position = %MaskSelection.position
 	%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
-	%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+	%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color(0.8,0.8,0.8,0.9)
 	%MaskCutOut.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
 
 func would_split_player_in_half() -> bool:
@@ -83,7 +83,7 @@ func _enter_state(new_state):
 		State.Playing:
 			%MaskCutOut.visible = true
 			layer.modulate = Color.WHITE
-			self.modulate = Color(0.5,0.5,0.5)
+			self.modulate = Color(0.8,0.8,0.8)
 			mask_button.text = "Editar Máscara"
 			preview.visible = false
 			layer_preview.visible = true
@@ -91,7 +91,7 @@ func _enter_state(new_state):
 			%Layer.process_mode = Node.PROCESS_MODE_INHERIT
 		State.Masking:
 			%MaskCutOut.visible = false
-			layer.modulate = Color(0.5,0.5,0.5)
+			layer.modulate = Color(0.8,0.8,0.8)
 			self.modulate = Color.WHITE
 			mask_button.text = "Aplicar Máscara"
 			preview.visible = true
