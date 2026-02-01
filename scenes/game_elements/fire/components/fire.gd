@@ -7,6 +7,12 @@ extends Area2D
 var boxes = []
 
 func _ready() -> void:
+	if !GameElementUtils.is_in_layer(self):
+		$fuego_sfx.process_mode = Node.PROCESS_MODE_DISABLED
+		$CPUParticles2D.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		$fuego_sfx.process_mode = Node.PROCESS_MODE_INHERIT
+		$CPUParticles2D.process_mode = Node.PROCESS_MODE_INHERIT
 	kill_zone.body_entered.connect(func(body):
 		body.die(&"burn_to_crisps")
 	)
