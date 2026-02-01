@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dbyrwtaqdxku3"]
+
+[ext_resource type="PackedScene" uid="uid://dxikjpq2durx0" path="res://screens/game_scenes/template_level/template_level.tscn" id="1_leai1"]
+[ext_resource type="PackedScene" uid="uid://wohqnype4xyh" path="res://scenes/game_elements/player/player.tscn" id="2_img7x"]
+[ext_resource type="PackedScene" uid="uid://frcdjlt2d2ad" path="res://scenes/game_elements/goal/goal.tscn" id="3_br4a0"]
+[ext_resource type="PackedScene" uid="uid://una1tx2kpxxv" path="res://scenes/game_elements/platforms/platform_1.tscn" id="4_urdbu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_img7x"]
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_br4a0"]
+viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
+
+[node name="Nivel" unique_id=868727410 instance=ExtResource("1_leai1")]
+mask_size = Vector2i(120, 60)
+
+[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="3" unique_id=1110395595]
+texture = SubResource("ViewportTexture_img7x")
+
+[node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="4" unique_id=2374421]
+mask_size = Vector2i(120, 60)
+
+[node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_img7x")]
+position = Vector2(133, 557)
+
+[node name="Goal" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=1003504178 instance=ExtResource("3_br4a0")]
+position = Vector2(473, 474)
+
+[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
+texture = SubResource("ViewportTexture_br4a0")
+
+[node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
+mask_size = Vector2i(120, 60)
+
+[node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=121207750 instance=ExtResource("4_urdbu")]
+position = Vector2(476.99994, 552)
