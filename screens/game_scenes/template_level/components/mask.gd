@@ -43,12 +43,12 @@ func would_split_player_in_half() -> bool:
 	)
 
 func _physics_process(delta: float) -> void:
-	if get_tree().get_first_node_in_group("level").dying:
+	if get_tree().get_first_node_in_group("level").completed():
 		return
 	is_splitting_player_with_mask = would_split_player_in_half()
 
 func toggle_mask():
-	if get_tree().get_first_node_in_group("level").dying:
+	if get_tree().get_first_node_in_group("level").completed():
 		return
 	if would_split_player_in_half():
 		return

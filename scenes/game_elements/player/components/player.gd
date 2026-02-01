@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	update_animations()
 	
-	if not GameElementUtils.is_dying():
+	if not GameElementUtils.is_completed():
 		var sprite_pivot = $SpritePivotOuter
 		if 0.0 < abs(velocity.y):
 			sprite_pivot.scale.x = move_toward(sprite_pivot.scale.x, 0.95, delta)
@@ -55,11 +55,11 @@ func _physics_process(delta: float) -> void:
 		sprite_pivot.rotation = rotate_toward(sprite_pivot.rotation, PI / 40 * sign(velocity.x), delta)
 
 func flip():
-	if GameElementUtils.is_dying():
+	if GameElementUtils.is_completed():
 		return
 
 func update_animations():
-	if GameElementUtils.is_dying():
+	if GameElementUtils.is_completed():
 		return
 	if abs(velocity.x) > 0.0:
 		sprite_2d.play("default")
@@ -68,10 +68,10 @@ func update_animations():
 
 func die(animation_name = &"die"):
 	var level = get_tree().get_nodes_in_group("level").front()
-	if level.dying:
+	if level.completed():
 		return
 	SPEED = SPEED / 2
-	level.dying = true
+	level.player_died()
 
 	animation_player.play(animation_name)
 	await animation_player.animation_finished
