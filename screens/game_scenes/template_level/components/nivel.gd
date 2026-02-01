@@ -15,13 +15,11 @@ extends Node2D
 		if not is_node_ready():
 			await ready
 		
-		%LayerBackground.texture.width = canvas_size.x
-		%LayerBackground.texture.height = canvas_size.y
+		%LayerBackground.scale = Vector2(canvas_size) / %LayerBackground.texture.get_size()
 		$Layer/StaticBody2D/Bottom.position = canvas_size
 		$Layer/StaticBody2D/Right.position = canvas_size
 		
-		%MaskBackground.texture.width = canvas_size.x
-		%MaskBackground.texture.height = canvas_size.y
+		%MaskBackground.scale = Vector2(canvas_size) / %MaskBackground.texture.get_size()
 		
 		%MaskSubviewport.size = canvas_size
 		%LayerSubviewport.size = canvas_size

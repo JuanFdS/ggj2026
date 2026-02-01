@@ -4,20 +4,14 @@
 [ext_resource type="Script" uid="uid://x0qole3ha7y6" path="res://screens/game_scenes/template_level/components/layer.gd" id="2_3eck2"]
 [ext_resource type="Script" uid="uid://ps2ayfxa8vhk" path="res://screens/game_scenes/template_level/components/mask_cutout.gd" id="3_7w6s3"]
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/template_level/components/preview.gd" id="4_hkp1i"]
+[ext_resource type="Texture2D" uid="uid://csbttg3e4garl" path="res://screens/game_scenes/template_level/components/fondo_canvas_1.png" id="4_tr3vn"]
 [ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/game_elements.gd" id="5_3eck2"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="7_pub7v"]
 [ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/template_level/components/sub_viewport.gd" id="8_cubxh"]
-
-[sub_resource type="Gradient" id="Gradient_jg18i"]
-offsets = PackedFloat32Array(0.33639145, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_x4ba3"]
-gradient = SubResource("Gradient_jg18i")
-width = 768
-height = 960
+[ext_resource type="Texture2D" uid="uid://qge5rog7jtpb" path="res://screens/game_scenes/template_level/components/fondo_canvas_2.png" id="9_bqir4"]
+[ext_resource type="Texture2D" uid="uid://bhdxrwqmibvw0" path="res://screens/game_scenes/template_level/components/fondo.jpg" id="12_pub7v"]
 
 [sub_resource type="Gradient" id="Gradient_0npbb"]
 offsets = PackedFloat32Array(1)
@@ -27,17 +21,6 @@ colors = PackedColorArray(1, 1, 1, 1)
 gradient = SubResource("Gradient_0npbb")
 width = 400
 height = 400
-
-[sub_resource type="Gradient" id="Gradient_gvio3"]
-offsets = PackedFloat32Array(0.055045873, 0.33639145, 0.853211, 1)
-colors = PackedColorArray(0, 0.61960787, 0.81960785, 1, 0, 1, 1, 1, 0.78039217, 0.2509804, 0.14117648, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0npbb"]
-gradient = SubResource("Gradient_gvio3")
-width = 768
-height = 960
-fill = 2
-fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jg18i"]
 
@@ -98,13 +81,6 @@ size = Vector2(300, 150)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
 
-[sub_resource type="Gradient" id="Gradient_kjhe3"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1m11a"]
-gradient = SubResource("Gradient_kjhe3")
-
 [node name="Nivel" type="Node2D" unique_id=868727410]
 physics_interpolation_mode = 1
 script = ExtResource("1_746gp")
@@ -124,6 +100,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" unique_id=210780470]
 layout_mode = 2
@@ -150,10 +127,11 @@ script = ExtResource("5_tr3vn")
 unique_name_in_owner = true
 position = Vector2(60, 60)
 script = ExtResource("2_3eck2")
+metadata/_edit_lock_ = true
 
 [node name="LayerBackground" type="Sprite2D" parent="Layer" unique_id=284435309]
 unique_name_in_owner = true
-texture = SubResource("GradientTexture2D_x4ba3")
+texture = ExtResource("4_tr3vn")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -167,7 +145,6 @@ script = ExtResource("3_7w6s3")
 metadata/_edit_lock_ = true
 
 [node name="MaskBackground" type="Sprite2D" parent="Layer/MaskCutOut" unique_id=1819708292]
-texture = SubResource("GradientTexture2D_0npbb")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -232,10 +209,11 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 position = Vector2(1100, 60)
 script = ExtResource("6_bqir4")
+metadata/_edit_lock_ = true
 
 [node name="MaskBackground" type="Sprite2D" parent="Mask" unique_id=218631811]
 unique_name_in_owner = true
-texture = SubResource("GradientTexture2D_0npbb")
+texture = ExtResource("9_bqir4")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -307,7 +285,7 @@ canvas = NodePath("../../../Mask")
 [node name="MaskCamera" type="Camera2D" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" unique_id=2107362031]
 unique_name_in_owner = true
 rotation = 0.2617994
-offset = Vector2(955.00006, 289.99997)
+offset = Vector2(1100, 60)
 anchor_mode = 0
 ignore_rotation = false
 metadata/_edit_lock_ = true
@@ -337,7 +315,7 @@ canvas = NodePath("../../../Layer")
 
 [node name="LayerCamera" type="Camera2D" parent="CanvasLayer2/SubViewportContainer/LayerSubviewport" unique_id=816684468]
 unique_name_in_owner = true
-offset = Vector2(157, 318)
+offset = Vector2(60, 60)
 anchor_mode = 0
 ignore_rotation = false
 metadata/_edit_lock_ = true
@@ -374,5 +352,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_1m11a")
+texture = ExtResource("12_pub7v")
 metadata/_edit_lock_ = true
