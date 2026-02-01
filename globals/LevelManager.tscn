@@ -4,4 +4,4 @@
 
 [node name="LevelManager" type="Node" unique_id=279347259]
 script = ExtResource("1_sbx32")
-levels = Array[String](["uid://dbyrwtaqdxku3", "uid://1tf0pk1wfdkh"])
+levels = Array[String](["uid://dbyrwtaqdxku3", "uid://1tf0pk1wfdkh", "uid://bqmwvjjbps7w1", "uid://ce3d6dyofmwfr", "uid://dtpk2ayp7efqw"])
