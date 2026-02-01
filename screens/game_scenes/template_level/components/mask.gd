@@ -11,6 +11,7 @@ enum State {
 
 var is_splitting_player_with_mask: bool = false
 var state = State.Playing
+var can_toggle_mask = true
 @onready var preview: Sprite2D = %Preview
 @onready var layer_preview: Sprite2D = %LayerPreview
 
@@ -51,6 +52,10 @@ func toggle_mask():
 		return
 	if would_split_player_in_half():
 		return
+	if not can_toggle_mask:
+		return
+
+	can_toggle_mask = false
 		
 	%sfx/pegado_hoja.play()
 	match state:
@@ -64,22 +69,29 @@ func toggle_mask():
 			%MaskCutOut.visible = false
 			get_tree().paused = true
 			await %MaskCutOutForAnimation.play_unmask_animation()
-			get_tree().paused = false
 			_change_state(State.Masking)
+			get_tree().paused = false
+
 			$"../MaskCutOutForAnimation/MaskBackground".texture = original_texture
 		State.Masking:
 			get_tree().paused = true
+			preview.create_tween()\
+				.tween_property(preview, "self_modulate:a", 0, 0.3).from(1)
 			await %MaskCutOutForAnimation.play_mask_animation()
-			get_tree().paused = false
 			var things_with_intersections = {}
 			var masked_things = %MaskSelectionArea.get_overlapping_bodies() + %MaskSelectionArea.get_overlapping_areas()
 			for thing in masked_things:
 				things_with_intersections[thing] = %Layer.cut_into_shapes(%MaskSelectionArea, thing)
 			_change_state(State.Playing)
+			get_tree().paused = false
+
 			await get_tree().physics_frame
 			await get_tree().physics_frame
 			%Layer.apply_mask(things_with_intersections)
 			%MaskCutOutForAnimation.visible = false
+			
+	can_toggle_mask = true
+
 
 
 func _change_state(new_state):
@@ -89,6 +101,7 @@ func _change_state(new_state):
 func _enter_state(new_state):
 	match new_state:
 		State.Playing:
+			%MaskCutOut.update_size_and_offset()
 			%MaskCutOut.visible = true
 			# Esto quedó duplicado en mask_cut_out_for_animation
 			# (se lo necesita aquí para que el estado inicial esté bien)

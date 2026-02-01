@@ -206,6 +206,7 @@ metadata/_edit_lock_ = true
 
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
 unique_name_in_owner = true
+process_mode = 3
 light_mask = 2
 z_index = 5
 material = SubResource("CanvasItemMaterial_y5ptm")

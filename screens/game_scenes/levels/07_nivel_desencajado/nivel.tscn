@@ -11,9 +11,12 @@ viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_3ahs6"]
 viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_0wc0m"]
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
+
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_qo2bv")]
 
-[node name="Left" parent="Layer/StaticBody2D" parent_id_path=PackedInt32Array(1346561349) index="3" unique_id=1856295708]
+[node name="Left" parent="Layer/ScenarioBorders" parent_id_path=PackedInt32Array(1346561349) index="3" unique_id=1856295708]
 position = Vector2(-62, 485.5)
 
 [node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="5" unique_id=1110395595]
@@ -32,4 +35,9 @@ texture = SubResource("ViewportTexture_3ahs6")
 [node name="Box" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=1877681763 instance=ExtResource("3_b32q6")]
 position = Vector2(177, 471)
 
+[node name="MaskBackground" parent="MaskCutOutForAnimation" parent_id_path=PackedInt32Array(1193114252) index="0" unique_id=943261374]
+texture = SubResource("ViewportTexture_0wc0m")
+
+[editable path="sfx"]
 [editable path="Mask/GameElements/Box"]
+[editable path="MaskCutOutForAnimation/sfx"]
