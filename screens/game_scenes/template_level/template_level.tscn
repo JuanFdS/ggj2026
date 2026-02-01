@@ -30,8 +30,8 @@ normal = Vector2(0, 1)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dg2up"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2m1qm"]
-normal = Vector2(1, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr3vn"]
+size = Vector2(100, 991)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y5ptm"]
 light_mode = 2
@@ -185,8 +185,9 @@ position = Vector2(768, 960)
 shape = SubResource("WorldBoundaryShape2D_dg2up")
 metadata/_edit_lock_ = true
 
-[node name="Left" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=662259327]
-shape = SubResource("WorldBoundaryShape2D_2m1qm")
+[node name="Left" type="CollisionShape2D" parent="Layer/StaticBody2D" unique_id=1856295708]
+position = Vector2(-24, 485.5)
+shape = SubResource("RectangleShape2D_tr3vn")
 metadata/_edit_lock_ = true
 
 [node name="Preview" type="Sprite2D" parent="Layer" unique_id=1110395595]
