@@ -10,12 +10,13 @@
 [ext_resource type="AudioStream" uid="uid://bb5b6cuqbplmd" path="res://sonidos/arrancar hoja/arrancar_hoja_1.mp3" id="8_l4a0u"]
 [ext_resource type="AudioStream" uid="uid://c1e2kxpyoie7m" path="res://sonidos/tijera/tijera_2.mp3" id="9_rg8ox"]
 [ext_resource type="AudioStream" uid="uid://dtmavvh345q40" path="res://sonidos/arrancar_cuaderno_1.mp3" id="10_k2b04"]
-[ext_resource type="AudioStream" uid="uid://d34ra4djvdjx0" path="res://sonidos/tijera/tijera_1.mp3" id="11_rg8ox"]
 [ext_resource type="AudioStream" uid="uid://doc0kjw5rux6f" path="res://sonidos/tijera/tijera_3.mp3" id="12_k2b04"]
 [ext_resource type="AudioStream" uid="uid://bdnwjqnb0j2cf" path="res://sonidos/chasquido/chasquido_1.mp3" id="13_ea3s4"]
 [ext_resource type="AudioStream" uid="uid://dj63uujacj0eu" path="res://sonidos/chasquido/chasquido_2.mp3" id="14_buso6"]
 [ext_resource type="AudioStream" uid="uid://h6bxwuu2fye2" path="res://sonidos/camina.mp3" id="15_buso6"]
 [ext_resource type="AudioStream" uid="uid://bu6mc836lbujm" path="res://sonidos/fuh.mp3" id="16_qcyqu"]
+[ext_resource type="AudioStream" uid="uid://brohj6ntcqwth" path="res://sonidos/pegado hoja/sp_1.wav" id="16_urnqg"]
+[ext_resource type="AudioStream" uid="uid://cytj3045sqqfl" path="res://sonidos/pegado hoja/sp_2_NO.wav" id="17_4in1o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rg8ox"]
 streams_count = 6
@@ -27,19 +28,30 @@ stream_4/stream = ExtResource("5_m6fp4")
 stream_5/stream = ExtResource("6_l4a0u")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ea3s4"]
-streams_count = 6
+streams_count = 5
 stream_0/stream = ExtResource("7_m6fp4")
 stream_1/stream = ExtResource("8_l4a0u")
 stream_2/stream = ExtResource("9_rg8ox")
 stream_3/stream = ExtResource("10_k2b04")
-stream_4/stream = ExtResource("11_rg8ox")
-stream_5/stream = ExtResource("12_k2b04")
+stream_4/stream = ExtResource("12_k2b04")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qcyqu"]
 playback_mode = 1
 streams_count = 2
 stream_0/stream = ExtResource("13_ea3s4")
 stream_1/stream = ExtResource("14_buso6")
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_buso6"]
+stream_count = 2
+stream_0/stream = ExtResource("16_qcyqu")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("10_k2b04")
+stream_1/volume = 0.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hlbuw"]
+streams_count = 2
+stream_0/stream = ExtResource("16_urnqg")
+stream_1/stream = ExtResource("17_4in1o")
 
 [node name="sfx" type="Node" unique_id=403339373]
 
@@ -48,6 +60,7 @@ stream = SubResource("AudioStreamRandomizer_rg8ox")
 
 [node name="recorte_hoja" type="AudioStreamPlayer" parent="." unique_id=1069710579]
 stream = SubResource("AudioStreamRandomizer_ea3s4")
+pitch_scale = 0.91
 
 [node name="chasquido" type="AudioStreamPlayer" parent="." unique_id=1716899299]
 stream = SubResource("AudioStreamRandomizer_qcyqu")
@@ -62,3 +75,10 @@ stream = ExtResource("16_qcyqu")
 volume_db = -8.619
 pitch_scale = 1.18
 bus = &"reverb"
+
+[node name="arranco_pedazo" type="AudioStreamPlayer" parent="." unique_id=1978719108]
+stream = SubResource("AudioStreamSynchronized_buso6")
+pitch_scale = 0.82
+
+[node name="pegado_hoja" type="AudioStreamPlayer" parent="." unique_id=787708871]
+stream = SubResource("AudioStreamRandomizer_hlbuw")

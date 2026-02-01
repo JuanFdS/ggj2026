@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cytj3045sqqfl"
+path="res://.godot/imported/sp_2_NO.wav-05c7deb918be46aa289f35a131b8b5d4.sample"
+
+[deps]
+
+source_file="res://sonidos/pegado hoja/sp_2_NO.wav"
+dest_files=["res://.godot/imported/sp_2_NO.wav-05c7deb918be46aa289f35a131b8b5d4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
