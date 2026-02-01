@@ -11,6 +11,7 @@ enum State {
 
 var is_splitting_player_with_mask: bool = false
 var state = State.Playing
+var can_toggle_mask = true
 @onready var preview: Sprite2D = %Preview
 @onready var layer_preview: Sprite2D = %LayerPreview
 
@@ -51,6 +52,10 @@ func toggle_mask():
 		return
 	if would_split_player_in_half():
 		return
+	if not can_toggle_mask:
+		return
+
+	can_toggle_mask = false
 		
 	%sfx/pegado_hoja.play()
 	match state:
@@ -78,11 +83,14 @@ func toggle_mask():
 			for thing in masked_things:
 				things_with_intersections[thing] = %Layer.cut_into_shapes(%MaskSelectionArea, thing)
 			_change_state(State.Playing)
+			get_tree().paused = false
+
 			await get_tree().physics_frame
 			await get_tree().physics_frame
 			%Layer.apply_mask(things_with_intersections)
 			%MaskCutOutForAnimation.visible = false
-			get_tree().paused = false
+			
+	can_toggle_mask = true
 
 
 
