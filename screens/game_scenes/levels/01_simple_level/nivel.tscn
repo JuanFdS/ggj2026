@@ -37,10 +37,10 @@ height = 32
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_leai1")]
 mask_size = Vector2i(250, 250)
 
-[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="3" unique_id=1110395595]
+[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="5" unique_id=1110395595]
 texture = SubResource("ViewportTexture_br4a0")
 
-[node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="4" unique_id=2374421]
+[node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=2374421]
 mask_size = Vector2i(250, 250)
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_img7x")]
@@ -49,6 +49,7 @@ position = Vector2(640, 800)
 [node name="Platform2" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=121207750 instance=ExtResource("4_urdbu")]
 position = Vector2(320, 608)
 size_in_cells = Vector2i(5, 4)
+texture = SubResource("GradientTexture2D_yfm2f")
 
 [node name="Sprite2D" parent="Layer/GameElements/Platform2/Mask" parent_id_path=PackedInt32Array(121207750, 105858329) index="0" unique_id=851624041]
 texture = SubResource("GradientTexture2D_yfm2f")
@@ -62,24 +63,22 @@ position = Vector2(320, 896)
 [node name="Goal" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="3" unique_id=1003504178 instance=ExtResource("3_br4a0")]
 position = Vector2(96, 832)
 
-[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
+[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="2" unique_id=1890886365]
 texture = SubResource("ViewportTexture_w43mr")
 
-[node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
+[node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="4" unique_id=2110519118]
 mask_size = Vector2i(250, 250)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=721814089 instance=ExtResource("4_urdbu")]
 position = Vector2(496, 864)
 size_in_cells = Vector2i(4, 1)
+texture = SubResource("GradientTexture2D_nhiac")
 
 [node name="Sprite2D" parent="Mask/GameElements/Platform/Mask" parent_id_path=PackedInt32Array(721814089, 105858329) index="0" unique_id=851624041]
 texture = SubResource("GradientTexture2D_nhiac")
 
 [node name="CollisionPolygon2D" parent="Mask/GameElements/Platform" index="1" unique_id=1195296732]
 polygon = PackedVector2Array(0, 0, 128, 0, 128, 32, 0, 32)
-
-[node name="MaskCamera" parent="CanvasLayer/SubViewportContainer/MaskSubviewport" parent_id_path=PackedInt32Array(844272332) index="0" unique_id=2107362031]
-offset = Vector2(1084, 60)
 
 [editable path="Layer/GameElements/Platform2"]
 [editable path="Mask/GameElements/Platform"]

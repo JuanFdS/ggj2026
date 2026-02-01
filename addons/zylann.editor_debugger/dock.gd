@@ -389,5 +389,3 @@ func _on_SaveBranchFileDialog_file_selected(path: String) -> void:
 	ResourceSaver.save(packed_scene, path)
 	# Revert ownership of all children.
 	restore_ownership(node, owners, true)
-
-
