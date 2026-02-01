@@ -19,5 +19,5 @@ func _ready() -> void:
 	add_to_group("level")
 
 func win():
+	LevelManager.advance_to_next_level()
 	%ganaste.visible = true
-	get_tree().paused = true

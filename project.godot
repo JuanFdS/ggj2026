@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 RuakeLayer="*uid://dn8rjsyxnwqmi"
+LevelManager="*uid://bw3he4hq4vxtk"
 
 [display]
 
@@ -37,6 +38,7 @@ enabled=PackedStringArray("res://addons/ruake/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://globals/": "purple",
 "res://resources/": "yellow",
 "res://screens/": "teal"
 }
