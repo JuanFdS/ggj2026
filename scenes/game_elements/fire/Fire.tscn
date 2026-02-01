@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bfee3ym77dcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydwga"]
+size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_540mm"]
+size = Vector2(30, 16)
+
+[sub_resource type="Gradient" id="Gradient_540mm"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.30726257, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.42352942, 0, 0.73333335, 1, 1, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8dau5"]
+gradient = SubResource("Gradient_540mm")
+width = 5
+height = 5
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_540mm"]
+_data = [Vector2(0, 0.105145454), 0.0, 0.0, 0, 0, Vector2(0.13768116, 1), 0.0, 0.0, 0, 0, Vector2(0.64009666, 0.75838935), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_8dau5"]
+offsets = PackedFloat32Array(0.3512545, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_g38vg"]
+offsets = PackedFloat32Array(0.38351256, 0.75268817)
+colors = PackedColorArray(1, 0.38351256, 0, 1, 1, 1, 0, 1)
+
+[node name="Fire" type="Area2D" unique_id=240002621]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254380064]
+shape = SubResource("RectangleShape2D_ydwga")
+
+[node name="KillZone" type="Area2D" parent="." unique_id=980638087]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1429369091]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_540mm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=376539652]
+amount = 80
+texture = SubResource("GradientTexture2D_8dau5")
+lifetime = 0.65
+preprocess = 0.65
+emission_shape = 3
+emission_rect_extents = Vector2(15, 1)
+gravity = Vector2(0, -200)
+angular_velocity_min = -258.46
+angular_velocity_max = 246.15
+scale_amount_min = 1.4
+scale_amount_max = 2.2
+scale_amount_curve = SubResource("Curve_540mm")
+color_ramp = SubResource("Gradient_8dau5")
+color_initial_ramp = SubResource("Gradient_g38vg")
