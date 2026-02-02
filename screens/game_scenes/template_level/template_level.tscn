@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/template_level/components/preview.gd" id="4_hkp1i"]
 [ext_resource type="Texture2D" uid="uid://csbttg3e4garl" path="res://screens/game_scenes/template_level/components/fondo_canvas_1.png" id="4_tr3vn"]
 [ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/components/game_elements.gd" id="5_3eck2"]
-[ext_resource type="Script" uid="uid://bhav045fsr3pe" path="res://screens/game_scenes/template_level/kill_zone.gd" id="5_cubxh"]
+[ext_resource type="Script" path="res://screens/game_scenes/template_level/kill_zone.gd" id="5_cubxh"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
 [ext_resource type="Script" uid="uid://chflmo6al3wyn" path="res://screens/game_scenes/template_level/components/mask_cut_out_for_animation.gd" id="7_cubxh"]
@@ -644,7 +644,6 @@ script = ExtResource("5_tr3vn")
 
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
-clip_children = 2
 position = Vector2(60, 60)
 script = ExtResource("2_3eck2")
 
