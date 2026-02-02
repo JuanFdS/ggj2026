@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://b87gjfcitarsd" path="res://screens/menues/main_menu/opcion.gd" id="4_w7w1m"]
 [ext_resource type="PackedScene" uid="uid://d3gd1pjmwct66" path="res://screens/menues/main_menu/pointer.tscn" id="5_w7w1m"]
 [ext_resource type="Texture2D" uid="uid://d2wo0lgwsm7ku" path="res://screens/menues/main_menu/components/credits.png" id="6_5aqbs"]
-[ext_resource type="Texture2D" uid="uid://dm5mjtpkiwro3" path="res://screens/menues/main_menu/components/wip.png" id="8_ait1d"]
 [ext_resource type="Script" uid="uid://c15p73qpayhj3" path="res://screens/menues/main_menu/hoja.gd" id="8_wnf6w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3bkq0"]
@@ -250,52 +249,4 @@ texture = ExtResource("6_5aqbs")
 script = ExtResource("8_wnf6w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Credits" unique_id=986403637]
-libraries/ = SubResource("AnimationLibrary_wnf6w")
-
-[node name="Settings" type="Control" parent="." unique_id=1934932957]
-process_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-focus_mode = 1
-
-[node name="Hoja" type="TextureRect" parent="Settings" unique_id=1238680391]
-layout_mode = 0
-offset_left = 1936.0
-offset_top = -200.0
-offset_right = 2941.996
-offset_bottom = 1140.5588
-rotation = -0.010271391
-pivot_offset = Vector2(261.7124, 1385.7506)
-focus_mode = 1
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-texture = ExtResource("8_ait1d")
-script = ExtResource("8_wnf6w")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Settings" unique_id=957211805]
-libraries/ = SubResource("AnimationLibrary_wnf6w")
-
-[node name="SelectLevel" type="Control" parent="." unique_id=1549093644]
-process_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-focus_mode = 1
-
-[node name="Hoja" type="TextureRect" parent="SelectLevel" unique_id=1759634615]
-layout_mode = 0
-offset_left = 1936.0
-offset_top = -200.0
-offset_right = 2941.996
-offset_bottom = 1140.5588
-rotation = -0.010271391
-pivot_offset = Vector2(261.7124, 1385.7506)
-focus_mode = 1
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-texture = ExtResource("8_ait1d")
-script = ExtResource("8_wnf6w")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SelectLevel" unique_id=493278722]
 libraries/ = SubResource("AnimationLibrary_wnf6w")

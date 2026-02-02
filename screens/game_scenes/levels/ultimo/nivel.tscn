@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://biwr6qgjsjrxx"]
+
+[ext_resource type="PackedScene" uid="uid://dxikjpq2durx0" path="res://screens/game_scenes/template_level/template_level.tscn" id="1_jylvm"]
+[ext_resource type="Texture2D" uid="uid://csbttg3e4garl" path="res://screens/game_scenes/template_level/components/fondo_canvas_1.png" id="2_74dch"]
+[ext_resource type="PackedScene" uid="uid://una1tx2kpxxv" path="res://scenes/game_elements/platforms/platform_1.tscn" id="2_u5bf0"]
+[ext_resource type="Script" uid="uid://bpvq63xuwmctv" path="res://scenes/game_elements/platforms/platform_1.gd" id="3_ls1qe"]
+[ext_resource type="Texture2D" uid="uid://x6pmtvhmy27l" path="res://plantillas/nivel_0.png" id="5_74dch"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j6e1d"]
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u5bf0"]
+viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ls1qe"]
+viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
+
+[node name="Nivel" unique_id=868727410 instance=ExtResource("1_jylvm")]
+
+[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=1110395595]
+texture = SubResource("ViewportTexture_j6e1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=2130206068]
+position = Vector2(416, 512)
+scale = Vector2(0.7083333, 0.5)
+texture = ExtResource("2_74dch")
+
+[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
+texture = SubResource("ViewportTexture_u5bf0")
+
+[node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=2108506641 instance=ExtResource("2_u5bf0")]
+texture_repeat = 2
+position = Vector2(96, 224)
+script = ExtResource("3_ls1qe")
+size_in_cells = Vector2i(19, 11)
+texture = ExtResource("5_74dch")
+
+[node name="CollisionPolygon2D" parent="Mask/GameElements/Platform" index="0" unique_id=1195296732]
+polygon = PackedVector2Array(0, 0, 608, 0, 608, 352, 0, 352)
+
+[node name="Mask" parent="Mask/GameElements/Platform" index="1" unique_id=105858329]
+clip_children = 1
+
+[node name="Sprite2D" parent="Mask/GameElements/Platform/Mask" index="0" unique_id=851624041]
+texture_repeat = 2
+texture = ExtResource("5_74dch")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 608, 352)
+
+[node name="MaskBackground" parent="MaskCutOutForAnimation" parent_id_path=PackedInt32Array(1193114252) index="0" unique_id=943261374]
+texture = SubResource("ViewportTexture_ls1qe")
+
+[editable path="sfx"]
+[editable path="Mask/GameElements/Platform"]
+[editable path="MaskCutOutForAnimation/sfx"]

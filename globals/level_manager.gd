@@ -12,7 +12,17 @@ func _ready() -> void:
 		if uid and levels.has(uid):
 			current_level_idx = levels.find(uid)
 
+func is_first_level():
+	return current_level_idx == 0
+
+func is_last_level():
+	return current_level_idx == levels.size() - 1
+
 func advance_to_next_level():
+	current_level_idx = (current_level_idx - 1) % levels.size()
+	go_to_level()
+
+func go_to_previous_level():
 	current_level_idx = (current_level_idx + 1) % levels.size()
 	go_to_level()
 

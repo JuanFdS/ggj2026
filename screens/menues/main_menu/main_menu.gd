@@ -15,7 +15,7 @@ func _ready():
 		)
 	await get_tree().process_frame
 	grab_focus()
-	for hoja in [$Credits/Hoja, $Settings/Hoja, $SelectLevel/Hoja]:
+	for hoja in [$Credits/Hoja]:
 		hoja.closed.connect(func(): self.grab_focus())
 
 func _gui_input(event: InputEvent) -> void:

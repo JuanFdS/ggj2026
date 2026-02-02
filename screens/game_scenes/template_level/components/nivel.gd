@@ -71,6 +71,7 @@ func win():
 
 func go_to_next_level():
 	%MaskCutOut.visible = false
+	%Preview.visible = false
 	$AnimationPlayer.play_backwards("poner_hojas")
 	$AnimationPlayer.animation_finished.connect(func(animation_finished):
 		get_tree().paused = false
@@ -78,9 +79,23 @@ func go_to_next_level():
 	)
 	get_tree().paused = true
 
+func go_to_previous_level():
+	%MaskCutOut.visible = false
+	%Preview.visible = false
+	$AnimationPlayer.play_backwards("poner_hojas")
+	$AnimationPlayer.animation_finished.connect(func(animation_finished):
+		get_tree().paused = false
+		LevelManager.go_to_previous_level()
+	)
+	get_tree().paused = true
+
 func _process(delta):
 	if Engine.is_editor_hint():
 		return
+	if Input.is_action_just_pressed("nivel_anterior") and not LevelManager.is_first_level():
+		go_to_previous_level()
+	if Input.is_action_just_pressed("siguiente_nivel") and not LevelManager.is_last_level():
+		go_to_next_level()
 	if Input.is_action_just_pressed("Reset"):
 		lose()
 	
