@@ -56,16 +56,30 @@ gradient = SubResource("Gradient_ytfij")
 width = 96
 height = 32
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_a6uub"]
+[sub_resource type="Gradient" id="Gradient_a6uub"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8784314, 0.7058824, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xrfe4"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_a6uub")
+width = 96
+height = 32
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r86ky"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_lkm06")]
 mask_size = Vector2i(160, 128)
 
-[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="5" unique_id=1110395595]
+[node name="LayerBackground3" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="1" unique_id=1182094189]
+visible = true
+
+[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=1110395595]
 texture = SubResource("ViewportTexture_a5y3u")
 
-[node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=2374421]
+[node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="7" unique_id=2374421]
 mask_size = Vector2i(160, 128)
 
 [node name="Platform" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=121207750 instance=ExtResource("2_nacn3")]
@@ -123,13 +137,13 @@ texture = SubResource("GradientTexture2D_hqj3g")
 
 [node name="Platform2" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="1" unique_id=1126636538 instance=ExtResource("2_nacn3")]
 position = Vector2(224, 800)
-texture = SubResource("GradientTexture2D_hqj3g")
+texture = SubResource("GradientTexture2D_xrfe4")
 
 [node name="Sprite2D" parent="Mask/GameElements/Platform2/Mask" parent_id_path=PackedInt32Array(1126636538, 105858329) index="0" unique_id=851624041]
-texture = SubResource("GradientTexture2D_hqj3g")
+texture = SubResource("GradientTexture2D_xrfe4")
 
 [node name="MaskBackground" parent="MaskCutOutForAnimation" parent_id_path=PackedInt32Array(1193114252) index="0" unique_id=943261374]
-texture = SubResource("ViewportTexture_a6uub")
+texture = SubResource("ViewportTexture_r86ky")
 
 [editable path="sfx"]
 [editable path="Layer/GameElements/Platform"]
@@ -137,3 +151,4 @@ texture = SubResource("ViewportTexture_a6uub")
 [editable path="Layer/GameElements/Platform3"]
 [editable path="Mask/GameElements/Platform"]
 [editable path="Mask/GameElements/Platform2"]
+[editable path="MaskCutOutForAnimation/sfx"]

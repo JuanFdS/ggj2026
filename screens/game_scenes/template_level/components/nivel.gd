@@ -46,15 +46,21 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	add_to_group("level")
-	$Layer/GameElements.visible = false
-	%LayerBackground.visible = false
-	%MaskBackground.visible = false
-	$Mask/GameElements.visible = false
-	$AnimationPlayer.play("poner_hojas")
-	$AnimationPlayer.animation_finished.connect(func(animation_finished):
-		get_tree().paused = false
-	)
-	get_tree().paused = true
+	if LevelManager.resetting:
+		%Layer.modulate = Color.BLACK
+		%Mask.modulate = Color.BLACK
+		$AnimationPlayer.play("restaurar_hojas")
+	else:
+		$Layer/GameElements.visible = false
+		%LayerBackground.visible = false
+		%MaskBackground.visible = false
+		$Mask/GameElements.visible = false
+		$AnimationPlayer.play("poner_hojas")
+		$AnimationPlayer.animation_finished.connect(func(animation_finished):
+			get_tree().paused = false
+		)
+		get_tree().paused = true
+	
 
 func win():
 	play_state = PlayState.Won
@@ -76,7 +82,9 @@ func _process(delta):
 	if Engine.is_editor_hint():
 		return
 	if Input.is_action_just_pressed("Reset"):
-		get_tree().reload_current_scene()
+		lose()
 
 func lose():
-	pass
+	$AnimationPlayer.play("sacudir_hojas")
+	await $AnimationPlayer.animation_finished
+	LevelManager.reset_level()
