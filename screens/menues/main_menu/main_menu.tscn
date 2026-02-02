@@ -6,7 +6,80 @@
 [ext_resource type="Script" uid="uid://b87gjfcitarsd" path="res://screens/menues/main_menu/opcion.gd" id="4_w7w1m"]
 [ext_resource type="PackedScene" uid="uid://d3gd1pjmwct66" path="res://screens/menues/main_menu/pointer.tscn" id="5_w7w1m"]
 [ext_resource type="Texture2D" uid="uid://d2wo0lgwsm7ku" path="res://screens/menues/main_menu/components/credits.png" id="6_5aqbs"]
+[ext_resource type="Texture2D" uid="uid://c2jvee8ckt2v3" path="res://screens/menues/main_menu/components/titulo.png" id="8_ait1d"]
 [ext_resource type="Script" uid="uid://c15p73qpayhj3" path="res://screens/menues/main_menu/hoja.gd" id="8_wnf6w"]
+[ext_resource type="Script" uid="uid://c8mea0k1jmpkh" path="res://screens/menues/main_menu/color_rect.gd" id="9_ait1d"]
+
+[sub_resource type="Animation" id="Animation_ait1d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(483, -734)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.17176607]
+}
+
+[sub_resource type="Animation" id="Animation_3bkq0"]
+resource_name = "new_animation"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(483, -734), Vector2(550, -427)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.17176607, 6.3666015]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0yn3g"]
+_data = {
+&"RESET": SubResource("Animation_ait1d"),
+&"new_animation": SubResource("Animation_3bkq0")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wnf6w"]
+blend_mode = 4
+
+[sub_resource type="Gradient" id="Gradient_ait1d"]
+offsets = PackedFloat32Array(0, 0.27129337, 0.77602524, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.41568628, 0, 0, 0, 0.41568628, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3bkq0"]
+gradient = SubResource("Gradient_ait1d")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3bkq0"]
 
@@ -131,6 +204,29 @@ expand_mode = 3
 stretch_mode = 6
 metadata/_edit_lock_ = true
 
+[node name="Titulo" type="TextureRect" parent="." unique_id=922670711]
+clip_children = 2
+layout_mode = 0
+offset_left = 483.0
+offset_top = -734.0
+offset_right = 1443.0009
+offset_bottom = 546.0
+rotation = -0.17176607
+mouse_filter = 2
+texture = ExtResource("8_ait1d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Titulo" unique_id=1579052140]
+libraries/ = SubResource("AnimationLibrary_0yn3g")
+autoplay = &"new_animation"
+
+[node name="ColorRect" type="Sprite2D" parent="Titulo" unique_id=1367363299]
+material = SubResource("CanvasItemMaterial_wnf6w")
+position = Vector2(353.34048, 964.13763)
+rotation = 0.91386014
+scale = Vector2(2.1046188, 12.902424)
+texture = SubResource("GradientTexture2D_3bkq0")
+script = ExtResource("9_ait1d")
+
 [node name="Posiciones" type="Control" parent="." unique_id=1508798771]
 unique_name_in_owner = true
 anchors_preset = 0
@@ -195,30 +291,6 @@ offset_top = 0.0
 offset_right = 1244.0
 offset_bottom = 40.0
 
-[node name="Credits" type="Control" parent="." unique_id=1668508799]
-process_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-focus_mode = 1
-
-[node name="Hoja" type="TextureRect" parent="Credits" unique_id=454676327]
-layout_mode = 0
-offset_left = 1936.0
-offset_top = -200.0
-offset_right = 2941.9956
-offset_bottom = 1140.5588
-rotation = -0.010271391
-pivot_offset = Vector2(261.7124, 1385.7506)
-focus_mode = 1
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-texture = ExtResource("6_5aqbs")
-script = ExtResource("8_wnf6w")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Credits" unique_id=986403637]
-libraries/ = SubResource("AnimationLibrary_wnf6w")
-
 [node name="Focus2" type="Line2D" parent="." unique_id=522159509]
 position = Vector2(911.00024, 776.0001)
 rotation = -0.14078726
@@ -250,3 +322,27 @@ points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
 width_curve = SubResource("Curve_ip7hk")
 default_color = Color(0.3137255, 0.08627451, 0.08235294, 0.90588236)
 antialiased = true
+
+[node name="Credits" type="Control" parent="." unique_id=1668508799]
+process_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+focus_mode = 1
+
+[node name="Hoja" type="TextureRect" parent="Credits" unique_id=454676327]
+layout_mode = 0
+offset_left = 1936.0
+offset_top = -200.0
+offset_right = 2941.9956
+offset_bottom = 1140.5588
+rotation = -0.010271391
+pivot_offset = Vector2(261.7124, 1385.7506)
+focus_mode = 1
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("6_5aqbs")
+script = ExtResource("8_wnf6w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Credits" unique_id=986403637]
+libraries/ = SubResource("AnimationLibrary_wnf6w")
