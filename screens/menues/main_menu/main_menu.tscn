@@ -26,7 +26,7 @@ Button/styles/normal = SubResource("StyleBoxEmpty_7dwei")
 Button/styles/pressed = SubResource("StyleBoxEmpty_use87")
 
 [sub_resource type="Curve" id="Curve_ip7hk"]
-_data = [Vector2(0, 0.11635959), 0.0, 0.0, 0, 0, Vector2(0.47172242, 0.94009227), 0.0, 0.0, 0, 0, Vector2(0.8856042, 0.8951614), 0.0, 0.0, 0, 0, Vector2(1, 0.45084494), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.11635959), 0.0, 0.0, 0, 0, Vector2(0.5335917, 0.96485114), 0.0, 0.0, 0, 0, Vector2(0.8856042, 0.8951614), 0.0, 0.0, 0, 0, Vector2(1, 0.45084494), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Animation" id="Animation_n4sjw"]
@@ -155,50 +155,18 @@ width_curve = SubResource("Curve_ip7hk")
 default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
 antialiased = true
 
-[node name="ElegirNivel" type="Button" parent="Posiciones" unique_id=455204239]
+[node name="Creditos" type="Button" parent="Posiciones" unique_id=455204239]
 layout_mode = 0
 offset_left = 909.0
-offset_top = 578.0
+offset_top = 848.0
 offset_right = 1337.0
-offset_bottom = 653.0
+offset_bottom = 923.0
 mouse_default_cursor_shape = 2
 script = ExtResource("4_w7w1m")
 
-[node name="Focus" type="Line2D" parent="Posiciones/ElegirNivel" unique_id=1229644711]
+[node name="Focus" type="Line2D" parent="Posiciones/Creditos" unique_id=1229644711]
 position = Vector2(6, 86)
 points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 369, 4)
-width_curve = SubResource("Curve_ip7hk")
-default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
-antialiased = true
-
-[node name="Configuracion" type="Button" parent="Posiciones" unique_id=14336047]
-layout_mode = 0
-offset_left = 910.0
-offset_top = 713.0
-offset_right = 1375.0
-offset_bottom = 784.0
-mouse_default_cursor_shape = 2
-script = ExtResource("4_w7w1m")
-
-[node name="Focus" type="Line2D" parent="Posiciones/Configuracion" unique_id=1801776741]
-position = Vector2(20, 92)
-points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
-width_curve = SubResource("Curve_ip7hk")
-default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
-antialiased = true
-
-[node name="Creditos" type="Button" parent="Posiciones" unique_id=139926725]
-layout_mode = 0
-offset_left = 918.0
-offset_top = 842.0
-offset_right = 1286.0
-offset_bottom = 913.0
-mouse_default_cursor_shape = 2
-script = ExtResource("4_w7w1m")
-
-[node name="Focus" type="Line2D" parent="Posiciones/Creditos" unique_id=497709796]
-position = Vector2(-9, 93)
-points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
 width_curve = SubResource("Curve_ip7hk")
 default_color = Color(0.17641911, 0.17641908, 0.17641908, 0.65882355)
 antialiased = true
@@ -250,3 +218,35 @@ script = ExtResource("8_wnf6w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Credits" unique_id=986403637]
 libraries/ = SubResource("AnimationLibrary_wnf6w")
+
+[node name="Focus2" type="Line2D" parent="." unique_id=522159509]
+position = Vector2(911.00024, 776.0001)
+rotation = -0.14078726
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.3137255, 0.08627451, 0.08235294, 0.90588236)
+antialiased = true
+
+[node name="Focus3" type="Line2D" parent="." unique_id=970156571]
+position = Vector2(911, 717.99994)
+rotation = 0.20696312
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.3137255, 0.08627451, 0.08235294, 0.90588236)
+antialiased = true
+
+[node name="Focus4" type="Line2D" parent="." unique_id=923711212]
+position = Vector2(911.00024, 651.85504)
+rotation = -0.14078726
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.3137255, 0.08627451, 0.08235294, 0.90588236)
+antialiased = true
+
+[node name="Focus5" type="Line2D" parent="." unique_id=894654724]
+position = Vector2(911, 593.85486)
+rotation = 0.20696312
+points = PackedVector2Array(-1, 4, 75, 1, 236, -9, 389, -8)
+width_curve = SubResource("Curve_ip7hk")
+default_color = Color(0.3137255, 0.08627451, 0.08235294, 0.90588236)
+antialiased = true
