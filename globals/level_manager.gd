@@ -19,11 +19,11 @@ func is_last_level():
 	return current_level_idx == levels.size() - 1
 
 func advance_to_next_level():
-	current_level_idx = (current_level_idx - 1) % levels.size()
+	current_level_idx = (current_level_idx + 1) % levels.size()
 	go_to_level()
 
 func go_to_previous_level():
-	current_level_idx = (current_level_idx + 1) % levels.size()
+	current_level_idx = (current_level_idx - 1) % levels.size()
 	go_to_level()
 
 func start_from_first_level():
