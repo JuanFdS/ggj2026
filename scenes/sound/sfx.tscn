@@ -20,6 +20,9 @@
 [ext_resource type="AudioStream" uid="uid://jdqpnxejx3u8" path="res://sonidos/golpe_caja/salto 3.wav" id="18_hlbuw"]
 [ext_resource type="AudioStream" uid="uid://c82llyb18wcbu" path="res://sonidos/golpe_caja/salto 6.wav" id="19_7mb7c"]
 [ext_resource type="AudioStream" uid="uid://cbcp6ia1pl8rr" path="res://sonidos/click.wav" id="20_7mb7c"]
+[ext_resource type="AudioStream" uid="uid://b1f30orj77lyk" path="res://sonidos/hover/sp_8.wav" id="21_0hww3"]
+[ext_resource type="AudioStream" uid="uid://cewalgqwkfqcm" path="res://sonidos/muertes/muerte_1.mp3" id="22_i6pn6"]
+[ext_resource type="AudioStream" uid="uid://bcfccs88r5wo8" path="res://sonidos/muertes/muerte_2.mp3" id="23_i6pn6"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rg8ox"]
 streams_count = 6
@@ -61,6 +64,19 @@ streams_count = 2
 stream_0/stream = ExtResource("18_hlbuw")
 stream_1/stream = ExtResource("19_7mb7c")
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_8hkn6"]
+stream_count = 2
+stream_0/stream = ExtResource("23_i6pn6")
+stream_0/volume = 0.0
+stream_1/volume = 0.0
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_qxydi"]
+stream_count = 2
+stream_0/stream = ExtResource("16_qcyqu")
+stream_0/volume = -24.13
+stream_1/stream = ExtResource("18_hlbuw")
+stream_1/volume = 0.0
+
 [node name="sfx" type="Node" unique_id=403339373]
 
 [node name="cambio_hoja" type="AudioStreamPlayer" parent="." unique_id=113780850]
@@ -96,3 +112,19 @@ stream = SubResource("AudioStreamRandomizer_vkow4")
 
 [node name="click" type="AudioStreamPlayer" parent="." unique_id=576889709]
 stream = ExtResource("20_7mb7c")
+
+[node name="hover" type="AudioStreamPlayer" parent="." unique_id=970151897]
+stream = ExtResource("21_0hww3")
+volume_db = -6.0
+
+[node name="muerte_papeles" type="AudioStreamPlayer" parent="." unique_id=1782229715]
+stream = ExtResource("22_i6pn6")
+pitch_scale = 0.95
+
+[node name="muerte_misterio" type="AudioStreamPlayer" parent="." unique_id=1508872259]
+stream = SubResource("AudioStreamSynchronized_8hkn6")
+
+[node name="muerte_aplastado" type="AudioStreamPlayer" parent="." unique_id=405077566]
+stream = SubResource("AudioStreamSynchronized_qxydi")
+pitch_scale = 0.6
+bus = &"reverb"
