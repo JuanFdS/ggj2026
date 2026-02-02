@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 
 	coyote_time_left = move_toward(coyote_time_left, 0.0, delta)
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or coyote_time_left > 0.0):
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_time_left > 0.0):
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
