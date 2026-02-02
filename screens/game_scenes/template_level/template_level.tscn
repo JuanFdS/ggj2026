@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/template_level/components/preview.gd" id="4_hkp1i"]
 [ext_resource type="Texture2D" uid="uid://csbttg3e4garl" path="res://screens/game_scenes/template_level/components/fondo_canvas_1.png" id="4_tr3vn"]
 [ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/components/game_elements.gd" id="5_3eck2"]
-[ext_resource type="Script" uid="uid://bhav045fsr3pe" path="res://screens/game_scenes/template_level/kill_zone.gd" id="5_cubxh"]
+[ext_resource type="Script" path="res://screens/game_scenes/template_level/kill_zone.gd" id="5_cubxh"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
 [ext_resource type="Script" uid="uid://chflmo6al3wyn" path="res://screens/game_scenes/template_level/components/mask_cut_out_for_animation.gd" id="7_cubxh"]
@@ -49,11 +49,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2br0v"]
 gradient = SubResource("Gradient_y5ptm")
-width = 128
-height = 160
+width = 300
+height = 150
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n54bx"]
-size = Vector2(128, 160)
+size = Vector2(300, 150)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
 light_mode = 2
@@ -67,8 +67,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
 gradient = SubResource("Gradient_n54bx")
-width = 128
-height = 160
+width = 300
+height = 150
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
@@ -76,11 +76,11 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
-width = 128
-height = 160
+width = 300
+height = 150
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(128, 160)
+size = Vector2(300, 150)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pub7v"]
 load_path = "res://.godot/imported/fondo.jpg-a33336dc9cf7cfc4f4a6abb7633b7059.ctex"
@@ -643,7 +643,6 @@ script = ExtResource("5_tr3vn")
 
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true
-clip_children = 2
 position = Vector2(60, 60)
 script = ExtResource("2_3eck2")
 
@@ -678,7 +677,6 @@ metadata/_edit_lock_ = true
 
 [node name="LayerBackground" type="Sprite2D" parent="Layer" unique_id=284435309]
 unique_name_in_owner = true
-scale = Vector2(0.89824563, 0.96)
 texture = ExtResource("4_tr3vn")
 centered = false
 
