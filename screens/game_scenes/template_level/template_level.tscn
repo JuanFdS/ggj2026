@@ -91,6 +91,234 @@ viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0v"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.827451)
 
+[sub_resource type="Animation" id="Animation_ce1ia"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Layer/GameElements:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Layer/LayerBackground:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mask/MaskBackground:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mask/GameElements:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mask/MaskSelection:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Layer/GameElements:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Layer/LayerBackground:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mask/MaskBackground:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Mask/GameElements:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_cubxh"]
+resource_name = "poner_hojas"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Layer/GameElements:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-958, 1302), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Layer/LayerBackground:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-958, 1302), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mask/MaskBackground:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(946, -523), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mask/GameElements:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(946, -523), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mask/MaskSelection:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Layer/GameElements:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Layer/LayerBackground:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mask/MaskBackground:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Mask/GameElements:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.08),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ce1ia"]
+_data = {
+&"RESET": SubResource("Animation_ce1ia"),
+&"poner_hojas": SubResource("Animation_cubxh")
+}
+
 [node name="Nivel" type="Node2D" unique_id=868727410 groups=["level"]]
 physics_interpolation_mode = 1
 script = ExtResource("1_746gp")
@@ -144,7 +372,6 @@ unique_name_in_owner = true
 clip_children = 2
 position = Vector2(60, 60)
 script = ExtResource("2_3eck2")
-metadata/_edit_lock_ = true
 
 [node name="KillZone" type="Area2D" parent="Layer" unique_id=1312538758]
 position = Vector2(-31, 1067)
@@ -158,6 +385,7 @@ shape = SubResource("RectangleShape2D_cubxh")
 
 [node name="LayerBackground3" type="Sprite2D" parent="Layer" unique_id=1182094189]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.6583396, 0.6583401, 0.65833956, 1)
 position = Vector2(-22, 2)
 rotation = 0.010471975
@@ -178,7 +406,6 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 texture = ExtResource("4_tr3vn")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="MaskCutOut" type="Sprite2D" parent="Layer" unique_id=717492432]
 unique_name_in_owner = true
@@ -264,9 +491,9 @@ metadata/_edit_lock_ = true
 
 [node name="MaskBackground" type="Sprite2D" parent="Mask" unique_id=218631811]
 unique_name_in_owner = true
+visible = false
 texture = ExtResource("9_bqir4")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="LayerPreview" type="Sprite2D" parent="Mask" unique_id=1890886365]
 unique_name_in_owner = true
@@ -290,6 +517,7 @@ z_index = 1
 position = Vector2(226, 146)
 script = ExtResource("7_pub7v")
 mask_size = Vector2i(300, 150)
+MOVE_SPEED = 500.0
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask/MaskSelection" unique_id=26579043]
@@ -306,6 +534,7 @@ shape = SubResource("RectangleShape2D_2m1qm")
 metadata/_edit_lock_ = true
 
 [node name="GameElements" type="Node2D" parent="Mask" unique_id=1295757892]
+visible = false
 script = ExtResource("5_3eck2")
 metadata/_edit_lock_ = true
 
@@ -320,6 +549,7 @@ region_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="FondoTexture" type="Sprite2D" parent="MaskHole" unique_id=7921866]
+position = Vector2(-887.99994, 1383)
 scale = Vector2(1.7284344, 1.7284346)
 texture = SubResource("CompressedTexture2D_pub7v")
 centered = false
@@ -443,6 +673,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_pub7v")
 metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1641390514]
+process_mode = 3
+callback_mode_method = 1
+libraries/ = SubResource("AnimationLibrary_ce1ia")
 
 [editable path="sfx"]
 [editable path="MaskCutOutForAnimation/sfx"]

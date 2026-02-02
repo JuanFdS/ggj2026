@@ -24,13 +24,17 @@ func _ready() -> void:
 	# cortes con errores.
 	#rotation_degrees = 1
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_mask"):
 		toggle_mask()
 	%LayerPreviewMask.position = %MaskSelection.position
-	%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
-	%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color(0.8,0.8,0.8,0.9)
-	%MaskCutOut.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+	if GameElementUtils.is_completed():
+		for coso in [%MaskSelection, %Preview, %MaskCutOut]:
+			coso.modulate = lerp(coso.modulate, Color.TRANSPARENT, 1 - pow(0.05, delta))
+	else:
+		%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+		%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color(0.8,0.8,0.8,0.9)
+		%MaskCutOut.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
 
 func would_split_player_in_half() -> bool:
 	var player = get_tree().get_first_node_in_group("player")
