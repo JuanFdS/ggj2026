@@ -34,7 +34,7 @@ viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
 [sub_resource type="Gradient" id="Gradient_poncf"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 0.716328, 0.9780559, 1)
+colors = PackedColorArray(0.9098039, 0.8745098, 0.5568628, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vxw0p"]
 resource_local_to_scene = true
@@ -45,7 +45,7 @@ height = 32
 [sub_resource type="Gradient" id="Gradient_cwv3d"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 0.716328, 0.9780559, 1)
+colors = PackedColorArray(0.9098039, 0.8745098, 0.5568628, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r5xx1"]
 resource_local_to_scene = true
@@ -121,10 +121,10 @@ polygon = PackedVector2Array(0, 0, 160, 0, 160, 32, 0, 32)
 texture = SubResource("CompressedTexture2D_v5q6l")
 region_rect = Rect2(0, 0, 160, 32)
 
-[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="2" unique_id=1890886365]
+[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
 texture = SubResource("ViewportTexture_ytiph")
 
-[node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="4" unique_id=2110519118]
+[node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
 mask_size = Vector2i(268, 150)
 
 [node name="Platform2" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=1180708638 instance=ExtResource("2_4abb6")]
