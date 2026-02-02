@@ -38,13 +38,9 @@ load_path = "res://.godot/imported/fondo.jpg-0c6ac191a58238f33415ac2ac4292972.ct
 resource_local_to_scene = true
 load_path = "res://.godot/imported/fondo.jpg-0c6ac191a58238f33415ac2ac4292972.ctex"
 
-[sub_resource type="Gradient" id="Gradient_i0l8l"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_hmch5"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hmch5"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_i0l8l")
-width = 96
-height = 96
+load_path = "res://.godot/imported/fondo.jpg-90b5a5944e1b1ce8ba4aa8faec0ac11d.ctex"
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l31jt"]
 viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
@@ -73,17 +69,9 @@ load_path = "res://.godot/imported/fondo.jpg-0c6ac191a58238f33415ac2ac4292972.ct
 resource_local_to_scene = true
 load_path = "res://.godot/imported/fondo.jpg-0c6ac191a58238f33415ac2ac4292972.ctex"
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lhl6p"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lhl6p"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_i0l8l")
-width = 96
-height = 96
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cubxh"]
-light_mode = 2
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pub7v"]
-load_path = "res://.godot/imported/fondo.jpg-a33336dc9cf7cfc4f4a6abb7633b7059.ctex"
+load_path = "res://.godot/imported/fondo.jpg-90b5a5944e1b1ce8ba4aa8faec0ac11d.ctex"
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5fxdf"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
@@ -186,13 +174,13 @@ texture = SubResource("CompressedTexture2D_uer5f")
 [node name="Box" parent="Layer/GameElements" index="11" unique_id=797266116 instance=ExtResource("4_14crb")]
 position = Vector2(352, 448)
 size_in_cells = Vector2i(3, 3)
-texture = SubResource("GradientTexture2D_hmch5")
+texture = SubResource("CompressedTexture2D_hmch5")
 
 [node name="CollisionPolygon2D" parent="Layer/GameElements/Box" index="1" unique_id=1195296732]
 polygon = PackedVector2Array(0, 0, 96, 0, 96, 96, 0, 96)
 
 [node name="Sprite2D" parent="Layer/GameElements/Box/Mask" parent_id_path=PackedInt32Array(797266116, 105858329) index="0" unique_id=851624041]
-texture = SubResource("GradientTexture2D_hmch5")
+texture = SubResource("CompressedTexture2D_hmch5")
 region_rect = Rect2(0, 0, 96, 96)
 
 [node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
@@ -270,24 +258,14 @@ width_in_cells = 3
 [node name="Box" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="7" unique_id=1382320277 instance=ExtResource("4_14crb")]
 position = Vector2(320, 96)
 size_in_cells = Vector2i(3, 3)
-texture = SubResource("GradientTexture2D_lhl6p")
+texture = SubResource("CompressedTexture2D_lhl6p")
 
 [node name="CollisionPolygon2D" parent="Mask/GameElements/Box" index="1" unique_id=1195296732]
 polygon = PackedVector2Array(0, 0, 96, 0, 96, 96, 0, 96)
 
 [node name="Sprite2D" parent="Mask/GameElements/Box/Mask" parent_id_path=PackedInt32Array(1382320277, 105858329) index="0" unique_id=851624041]
-texture = SubResource("GradientTexture2D_lhl6p")
+texture = SubResource("CompressedTexture2D_lhl6p")
 region_rect = Rect2(0, 0, 96, 96)
-
-[node name="MaskHole#FondoTexture" type="Sprite2D" parent="." index="4" unique_id=7921866]
-unique_name_in_owner = true
-visibility_layer = 2
-z_index = 900
-material = SubResource("CanvasItemMaterial_cubxh")
-position = Vector2(-99.99999, -4)
-scale = Vector2(1.92, 1.3617021)
-texture = SubResource("CompressedTexture2D_pub7v")
-centered = false
 
 [node name="MaskBackground" parent="MaskCutOutForAnimation" parent_id_path=PackedInt32Array(1193114252) index="0" unique_id=943261374]
 texture = SubResource("ViewportTexture_5fxdf")
