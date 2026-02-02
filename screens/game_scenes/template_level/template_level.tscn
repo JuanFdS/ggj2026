@@ -834,7 +834,6 @@ shape = SubResource("RectangleShape2D_cubxh")
 
 [node name="LayerBackground3" type="Sprite2D" parent="Layer" unique_id=1182094189]
 unique_name_in_owner = true
-visible = false
 modulate = Color(0.6583396, 0.6583401, 0.65833956, 1)
 position = Vector2(-22, 2)
 rotation = 0.010471975
