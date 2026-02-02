@@ -45,17 +45,21 @@ load_path = "res://.godot/imported/fondo.jpg-0c6ac191a58238f33415ac2ac4292972.ct
 resource_local_to_scene = true
 load_path = "res://.godot/imported/fondo.jpg-0c6ac191a58238f33415ac2ac4292972.ctex"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_htwbi"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_htwbi"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/fondo.jpg-90b5a5944e1b1ce8ba4aa8faec0ac11d.ctex"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3toxb"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_p6bxp")]
-mask_size = Vector2i(160, 128)
+mask_size = Vector2i(175, 175)
 
 [node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=1110395595]
 texture = SubResource("ViewportTexture_qy7c7")
 
 [node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="7" unique_id=2374421]
-mask_size = Vector2i(160, 128)
+mask_size = Vector2i(175, 175)
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_dprao")]
 position = Vector2(64, 96)
@@ -106,7 +110,7 @@ width_in_cells = 4
 texture = SubResource("ViewportTexture_jrd6q")
 
 [node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
-mask_size = Vector2i(160, 128)
+mask_size = Vector2i(175, 175)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=1733357601 instance=ExtResource("4_d2bj4")]
 position = Vector2(576, 832)
@@ -161,15 +165,17 @@ width_in_cells = 4
 [node name="Box" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="6" unique_id=797266116 instance=ExtResource("8_d2bj4")]
 position = Vector2(320, 544)
 size_in_cells = Vector2i(2, 2)
+texture = SubResource("CompressedTexture2D_htwbi")
 
 [node name="CollisionPolygon2D" parent="Mask/GameElements/Box" index="1" unique_id=1195296732]
 polygon = PackedVector2Array(0, 0, 64, 0, 64, 64, 0, 64)
 
 [node name="Sprite2D" parent="Mask/GameElements/Box/Mask" parent_id_path=PackedInt32Array(797266116, 105858329) index="0" unique_id=851624041]
+texture = SubResource("CompressedTexture2D_htwbi")
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="MaskBackground" parent="MaskCutOutForAnimation" parent_id_path=PackedInt32Array(1193114252) index="0" unique_id=943261374]
-texture = SubResource("ViewportTexture_htwbi")
+texture = SubResource("ViewportTexture_3toxb")
 
 [editable path="sfx"]
 [editable path="Layer/GameElements/Platform"]
