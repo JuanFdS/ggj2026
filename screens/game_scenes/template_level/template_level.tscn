@@ -861,13 +861,13 @@ energy = 0.0
 blend_mode = 1
 texture = SubResource("GradientTexture2D_kjhe3")
 
-[node name="FondoTexture" type="Sprite2D" parent="Mask" unique_id=7921866]
+[node name="FondoTexture" type="Sprite2D" parent="." unique_id=7921866]
 unique_name_in_owner = true
 visibility_layer = 2
 z_index = 900
 material = SubResource("CanvasItemMaterial_cubxh")
-position = Vector2(-1088, -64)
-scale = Vector2(1.938, 1.3554443)
+position = Vector2(-4, -4)
+scale = Vector2(1.92, 1.3617021)
 texture = SubResource("CompressedTexture2D_pub7v")
 centered = false
 
