@@ -70,6 +70,7 @@ func win():
 	#%MaskCutOutForAnimation.modulate.a = 0
 
 func go_to_next_level():
+	%MaskCutOut.visible = false
 	$AnimationPlayer.play_backwards("poner_hojas")
 	$AnimationPlayer.animation_finished.connect(func(animation_finished):
 		get_tree().paused = false
