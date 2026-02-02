@@ -12,29 +12,24 @@ viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_2bli1"]
 viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
 
-[sub_resource type="Gradient" id="Gradient_ulp31"]
+[sub_resource type="Gradient" id="Gradient_ldwu6"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.8784314, 0.7058824, 0, 1)
+colors = PackedColorArray(0.9098039, 0.8745098, 0.5568628, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_yrh85"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ulp31"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_ulp31")
+gradient = SubResource("Gradient_ldwu6")
 width = 96
 height = 32
 
-[sub_resource type="Gradient" id="Gradient_01m78"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_01m78"]
 resource_local_to_scene = true
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.8784314, 0.7058824, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xnwht"]
-resource_local_to_scene = true
-gradient = SubResource("Gradient_01m78")
+gradient = SubResource("Gradient_ldwu6")
 width = 96
 height = 32
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_86gm2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xnwht"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_lkm06")]
@@ -82,30 +77,30 @@ region_rect = Rect2(0, 0, 160, 32)
 [node name="Goal" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="5" unique_id=1003504178 instance=ExtResource("5_a5y3u")]
 position = Vector2(608, 512)
 
-[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="2" unique_id=1890886365]
+[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
 texture = SubResource("ViewportTexture_2bli1")
 
-[node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="4" unique_id=2110519118]
+[node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="3" unique_id=2110519118]
 mask_size = Vector2i(160, 128)
 
 [node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=313311555 instance=ExtResource("2_nacn3")]
 position = Vector2(384, 736)
-texture = SubResource("GradientTexture2D_yrh85")
+texture = SubResource("GradientTexture2D_ulp31")
 
 [node name="Sprite2D" parent="Mask/GameElements/Platform/Mask" parent_id_path=PackedInt32Array(313311555, 105858329) index="0" unique_id=851624041]
-texture = SubResource("GradientTexture2D_yrh85")
+texture = SubResource("GradientTexture2D_ulp31")
 region_enabled = false
 
 [node name="Platform2" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="1" unique_id=1126636538 instance=ExtResource("2_nacn3")]
 position = Vector2(224, 800)
-texture = SubResource("GradientTexture2D_xnwht")
+texture = SubResource("GradientTexture2D_01m78")
 
 [node name="Sprite2D" parent="Mask/GameElements/Platform2/Mask" parent_id_path=PackedInt32Array(1126636538, 105858329) index="0" unique_id=851624041]
-texture = SubResource("GradientTexture2D_xnwht")
+texture = SubResource("GradientTexture2D_01m78")
 region_enabled = false
 
 [node name="MaskBackground" parent="MaskCutOutForAnimation" parent_id_path=PackedInt32Array(1193114252) index="0" unique_id=943261374]
-texture = SubResource("ViewportTexture_86gm2")
+texture = SubResource("ViewportTexture_xnwht")
 
 [editable path="sfx"]
 [editable path="Layer/GameElements/Platform"]

@@ -16,10 +16,10 @@ viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_qo2bv")]
 
-[node name="Left" parent="Layer/ScenarioBorders" parent_id_path=PackedInt32Array(1346561349) index="3" unique_id=1856295708]
+[node name="Left" parent="Layer/ScenarioBorders" parent_id_path=PackedInt32Array(1346561349) index="2" unique_id=1856295708]
 position = Vector2(-62, 485.5)
 
-[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="5" unique_id=1110395595]
+[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=1110395595]
 texture = SubResource("ViewportTexture_b32q6")
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=1672557778 instance=ExtResource("2_0srop")]
@@ -29,7 +29,7 @@ position = Vector2(422, 826)
 position = Vector2(151, 890)
 width_in_cells = 4
 
-[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="2" unique_id=1890886365]
+[node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="1" unique_id=1890886365]
 texture = SubResource("ViewportTexture_3ahs6")
 
 [node name="Box" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=1877681763 instance=ExtResource("3_b32q6")]

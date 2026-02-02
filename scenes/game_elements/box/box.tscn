@@ -2,14 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpvq63xuwmctv" path="res://scenes/game_elements/platforms/platform_1.gd" id="1_37hoe"]
 [ext_resource type="Script" uid="uid://brifqi4kfjht6" path="res://scenes/game_elements/box/components/box_logic.gd" id="2_1f7j7"]
-
-[sub_resource type="Gradient" id="Gradient_i0l8l"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1f7j7"]
-resource_local_to_scene = true
-gradient = SubResource("Gradient_i0l8l")
-width = 96
-height = 32
+[ext_resource type="Texture2D" uid="uid://dxcvrnvokx738" path="res://scenes/game_elements/box/components/fondo.jpg" id="3_iddak"]
 
 [node name="Box" type="CharacterBody2D" unique_id=797266116 groups=["box"]]
 collision_layer = 5
@@ -17,7 +10,7 @@ collision_mask = 2147483649
 safe_margin = 0.001
 script = ExtResource("1_37hoe")
 size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_1f7j7")
+texture = ExtResource("3_iddak")
 metadata/_edit_vertical_guides_ = [-198.0]
 
 [node name="BoxLogic" type="Node2D" parent="." unique_id=1473442202]
@@ -32,6 +25,7 @@ clip_children = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=851624041]
 texture_repeat = 2
-texture = SubResource("GradientTexture2D_1f7j7")
+texture = ExtResource("3_iddak")
 centered = false
-region_rect = Rect2(0, 0, 160, 32)
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 32)
