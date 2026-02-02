@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		toggle_mask()
 	%LayerPreviewMask.position = %MaskSelection.position
 	if GameElementUtils.is_completed():
-		for coso in [%MaskSelection, %Preview, %MaskCutOut]:
+		for coso in [%MaskSelection, %Preview, %MaskCutOut, %MaskHole]:
 			coso.modulate = lerp(coso.modulate, Color.TRANSPARENT, 1 - pow(0.05, delta))
 	else:
 		%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
