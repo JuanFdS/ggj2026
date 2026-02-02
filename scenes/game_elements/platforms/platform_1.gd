@@ -27,13 +27,13 @@ func update_based_on_size_in_cells():
 		owner.set_editable_instance(self, true)
 	
 	var size = 32 * Vector2(size_in_cells)
-	if $Mask/Sprite2D.texture is GradientTexture2D:
-		$Mask/Sprite2D.texture.width = size.x
-		$Mask/Sprite2D.texture.height = size.y
-		$Mask/Sprite2D.region_enabled = false
-	elif $Mask/Sprite2D.texture is CompressedTexture2D:
-		$Mask/Sprite2D.region_enabled = true
-		$Mask/Sprite2D.region_rect = Rect2(0, 0, size.x, size.y)
+	#if $Mask/Sprite2D.texture is GradientTexture2D:
+		#$Mask/Sprite2D.texture.width = size.x
+		#$Mask/Sprite2D.texture.height = size.y
+		#$Mask/Sprite2D.region_enabled = false
+	#elif $Mask/Sprite2D.texture is CompressedTexture2D:
+		#$Mask/Sprite2D.region_enabled = true
+		#$Mask/Sprite2D.region_rect = Rect2(0, 0, size.x, size.y)
 	
 	$CollisionPolygon2D.polygon = PackedVector2Array(
 		[
