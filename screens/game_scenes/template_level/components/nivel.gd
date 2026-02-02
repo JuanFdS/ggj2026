@@ -53,8 +53,7 @@ func _ready() -> void:
 	else:
 		$Layer/GameElements.visible = false
 		%LayerBackground.visible = false
-		%MaskBackground.visible = false
-		$Mask/GameElements.visible = false
+		%Mask.visible = false
 		$AnimationPlayer.play("poner_hojas")
 		$AnimationPlayer.animation_finished.connect(func(animation_finished):
 			get_tree().paused = false
@@ -64,11 +63,11 @@ func _ready() -> void:
 
 func win():
 	play_state = PlayState.Won
-	%Preview.modulate.a = 0
-	%PreviewMask.modulate.a = 0
-	%LayerPreview.modulate.a = 0
-	%MaskCutOut.modulate.a = 0
-	%MaskCutOutForAnimation.modulate.a = 0
+	#%Preview.modulate.a = 0
+	#%PreviewMask.modulate.a = 0
+	#%LayerPreview.modulate.a = 0
+	#%MaskCutOut.modulate.a = 0
+	#%MaskCutOutForAnimation.modulate.a = 0
 
 func go_to_next_level():
 	$AnimationPlayer.play_backwards("poner_hojas")

@@ -4,20 +4,21 @@ var pos: Vector2
 
 func _ready() -> void:
 	visible = false
-	%MaskHole.visible = false
-	%MaskHole/FondoTexture.texture = %Fondo.texture
+	%FondoTexture.visible = false
+	%FondoTexture.texture = %Fondo.texture
 
 func _process(delta: float) -> void:
 	offset = %MaskSelection.position - Vector2(%MaskSelection.mask_size) / 2
 	region_rect.size = Vector2(%MaskSelection.mask_size)
-	%MaskHole.region_rect.size = region_rect.size
-	%MaskHole.offset = %MaskSelection.global_position - Vector2(%MaskSelection.mask_size) / 2
+	%MaskHole.texture.width = region_rect.size.x
+	%MaskHole.texture.height = region_rect.size.y
+	%MaskHole.global_position = %MaskSelection.global_position
 	
 
 func play_mask_animation():
 	# Seguro hay mejores maneras de encadenar tweens
 	$sfx/recorte_hoja.play()
-	%MaskHole.visible = true
+	%FondoTexture.visible = true
 	visible = true
 	var duration_in_seconds: float = 1.0
 	create_tween().tween_property(
@@ -73,4 +74,4 @@ func play_unmask_animation():
 		.set_trans(Tween.TRANS_QUAD)\
 		.set_ease(Tween.EASE_IN_OUT).finished
 	visible = false
-	%MaskHole.visible = false
+	%FondoTexture.visible = false

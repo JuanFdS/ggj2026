@@ -19,6 +19,10 @@ run/main_scene="uid://cgyih2g4idb5g"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dh47sltdkdcb1"
+
 [autoload]
 
 RuakeLayer="*uid://dn8rjsyxnwqmi"
@@ -29,7 +33,6 @@ Musica="*uid://rdpv23r2lkfi"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 

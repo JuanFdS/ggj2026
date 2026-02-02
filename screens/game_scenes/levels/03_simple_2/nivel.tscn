@@ -42,7 +42,7 @@ colors = PackedColorArray(0, 1, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_run6k"]
 resource_local_to_scene = true
 gradient = SubResource("Gradient_frck3")
-width = 96
+width = 320
 height = 32
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_71lpv"]
@@ -76,6 +76,7 @@ polygon = PackedVector2Array(0, 0, 160, 0, 160, 32, 0, 32)
 
 [node name="Sprite2D" parent="Layer/GameElements/Platform/Mask" parent_id_path=PackedInt32Array(121207750, 105858329) index="0" unique_id=851624041]
 texture = SubResource("GradientTexture2D_efrp5")
+region_enabled = false
 region_rect = Rect2(0, 0, 160, 32)
 
 [node name="Platform2" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=476893247 instance=ExtResource("3_0dfhe")]
@@ -88,6 +89,7 @@ polygon = PackedVector2Array(0, 0, 160, 0, 160, 32, 0, 32)
 
 [node name="Sprite2D" parent="Layer/GameElements/Platform2/Mask" parent_id_path=PackedInt32Array(476893247, 105858329) index="0" unique_id=851624041]
 texture = SubResource("GradientTexture2D_a2f2v")
+region_enabled = false
 region_rect = Rect2(0, 0, 160, 32)
 
 [node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="2" unique_id=1672557778 instance=ExtResource("2_a3ejg")]
@@ -122,16 +124,17 @@ polygon = PackedVector2Array(0, 0, 320, 0, 320, 32, 0, 32)
 
 [node name="Sprite2D" parent="Mask/GameElements/Platform/Mask" parent_id_path=PackedInt32Array(1040882320, 105858329) index="0" unique_id=851624041]
 texture = SubResource("GradientTexture2D_run6k")
+region_enabled = false
 region_rect = Rect2(0, 0, 320, 32)
 
 [node name="AyudaControles2" type="Sprite2D" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="1" unique_id=2058363031]
 position = Vector2(448, 192)
 texture = ExtResource("2_6u7fw")
 
-[node name="FondoTexture" parent="MaskHole" parent_id_path=PackedInt32Array(751834744) index="0" unique_id=7921866]
+[node name="FondoTexture" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="6" unique_id=7921866]
 position = Vector2(0, 0)
 
-[node name="MaskCutOutForAnimation" parent="." index="5" unique_id=1193114252]
+[node name="MaskCutOutForAnimation" parent="." index="4" unique_id=1193114252]
 texture = SubResource("ViewportTexture_71lpv")
 
 [node name="MaskBackground" parent="MaskCutOutForAnimation" index="0" unique_id=943261374]
