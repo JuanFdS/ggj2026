@@ -1,38 +1,45 @@
-[gd_scene format=3 uid="uid://buvw1hptrmo26"]
+[gd_scene format=3 uid="uid://e12sl5f7vv1u"]
 
 [ext_resource type="PackedScene" uid="uid://dxikjpq2durx0" path="res://screens/game_scenes/template_level/template_level.tscn" id="1_c8sr6"]
 [ext_resource type="PackedScene" uid="uid://5hxxg3xnnmf0" path="res://scenes/game_elements/box/box.tscn" id="2_dfmgn"]
-[ext_resource type="Script" uid="uid://bpvq63xuwmctv" path="res://scenes/game_elements/platforms/platform_1.gd" id="3_pc8lw"]
 [ext_resource type="PackedScene" uid="uid://una1tx2kpxxv" path="res://scenes/game_elements/platforms/platform_1.tscn" id="5_nimsq"]
 [ext_resource type="PackedScene" uid="uid://frcdjlt2d2ad" path="res://scenes/game_elements/goal/goal.tscn" id="6_24k75"]
-[ext_resource type="Script" uid="uid://c0nrfrhvhoem0" path="res://scenes/game_elements/goal/components/goal.gd" id="7_buk6o"]
 [ext_resource type="PackedScene" path="res://scenes/game_elements/fire/MultipleFire.tscn" id="8_rf8s0"]
-[ext_resource type="Script" path="res://scenes/game_elements/fire/components/multiple_fire.gd" id="9_m2abo"]
 [ext_resource type="PackedScene" uid="uid://wohqnype4xyh" path="res://scenes/game_elements/player/player.tscn" id="10_cw5p6"]
-[ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/game_elements/player/components/player.gd" id="11_nimsq"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_utj4j"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_huw3r"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
-[sub_resource type="Gradient" id="Gradient_6g423"]
+[sub_resource type="Gradient" id="Gradient_bt4uk"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 1, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tke3l"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_71o1r"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_6g423")
+gradient = SubResource("Gradient_bt4uk")
 width = 96
 height = 32
 
-[sub_resource type="Gradient" id="Gradient_psqvh"]
+[sub_resource type="Gradient" id="Gradient_dfmgn"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 1, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r41hs"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pc8lw"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_psqvh")
+gradient = SubResource("Gradient_dfmgn")
+width = 96
+height = 32
+
+[sub_resource type="Gradient" id="Gradient_cw5p6"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nimsq"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_cw5p6")
 width = 96
 height = 32
 
@@ -44,7 +51,7 @@ colors = PackedColorArray(0, 1, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_buk6o"]
 resource_local_to_scene = true
 gradient = SubResource("Gradient_24k75")
-width = 32
+width = 96
 height = 32
 
 [sub_resource type="Gradient" id="Gradient_rf8s0"]
@@ -69,174 +76,149 @@ gradient = SubResource("Gradient_juw1n")
 width = 96
 height = 32
 
-[sub_resource type="Gradient" id="Gradient_pc8lw"]
-resource_local_to_scene = true
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 1, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cw5p6"]
-resource_local_to_scene = true
-gradient = SubResource("Gradient_pc8lw")
-width = 96
-height = 32
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_0x8al"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tke3l"]
 viewport_path = NodePath("CanvasLayer2/SubViewportContainer/LayerSubviewport")
 
-[sub_resource type="Gradient" id="Gradient_tke3l"]
+[sub_resource type="Gradient" id="Gradient_psqvh"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 1, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_psqvh"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r41hs"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_tke3l")
+gradient = SubResource("Gradient_psqvh")
 width = 96
 height = 32
 
-[sub_resource type="Gradient" id="Gradient_r41hs"]
+[sub_resource type="Gradient" id="Gradient_o3nvq"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 1, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o3nvq"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tkfu1"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_r41hs")
+gradient = SubResource("Gradient_o3nvq")
 width = 96
 height = 32
 
 [sub_resource type="Gradient" id="Gradient_i0l8l"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pc8lw"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_alrd8"]
 resource_local_to_scene = true
 gradient = SubResource("Gradient_i0l8l")
 width = 160
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m2omi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_g6s6x"]
 viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_c8sr6")]
 mask_size = Vector2i(128, 160)
 
-[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="5" unique_id=1110395595]
-texture = SubResource("ViewportTexture_utj4j")
+[node name="Preview" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=1110395595]
+texture = SubResource("ViewportTexture_huw3r")
 
-[node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="6" unique_id=2374421]
+[node name="PreviewMask" parent="Layer" parent_id_path=PackedInt32Array(105627276) index="7" unique_id=2374421]
 mask_size = Vector2i(128, 160)
 
-[node name="Platform" type="StaticBody2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=121207750 instance=ExtResource("5_nimsq")]
+[node name="Platform" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="0" unique_id=121207750 instance=ExtResource("5_nimsq")]
 position = Vector2(256, 416)
-script = ExtResource("3_pc8lw")
-size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_tke3l")
+texture = SubResource("GradientTexture2D_71o1r")
 
-[node name="Platform2" type="StaticBody2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=1046640698 instance=ExtResource("5_nimsq")]
+[node name="Sprite2D" parent="Layer/GameElements/Platform/Mask" parent_id_path=PackedInt32Array(121207750, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_71o1r")
+
+[node name="Platform2" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="1" unique_id=1046640698 instance=ExtResource("5_nimsq")]
 position = Vector2(448, 416)
-script = ExtResource("3_pc8lw")
-size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_r41hs")
+texture = SubResource("GradientTexture2D_pc8lw")
 
-[node name="Goal" type="Area2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="2" unique_id=1003504178 instance=ExtResource("6_24k75")]
+[node name="Sprite2D" parent="Layer/GameElements/Platform2/Mask" parent_id_path=PackedInt32Array(1046640698, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_pc8lw")
+
+[node name="Goal" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="2" unique_id=1003504178 instance=ExtResource("6_24k75")]
 position = Vector2(576, 672)
-collision_mask = 2
-script = ExtResource("7_buk6o")
 
-[node name="MultipleFire" type="Node2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="3" unique_id=992309916 instance=ExtResource("8_rf8s0")]
+[node name="MultipleFire" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="3" unique_id=992309916 instance=ExtResource("8_rf8s0")]
 position = Vector2(352, 768)
-script = ExtResource("9_m2abo")
 width_in_cells = 3
 
 [node name="Platform3" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="4" unique_id=1843971961 instance=ExtResource("5_nimsq")]
 position = Vector2(384, 320)
-script = ExtResource("3_pc8lw")
-texture = SubResource("GradientTexture2D_buk6o")
+texture = SubResource("GradientTexture2D_nimsq")
 
-[node name="CollisionPolygon2D" parent="Layer/GameElements/Platform3" index="0" unique_id=1195296732]
-polygon = PackedVector2Array(0, 0, 32, 0, 32, 32, 0, 32)
+[node name="Sprite2D" parent="Layer/GameElements/Platform3/Mask" parent_id_path=PackedInt32Array(1843971961, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_nimsq")
 
-[node name="Mask" parent="Layer/GameElements/Platform3" index="1" unique_id=105858329]
-clip_children = 1
-
-[node name="Sprite2D" parent="Layer/GameElements/Platform3/Mask" index="0" unique_id=851624041]
-texture_repeat = 2
-texture = SubResource("GradientTexture2D_buk6o")
-centered = false
-
-[node name="Platform4" type="StaticBody2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="5" unique_id=982947398 instance=ExtResource("5_nimsq")]
+[node name="Platform4" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="5" unique_id=982947398 instance=ExtResource("5_nimsq")]
 position = Vector2(64, 800)
-script = ExtResource("3_pc8lw")
-size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_m2abo")
+texture = SubResource("GradientTexture2D_buk6o")
 
-[node name="Player" type="CharacterBody2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="6" unique_id=1672557778 groups=["player"] instance=ExtResource("10_cw5p6")]
+[node name="Sprite2D" parent="Layer/GameElements/Platform4/Mask" parent_id_path=PackedInt32Array(982947398, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_buk6o")
+
+[node name="Player" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="6" unique_id=1672557778 instance=ExtResource("10_cw5p6")]
 position = Vector2(64, 672)
-collision_layer = 3
-collision_mask = 2147483649
-safe_margin = 2.0
-script = ExtResource("11_nimsq")
 
 [node name="Platform5" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="7" unique_id=1001660483 instance=ExtResource("5_nimsq")]
 position = Vector2(576, 800)
-script = ExtResource("3_pc8lw")
-size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_6g423")
+texture = SubResource("GradientTexture2D_m2abo")
 
-[node name="CollisionPolygon2D" parent="Layer/GameElements/Platform5" index="0" unique_id=1195296732]
-polygon = PackedVector2Array(0, 0, 96, 0, 96, 32, 0, 32)
+[node name="Sprite2D" parent="Layer/GameElements/Platform5/Mask" parent_id_path=PackedInt32Array(1001660483, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_m2abo")
 
-[node name="Mask" parent="Layer/GameElements/Platform5" index="1" unique_id=105858329]
-clip_children = 1
-
-[node name="Sprite2D" parent="Layer/GameElements/Platform5/Mask" index="0" unique_id=851624041]
-texture_repeat = 2
-texture = SubResource("GradientTexture2D_6g423")
-centered = false
-
-[node name="Platform6" type="StaticBody2D" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="8" unique_id=197749085 instance=ExtResource("5_nimsq")]
+[node name="Platform6" parent="Layer/GameElements" parent_id_path=PackedInt32Array(645795038) index="8" unique_id=197749085 instance=ExtResource("5_nimsq")]
 position = Vector2(352, 832)
-script = ExtResource("3_pc8lw")
-size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_cw5p6")
+texture = SubResource("GradientTexture2D_6g423")
+
+[node name="Sprite2D" parent="Layer/GameElements/Platform6/Mask" parent_id_path=PackedInt32Array(197749085, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_6g423")
 
 [node name="LayerPreview" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="2" unique_id=1890886365]
-texture = SubResource("ViewportTexture_0x8al")
+texture = SubResource("ViewportTexture_tke3l")
 
 [node name="MaskSelection" parent="Mask" parent_id_path=PackedInt32Array(384021872) index="4" unique_id=2110519118]
 mask_size = Vector2i(128, 160)
+MOVE_SPEED = 500.0
 
-[node name="Platform2" type="StaticBody2D" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=61418378 instance=ExtResource("5_nimsq")]
+[node name="Platform2" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="0" unique_id=61418378 instance=ExtResource("5_nimsq")]
 position = Vector2(448, 416)
-script = ExtResource("3_pc8lw")
-size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_psqvh")
+texture = SubResource("GradientTexture2D_r41hs")
 
-[node name="Platform" type="StaticBody2D" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="1" unique_id=661493987 instance=ExtResource("5_nimsq")]
+[node name="Sprite2D" parent="Mask/GameElements/Platform2/Mask" parent_id_path=PackedInt32Array(61418378, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_r41hs")
+
+[node name="Platform" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="1" unique_id=661493987 instance=ExtResource("5_nimsq")]
 position = Vector2(256, 416)
-script = ExtResource("3_pc8lw")
-size_in_cells = Vector2i(3, 1)
-texture = SubResource("GradientTexture2D_o3nvq")
+texture = SubResource("GradientTexture2D_tkfu1")
 
-[node name="MultipleFire" type="Node2D" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="2" unique_id=1405905061 instance=ExtResource("8_rf8s0")]
+[node name="Sprite2D" parent="Mask/GameElements/Platform/Mask" parent_id_path=PackedInt32Array(661493987, 105858329) index="0" unique_id=851624041]
+texture = SubResource("GradientTexture2D_tkfu1")
+
+[node name="MultipleFire" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="2" unique_id=1405905061 instance=ExtResource("8_rf8s0")]
 position = Vector2(352, 768)
-script = ExtResource("9_m2abo")
 width_in_cells = 3
 
 [node name="Box" parent="Mask/GameElements" parent_id_path=PackedInt32Array(1295757892) index="3" unique_id=797266116 instance=ExtResource("2_dfmgn")]
 position = Vector2(320, 192)
 size_in_cells = Vector2i(5, 2)
-texture = SubResource("GradientTexture2D_pc8lw")
+texture = SubResource("GradientTexture2D_alrd8")
 
 [node name="CollisionPolygon2D" parent="Mask/GameElements/Box" index="1" unique_id=1195296732]
 polygon = PackedVector2Array(0, 0, 160, 0, 160, 64, 0, 64)
 
 [node name="Sprite2D" parent="Mask/GameElements/Box/Mask" parent_id_path=PackedInt32Array(797266116, 105858329) index="0" unique_id=851624041]
-texture = SubResource("GradientTexture2D_pc8lw")
+texture = SubResource("GradientTexture2D_alrd8")
 
 [node name="MaskBackground" parent="MaskCutOutForAnimation" parent_id_path=PackedInt32Array(1193114252) index="0" unique_id=943261374]
-texture = SubResource("ViewportTexture_m2omi")
+texture = SubResource("ViewportTexture_g6s6x")
 
 [editable path="sfx"]
+[editable path="Layer/GameElements/Platform"]
+[editable path="Layer/GameElements/Platform2"]
 [editable path="Layer/GameElements/Platform3"]
+[editable path="Layer/GameElements/Platform4"]
 [editable path="Layer/GameElements/Platform5"]
+[editable path="Layer/GameElements/Platform6"]
+[editable path="Mask/GameElements/Platform2"]
+[editable path="Mask/GameElements/Platform"]
 [editable path="Mask/GameElements/Box"]
 [editable path="MaskCutOutForAnimation/sfx"]
