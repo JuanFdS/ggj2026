@@ -4,17 +4,83 @@
 [ext_resource type="Script" uid="uid://x0qole3ha7y6" path="res://screens/game_scenes/template_level/components/layer.gd" id="2_3eck2"]
 [ext_resource type="PackedScene" uid="uid://cxtgkwjdb1ow8" path="res://scenes/sound/sfx.tscn" id="2_bqir4"]
 [ext_resource type="Script" uid="uid://ps2ayfxa8vhk" path="res://screens/game_scenes/template_level/components/mask_cutout.gd" id="3_7w6s3"]
+[ext_resource type="Script" uid="uid://cqgnx6iwoaqdg" path="res://screens/game_scenes/template_level/ui.gd" id="3_wdwwa"]
+[ext_resource type="Texture2D" uid="uid://dl2fx2v7m3sfs" path="res://screens/game_scenes/levels/03_simple_2/controles.png" id="4_ce1ia"]
 [ext_resource type="Script" uid="uid://c3ihr86jc3lsg" path="res://screens/game_scenes/template_level/components/preview.gd" id="4_hkp1i"]
 [ext_resource type="Texture2D" uid="uid://csbttg3e4garl" path="res://screens/game_scenes/template_level/components/fondo_canvas_1.png" id="4_tr3vn"]
 [ext_resource type="Script" uid="uid://b7ec55y6i7i60" path="res://screens/game_scenes/template_level/components/game_elements.gd" id="5_3eck2"]
 [ext_resource type="Script" uid="uid://bhav045fsr3pe" path="res://screens/game_scenes/template_level/kill_zone.gd" id="5_cubxh"]
 [ext_resource type="Script" uid="uid://b5b6vrre3kog" path="res://screens/game_scenes/template_level/components/reset_button.gd" id="5_tr3vn"]
 [ext_resource type="Script" uid="uid://caaqgeb6rfnfv" path="res://screens/game_scenes/template_level/components/mask.gd" id="6_bqir4"]
+[ext_resource type="Texture2D" uid="uid://ca8t82di15wl3" path="res://screens/game_scenes/levels/03_simple_2/photo_2026-02-01_23-20-13-Photoroom.png" id="6_wrfvt"]
 [ext_resource type="Script" uid="uid://chflmo6al3wyn" path="res://screens/game_scenes/template_level/components/mask_cut_out_for_animation.gd" id="7_cubxh"]
 [ext_resource type="Script" uid="uid://b3628p8i1q0mi" path="res://scenes/mask_selection/mask_selection.gd" id="7_pub7v"]
 [ext_resource type="Script" uid="uid://cfbw02l2ukjxt" path="res://screens/game_scenes/template_level/components/sub_viewport.gd" id="8_cubxh"]
 [ext_resource type="Texture2D" uid="uid://qge5rog7jtpb" path="res://screens/game_scenes/template_level/components/fondo_canvas_2.png" id="9_bqir4"]
 [ext_resource type="Texture2D" uid="uid://bhdxrwqmibvw0" path="res://screens/game_scenes/template_level/components/fondo.jpg" id="12_pub7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wrfvt"]
+
+[sub_resource type="Animation" id="Animation_yq6hc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hints:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(700, -400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.40784314, 0.40784314, 0.40784314, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wt52n"]
+resource_name = "show_hint"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hints:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(700, -400), Vector2(700, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.40784314, 0.40784314, 0.40784314, 0), Color(0.40784314, 0.40784314, 0.40784314, 0.5882353)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca4tf"]
+_data = {
+&"RESET": SubResource("Animation_yq6hc"),
+&"show_hint": SubResource("Animation_wt52n")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cubxh"]
 size = Vector2(832, 76)
@@ -50,10 +116,10 @@ colors = PackedColorArray(1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2br0v"]
 gradient = SubResource("Gradient_y5ptm")
 width = 160
-height = 200
+height = 192
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n54bx"]
-size = Vector2(160, 200)
+size = Vector2(160, 192)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
 light_mode = 2
@@ -68,7 +134,7 @@ colors = PackedColorArray(1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
 gradient = SubResource("Gradient_n54bx")
 width = 160
-height = 200
+height = 192
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
@@ -77,10 +143,10 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
 width = 160
-height = 200
+height = 192
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(160, 200)
+size = Vector2(160, 192)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cubxh"]
 light_mode = 2
@@ -658,6 +724,8 @@ unique_name_in_owner = true
 bus = &"Master"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2113149104]
+process_mode = 3
+script = ExtResource("3_wdwwa")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=902006675]
 visible = false
@@ -692,6 +760,62 @@ size_flags_vertical = 8
 focus_mode = 0
 text = "Resetear"
 script = ExtResource("5_tr3vn")
+
+[node name="Shadow" type="ColorRect" parent="UI" unique_id=558890929]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.40784314, 0.40784314, 0.40784314, 0)
+
+[node name="Hints" type="TextureRect" parent="UI" unique_id=343991465]
+offset_left = 700.0
+offset_top = -400.0
+offset_right = 1243.0
+offset_bottom = -111.0
+texture = ExtResource("4_ce1ia")
+
+[node name="ColorRect" type="TextureRect" parent="UI/Hints" unique_id=1295375498]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -32.0
+offset_top = 31.99997
+offset_right = 448.0
+offset_bottom = 672.0
+rotation = -0.18793112
+texture = ExtResource("6_wrfvt")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HiddenButton" type="Button" parent="UI/Hints/ColorRect" unique_id=265662526]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 37.41504
+offset_top = -25.45808
+offset_right = 467.8246
+offset_bottom = 460.94156
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wrfvt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wrfvt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wrfvt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wrfvt")
+
+[node name="HintButton" type="Button" parent="UI" unique_id=1062176847]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -124.0
+offset_bottom = 145.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 100
+text = "?"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=1147235259]
+libraries/ = SubResource("AnimationLibrary_ca4tf")
 
 [node name="Layer" type="Node2D" parent="." unique_id=105627276 groups=["layer"]]
 unique_name_in_owner = true

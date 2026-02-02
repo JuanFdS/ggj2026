@@ -83,6 +83,7 @@ func _process(delta):
 		return
 	if Input.is_action_just_pressed("Reset"):
 		lose()
+	
 
 func lose():
 	$AnimationPlayer.play("sacudir_hojas")
