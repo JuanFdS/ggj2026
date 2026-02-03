@@ -21,12 +21,15 @@ func _ready():
 func _gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_down"):
 		cambiar_opcion_actual_por(1)
+		$sfx/hover.play()
 		accept_event()
 	if event.is_action_pressed("ui_up"):
 		cambiar_opcion_actual_por(-1)
+		$sfx/hover.play()
 		accept_event()
 	if event.is_action_pressed("ui_accept"):
 		aceptar_opcion_actual()
+		$sfx/click.play()
 		accept_event()
 
 func _process(delta: float) -> void:

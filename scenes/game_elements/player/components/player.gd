@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_time_left > 0.0):
 		velocity.y = JUMP_VELOCITY
+		$sfx/Player/salto.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -35,6 +36,8 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.flip_h = direction < 0
 		velocity.x = direction * SPEED
 		last_direction = direction
+		if not $sfx/Player/camina.is_playing():
+			$sfx/Player/camina.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -74,5 +77,6 @@ func die(animation_name = &"die"):
 	level.player_died()
 
 	animation_player.play(animation_name)
+	$sfx/Player/muerte_picadora.play()
 	await animation_player.animation_finished
 	level.lose()

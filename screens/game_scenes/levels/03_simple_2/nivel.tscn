@@ -44,11 +44,11 @@ viewport_path = NodePath("CanvasLayer/SubViewportContainer/MaskSubviewport")
 [node name="Nivel" unique_id=868727410 instance=ExtResource("1_i416h")]
 mask_size = Vector2i(160, 200)
 
+[node name="salto" parent="sfx/Player" parent_id_path=PackedInt32Array(403339373, 1155952693) index="1" unique_id=289631925]
+volume_db = -24.0
+
 [node name="Layer" parent="." index="2" unique_id=105627276]
 metadata/_edit_lock_ = true
-
-[node name="LayerBackground3" parent="Layer" index="1" unique_id=1182094189]
-visible = true
 
 [node name="LayerBackground" parent="Layer" index="3" unique_id=284435309]
 metadata/_edit_lock_ = true

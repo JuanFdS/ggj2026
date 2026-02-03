@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bpvq63xuwmctv" path="res://scenes/game_elements/platforms/platform_1.gd" id="1_37hoe"]
 [ext_resource type="Script" uid="uid://brifqi4kfjht6" path="res://scenes/game_elements/box/components/box_logic.gd" id="2_1f7j7"]
 [ext_resource type="Texture2D" uid="uid://dxcvrnvokx738" path="res://scenes/game_elements/box/components/fondo.jpg" id="3_iddak"]
+[ext_resource type="PackedScene" uid="uid://cxtgkwjdb1ow8" path="res://scenes/sound/sfx.tscn" id="4_3ec1h"]
 
 [node name="Box" type="CharacterBody2D" unique_id=797266116 groups=["box"]]
 collision_layer = 5
@@ -17,6 +18,18 @@ metadata/_edit_vertical_guides_ = [-198.0]
 process_mode = 3
 script = ExtResource("2_1f7j7")
 
+[node name="sfx" parent="BoxLogic" unique_id=403339373 instance=ExtResource("4_3ec1h")]
+
+[node name="fuh" parent="BoxLogic/sfx" index="3" unique_id=1723191634]
+bus = &"Master"
+
+[node name="salto" parent="BoxLogic/sfx/Player" parent_id_path=PackedInt32Array(403339373, 1155952693) index="1" unique_id=289631925]
+volume_db = -15.0
+
+[node name="muerte_picadora" parent="BoxLogic/sfx/Player" parent_id_path=PackedInt32Array(403339373, 1155952693) index="4" unique_id=335182968]
+volume_db = -9.0
+pitch_scale = 1.0
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1195296732]
 polygon = PackedVector2Array(0, 0, 96, 0, 96, 32, 0, 32)
 
@@ -29,3 +42,5 @@ texture = ExtResource("3_iddak")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 96, 32)
+
+[editable path="BoxLogic/sfx"]

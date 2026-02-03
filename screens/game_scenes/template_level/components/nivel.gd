@@ -63,6 +63,7 @@ func _ready() -> void:
 
 func win():
 	play_state = PlayState.Won
+	$sfx/chasquido.play()
 	#%Preview.modulate.a = 0
 	#%PreviewMask.modulate.a = 0
 	#%LayerPreview.modulate.a = 0

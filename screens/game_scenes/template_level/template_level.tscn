@@ -115,11 +115,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2br0v"]
 gradient = SubResource("Gradient_y5ptm")
-width = 160
-height = 192
+width = 300
+height = 250
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n54bx"]
-size = Vector2(160, 192)
+size = Vector2(300, 250)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n54bx"]
 light_mode = 2
@@ -133,8 +133,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gvio3"]
 gradient = SubResource("Gradient_n54bx")
-width = 160
-height = 192
+width = 300
+height = 250
 
 [sub_resource type="Gradient" id="Gradient_2m1qm"]
 offsets = PackedFloat32Array(0.58709675)
@@ -142,11 +142,11 @@ colors = PackedColorArray(0.5294118, 0.5294118, 1, 0.6862745)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dg2up"]
 gradient = SubResource("Gradient_2m1qm")
-width = 160
-height = 192
+width = 300
+height = 250
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m1qm"]
-size = Vector2(160, 192)
+size = Vector2(300, 250)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cubxh"]
 light_mode = 2
@@ -720,8 +720,14 @@ metadata/_edit_lock_ = true
 [node name="sfx" parent="." unique_id=403339373 instance=ExtResource("2_bqir4")]
 unique_name_in_owner = true
 
-[node name="fuh" parent="sfx" index="4" unique_id=1723191634]
+[node name="fuh" parent="sfx" index="3" unique_id=1723191634]
 bus = &"Master"
+
+[node name="click" parent="sfx" index="6" unique_id=576889709]
+volume_db = -6.0
+
+[node name="hover" parent="sfx" index="7" unique_id=970151897]
+volume_db = -9.0
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2113149104]
 process_mode = 3
@@ -1013,7 +1019,7 @@ metadata/_edit_lock_ = true
 
 [node name="sfx" parent="MaskCutOutForAnimation" unique_id=1210593573 instance=ExtResource("2_bqir4")]
 
-[node name="fuh" parent="MaskCutOutForAnimation/sfx" index="4" unique_id=1723191634]
+[node name="fuh" parent="MaskCutOutForAnimation/sfx" index="3" unique_id=1723191634]
 bus = &"Master"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770220679]

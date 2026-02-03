@@ -4,8 +4,17 @@
 resource_name = "Distortion"
 drive = 0.5
 
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+predelay_msec = 50.0
+predelay_feedback = 0.2
+room_size = 0.1
+damping = 0.44
+spread = 0.2
+wet = 0.19
+
 [resource]
-bus/1/name = &"reverb"
+bus/1/name = &"distortion"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
@@ -19,3 +28,11 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
+bus/3/name = &"reverb"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
+bus/3/effect/0/enabled = true

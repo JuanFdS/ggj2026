@@ -22,6 +22,8 @@ func _physics_process(delta: float) -> void:
 	var box: CharacterBody2D = get_parent()
 	if not box.is_on_floor():
 		box.velocity += box.get_gravity() * delta
+		#if not $sfx/Box/sonido_caida.is_playing():
+		#	$sfx/Box/sonido_caida.play()
 	else:
 		box.velocity = Vector2.ZERO
 
@@ -32,3 +34,4 @@ func _physics_process(delta: float) -> void:
 		var player = collision.get_collider()
 		if not box.get_real_velocity().is_zero_approx() and box.global_position.y < player.global_position.y:
 			player.die("crushed")
+			$sfx/Box/muerte_aplastado.play()
