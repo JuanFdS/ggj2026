@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://rdpv23r2lkfi"]
 
-[ext_resource type="AudioStream" uid="uid://cx4sd46xngcwl" path="res://sonidos/musicaparapensar.mp3" id="1_mxix4"]
-[ext_resource type="AudioStream" uid="uid://bxx1e2kdd1fm1" path="res://sonidos/trap54.mp3" id="2_d0itx"]
+[ext_resource type="AudioStream" uid="uid://bpfqv3wcv2isj" path="res://sonidos/musicaparapensar.ogg" id="1_d0itx"]
+[ext_resource type="AudioStream" uid="uid://csk8g2xjarh1j" path="res://sonidos/trap54.ogg" id="2_1cfap"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_1cfap"]
 stream_count = 2
-stream_0/stream = ExtResource("1_mxix4")
+stream_0/stream = ExtResource("1_d0itx")
 stream_0/volume = 0.0
-stream_1/stream = ExtResource("2_d0itx")
+stream_1/stream = ExtResource("2_1cfap")
 stream_1/volume = -60.0
 
 [node name="musica_para_pensar" type="AudioStreamPlayer" unique_id=1795613391]
 process_mode = 3
 stream = SubResource("AudioStreamSynchronized_1cfap")
+volume_db = -3.0
 autoplay = true

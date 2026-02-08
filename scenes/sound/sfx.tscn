@@ -13,16 +13,33 @@
 [ext_resource type="AudioStream" uid="uid://doc0kjw5rux6f" path="res://sonidos/tijera/tijera_3.mp3" id="12_k2b04"]
 [ext_resource type="AudioStream" uid="uid://bdnwjqnb0j2cf" path="res://sonidos/chasquido/chasquido_1.mp3" id="13_ea3s4"]
 [ext_resource type="AudioStream" uid="uid://dj63uujacj0eu" path="res://sonidos/chasquido/chasquido_2.mp3" id="14_buso6"]
-[ext_resource type="AudioStream" uid="uid://h6bxwuu2fye2" path="res://sonidos/camina.mp3" id="15_buso6"]
 [ext_resource type="AudioStream" uid="uid://bu6mc836lbujm" path="res://sonidos/fuh.mp3" id="16_qcyqu"]
 [ext_resource type="AudioStream" uid="uid://brohj6ntcqwth" path="res://sonidos/pegado hoja/sp_1.wav" id="16_urnqg"]
 [ext_resource type="AudioStream" uid="uid://cytj3045sqqfl" path="res://sonidos/pegado hoja/sp_2_NO.wav" id="17_4in1o"]
 [ext_resource type="AudioStream" uid="uid://jdqpnxejx3u8" path="res://sonidos/golpe_caja/salto 3.wav" id="18_hlbuw"]
 [ext_resource type="AudioStream" uid="uid://c82llyb18wcbu" path="res://sonidos/golpe_caja/salto 6.wav" id="19_7mb7c"]
 [ext_resource type="AudioStream" uid="uid://cbcp6ia1pl8rr" path="res://sonidos/click.wav" id="20_7mb7c"]
+[ext_resource type="AudioStream" uid="uid://d1l31m1yi03eo" path="res://sonidos/caminata/1.ogg" id="20_qig1y"]
 [ext_resource type="AudioStream" uid="uid://b1f30orj77lyk" path="res://sonidos/hover/sp_8.wav" id="21_0hww3"]
+[ext_resource type="AudioStream" uid="uid://h1tpphjrl3vw" path="res://sonidos/caminata/2.ogg" id="21_kstnc"]
 [ext_resource type="AudioStream" uid="uid://cewalgqwkfqcm" path="res://sonidos/muertes/muerte_1.mp3" id="22_i6pn6"]
+[ext_resource type="AudioStream" uid="uid://cnjttpjwgjs23" path="res://sonidos/caminata/3.ogg" id="22_p6h7y"]
+[ext_resource type="AudioStream" uid="uid://dxwkh03at3c4u" path="res://sonidos/caminata/4.ogg" id="23_335mx"]
 [ext_resource type="AudioStream" uid="uid://bcfccs88r5wo8" path="res://sonidos/muertes/muerte_2.mp3" id="23_i6pn6"]
+[ext_resource type="AudioStream" uid="uid://ddhqpv85ydja0" path="res://sonidos/salto/salto_1.wav" id="24_71a6o"]
+[ext_resource type="AudioStream" uid="uid://bhfxe7sgf1ggu" path="res://sonidos/caminata/5.ogg" id="24_y1vhg"]
+[ext_resource type="AudioStream" uid="uid://bcnqs0v0gersw" path="res://sonidos/salto/salto_2.wav" id="25_5ft0v"]
+[ext_resource type="AudioStream" uid="uid://bn4vgere1caf3" path="res://sonidos/caminata/6.ogg" id="25_o5gl5"]
+[ext_resource type="AudioStream" uid="uid://c8em0w1r3rgrs" path="res://sonidos/caminata/7.ogg" id="26_udq2p"]
+[ext_resource type="AudioStream" uid="uid://bp3dt34a2gvos" path="res://sonidos/salto/salto_3.wav" id="26_ur054"]
+[ext_resource type="AudioStream" uid="uid://jksmbsuav7g2" path="res://sonidos/caminata/8.ogg" id="27_6k0si"]
+[ext_resource type="AudioStream" uid="uid://nn7wrgumd8wc" path="res://sonidos/salto/salto_4.wav" id="27_bs0fy"]
+[ext_resource type="AudioStream" uid="uid://bhtvosj477oh" path="res://sonidos/muertes/muertefuego_1.wav" id="27_ib17w"]
+[ext_resource type="AudioStream" uid="uid://bo8pgd5ra3f1s" path="res://sonidos/muertes/muertefuego_2.wav" id="28_2glwe"]
+[ext_resource type="AudioStream" uid="uid://hshnwtyldext" path="res://sonidos/salto/salto_5.wav" id="28_njkd8"]
+[ext_resource type="AudioStream" uid="uid://chlscfgws15ya" path="res://sonidos/muertes/muertefuego_3.wav" id="29_qcami"]
+[ext_resource type="AudioStream" uid="uid://deisyhq0x4q4x" path="res://sonidos/muertes/picadora.wav" id="30_romam"]
+[ext_resource type="AudioStream" uid="uid://d06jpxd0k2x24" path="res://sonidos/caida_caja.ogg" id="40_gpdps"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rg8ox"]
 streams_count = 6
@@ -59,16 +76,49 @@ streams_count = 2
 stream_0/stream = ExtResource("16_urnqg")
 stream_1/stream = ExtResource("17_4in1o")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vkow4"]
-streams_count = 2
-stream_0/stream = ExtResource("18_hlbuw")
-stream_1/stream = ExtResource("19_7mb7c")
-
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_8hkn6"]
 stream_count = 2
 stream_0/stream = ExtResource("23_i6pn6")
 stream_0/volume = 0.0
 stream_1/volume = 0.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_atteh"]
+streams_count = 8
+stream_0/stream = ExtResource("20_qig1y")
+stream_1/stream = ExtResource("21_kstnc")
+stream_2/stream = ExtResource("22_p6h7y")
+stream_3/stream = ExtResource("23_335mx")
+stream_4/stream = ExtResource("24_y1vhg")
+stream_5/stream = ExtResource("25_o5gl5")
+stream_6/stream = ExtResource("26_udq2p")
+stream_7/stream = ExtResource("27_6k0si")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ib17w"]
+random_pitch = 1.0594631
+streams_count = 5
+stream_0/stream = ExtResource("24_71a6o")
+stream_1/stream = ExtResource("25_5ft0v")
+stream_2/stream = ExtResource("26_ur054")
+stream_3/stream = ExtResource("27_bs0fy")
+stream_4/stream = ExtResource("28_njkd8")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tlcer"]
+playback_mode = 1
+streams_count = 2
+stream_0/stream = ExtResource("28_2glwe")
+stream_1/stream = ExtResource("29_qcami")
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_1lep8"]
+stream_count = 2
+stream_0/stream = ExtResource("30_romam")
+stream_0/volume = -60.0
+stream_1/stream = ExtResource("27_ib17w")
+stream_1/volume = -6.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vkow4"]
+streams_count = 2
+stream_0/stream = ExtResource("18_hlbuw")
+stream_1/stream = ExtResource("19_7mb7c")
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_qxydi"]
 stream_count = 2
@@ -88,11 +138,7 @@ pitch_scale = 0.91
 
 [node name="chasquido" type="AudioStreamPlayer" parent="." unique_id=1716899299]
 stream = SubResource("AudioStreamRandomizer_qcyqu")
-volume_db = 3.0
-
-[node name="camina" type="AudioStreamPlayer" parent="." unique_id=803427836]
-stream = ExtResource("15_buso6")
-volume_db = -4.022
+volume_db = 6.0
 
 [node name="fuh" type="AudioStreamPlayer" parent="." unique_id=1723191634]
 stream = ExtResource("16_qcyqu")
@@ -107,24 +153,53 @@ pitch_scale = 0.82
 [node name="pegado_hoja" type="AudioStreamPlayer" parent="." unique_id=787708871]
 stream = SubResource("AudioStreamRandomizer_hlbuw")
 
-[node name="golpe_caja" type="AudioStreamPlayer" parent="." unique_id=2061975541]
-stream = SubResource("AudioStreamRandomizer_vkow4")
-
 [node name="click" type="AudioStreamPlayer" parent="." unique_id=576889709]
 stream = ExtResource("20_7mb7c")
+volume_db = -9.0
 
 [node name="hover" type="AudioStreamPlayer" parent="." unique_id=970151897]
 stream = ExtResource("21_0hww3")
-volume_db = -6.0
-
-[node name="muerte_papeles" type="AudioStreamPlayer" parent="." unique_id=1782229715]
-stream = ExtResource("22_i6pn6")
-pitch_scale = 0.95
+volume_db = -9.0
 
 [node name="muerte_misterio" type="AudioStreamPlayer" parent="." unique_id=1508872259]
 stream = SubResource("AudioStreamSynchronized_8hkn6")
 
-[node name="muerte_aplastado" type="AudioStreamPlayer" parent="." unique_id=405077566]
-stream = SubResource("AudioStreamSynchronized_qxydi")
-pitch_scale = 0.6
+[node name="Player" type="Node" parent="." unique_id=1155952693]
+
+[node name="camina" type="AudioStreamPlayer" parent="Player" unique_id=803427836]
+stream = SubResource("AudioStreamRandomizer_atteh")
+volume_db = -15.0
+pitch_scale = 0.85
+
+[node name="salto" type="AudioStreamPlayer" parent="Player" unique_id=289631925]
+stream = SubResource("AudioStreamRandomizer_ib17w")
+volume_db = -24.0
+
+[node name="muerte_papeles" type="AudioStreamPlayer" parent="Player" unique_id=1782229715]
+stream = ExtResource("22_i6pn6")
+pitch_scale = 0.95
+
+[node name="muerte_fuego" type="AudioStreamPlayer" parent="Player" unique_id=1542220527]
+stream = SubResource("AudioStreamRandomizer_tlcer")
+volume_db = -15.0
+
+[node name="muerte_picadora" type="AudioStreamPlayer" parent="Player" unique_id=335182968]
+stream = SubResource("AudioStreamSynchronized_1lep8")
+volume_db = -12.0
+pitch_scale = 1.1
 bus = &"reverb"
+
+[node name="Box" type="Node" parent="." unique_id=1137228270]
+
+[node name="golpe_caja" type="AudioStreamPlayer" parent="Box" unique_id=2061975541]
+stream = SubResource("AudioStreamRandomizer_vkow4")
+
+[node name="sonido_caida" type="AudioStreamPlayer" parent="Box" unique_id=28398396]
+stream = ExtResource("40_gpdps")
+volume_db = -18.0
+
+[node name="muerte_aplastado" type="AudioStreamPlayer" parent="Box" unique_id=405077566]
+stream = SubResource("AudioStreamSynchronized_qxydi")
+volume_db = -9.0
+pitch_scale = 0.6
+bus = &"distortion"

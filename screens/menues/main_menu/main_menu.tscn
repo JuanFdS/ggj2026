@@ -3,12 +3,13 @@
 [ext_resource type="Theme" uid="uid://thyhonskbeh8" path="res://screens/menues/ui_theme.tres" id="1_mjkmc"]
 [ext_resource type="Texture2D" uid="uid://c2ymwgoe2ila4" path="res://screens/menues/main_menu/components/main_menu_berreta.jpg" id="2_ip7hk"]
 [ext_resource type="Script" uid="uid://b0t3ndfn83kmv" path="res://screens/menues/main_menu/main_menu.gd" id="2_w7w1m"]
-[ext_resource type="Script" uid="uid://b87gjfcitarsd" path="res://screens/menues/main_menu/opcion.gd" id="4_w7w1m"]
+[ext_resource type="Script" path="res://screens/menues/main_menu/opcion.gd" id="4_w7w1m"]
 [ext_resource type="PackedScene" uid="uid://d3gd1pjmwct66" path="res://screens/menues/main_menu/pointer.tscn" id="5_w7w1m"]
 [ext_resource type="Texture2D" uid="uid://d2wo0lgwsm7ku" path="res://screens/menues/main_menu/components/credits.png" id="6_5aqbs"]
 [ext_resource type="Texture2D" uid="uid://c2jvee8ckt2v3" path="res://screens/menues/main_menu/components/titulo.png" id="8_ait1d"]
-[ext_resource type="Script" uid="uid://c15p73qpayhj3" path="res://screens/menues/main_menu/hoja.gd" id="8_wnf6w"]
+[ext_resource type="Script" path="res://screens/menues/main_menu/hoja.gd" id="8_wnf6w"]
 [ext_resource type="Script" uid="uid://c8mea0k1jmpkh" path="res://screens/menues/main_menu/color_rect.gd" id="9_ait1d"]
+[ext_resource type="PackedScene" uid="uid://cxtgkwjdb1ow8" path="res://scenes/sound/sfx.tscn" id="10_3bkq0"]
 
 [sub_resource type="Animation" id="Animation_ait1d"]
 length = 0.001
@@ -346,3 +347,10 @@ script = ExtResource("8_wnf6w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Credits" unique_id=986403637]
 libraries/ = SubResource("AnimationLibrary_wnf6w")
+
+[node name="sfx" parent="." unique_id=403339373 instance=ExtResource("10_3bkq0")]
+
+[node name="fuh" parent="sfx" index="3" unique_id=1723191634]
+bus = &"Master"
+
+[editable path="sfx"]
