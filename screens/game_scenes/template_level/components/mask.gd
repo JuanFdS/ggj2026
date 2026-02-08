@@ -32,9 +32,10 @@ func _process(delta: float) -> void:
 		for coso in [%MaskSelection, %Preview]:
 			coso.modulate = lerp(coso.modulate, Color.TRANSPARENT, 1 - pow(0.05, delta))
 	else:
-		%MaskSelection.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
-		%Preview.modulate = Color.RED if is_splitting_player_with_mask else Color(0.8,0.8,0.8,0.9)
-		%MaskCutOut.modulate = Color.RED if is_splitting_player_with_mask else Color.WHITE
+		var color_forbidden := Color(1.0, 0.553, 0.489, 1.0)
+		%MaskSelection.modulate = color_forbidden if is_splitting_player_with_mask else Color.WHITE
+		%Preview.modulate = color_forbidden if is_splitting_player_with_mask else Color(0.8,0.8,0.8,0.9)
+		%MaskCutOut.modulate = color_forbidden if is_splitting_player_with_mask else Color.WHITE
 
 func would_split_player_in_half() -> bool:
 	var player = get_tree().get_first_node_in_group("player")
