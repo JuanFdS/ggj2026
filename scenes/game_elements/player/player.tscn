@@ -1,21 +1,72 @@
 [gd_scene format=3 uid="uid://wohqnype4xyh"]
 
 [ext_resource type="Script" uid="uid://cfp0q4rxa2l8x" path="res://scenes/game_elements/player/components/player.gd" id="1_07anl"]
-[ext_resource type="Texture2D" uid="uid://dqmrbmusktbr7" path="res://scenes/game_elements/player/components/provinejo_1.png" id="2_fkgod"]
-[ext_resource type="Texture2D" uid="uid://booxoqxrc3t52" path="res://scenes/game_elements/player/components/provinejo_2.png" id="3_epjya"]
+[ext_resource type="Texture2D" uid="uid://y7u7xy6wkvi" path="res://assets/player-falling-1.png" id="2_uler1"]
+[ext_resource type="Texture2D" uid="uid://dles40p3r1uos" path="res://assets/player-idle-1.png" id="2_wleqg"]
+[ext_resource type="Texture2D" uid="uid://vjliyjysrc36" path="res://assets/player-idle-2.png" id="3_k3y7j"]
+[ext_resource type="Texture2D" uid="uid://dl148cxgojlxd" path="res://assets/player-falling-2.png" id="3_uy7wv"]
 [ext_resource type="PackedScene" uid="uid://cxtgkwjdb1ow8" path="res://scenes/sound/sfx.tscn" id="4_epjya"]
+[ext_resource type="Texture2D" uid="uid://cetikwt2y4yt0" path="res://assets/player-idle-3.png" id="4_j0xuw"]
+[ext_resource type="Texture2D" uid="uid://p7jko7xavu7q" path="res://assets/player-jumping-1.png" id="5_cfvrk"]
+[ext_resource type="Texture2D" uid="uid://b6v774eg26fff" path="res://assets/player-walking-1.png" id="5_iiywu"]
+[ext_resource type="Texture2D" uid="uid://ru08wxkllw0b" path="res://assets/player-jumping-2.png" id="6_lyxlt"]
+[ext_resource type="Texture2D" uid="uid://bvp60noo1m581" path="res://assets/player-walking-2.png" id="6_q14in"]
+[ext_resource type="Texture2D" uid="uid://bn2yp8j3cooc8" path="res://assets/player-walking-3.png" id="7_cfvrk"]
+[ext_resource type="Texture2D" uid="uid://dpaaei21ksspe" path="res://assets/player-walking-4.png" id="8_lyxlt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wleqg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_fkgod")
+"texture": ExtResource("2_uler1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_epjya")
+"texture": ExtResource("3_uy7wv")
+}],
+"loop": false,
+"name": &"falling",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wleqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k3y7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j0xuw")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cfvrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lyxlt")
+}],
+"loop": false,
+"name": &"jumping",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_iiywu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q14in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cfvrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lyxlt")
+}],
+"loop": true,
+"name": &"walking",
 "speed": 5.0
 }]
 
@@ -338,10 +389,10 @@ position = Vector2(-35, -111)
 [node name="Sprite2D" type="AnimatedSprite2D" parent="SpritePivotOuter/SpritePivot" unique_id=675582281]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_wleqg")
-autoplay = "default"
-frame = 1
-frame_progress = 0.2655824
+animation = &"falling"
+autoplay = "idle"
 centered = false
+offset = Vector2(-20, -5)
 
 [node name="Mask" type="Polygon2D" parent="." unique_id=1872795804]
 clip_children = 1

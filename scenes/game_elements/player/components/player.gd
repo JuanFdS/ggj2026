@@ -64,10 +64,18 @@ func flip():
 func update_animations():
 	if GameElementUtils.is_completed():
 		return
-	if abs(velocity.x) > 0.0:
-		sprite_2d.play("default")
+	if is_on_floor() or coyote_time_left > 0.0:
+		if abs(velocity.x) > 0.0:
+			sprite_2d.play("walking")
+		else:
+			sprite_2d.play("idle")
 	else:
-		sprite_2d.stop()
+		if velocity.y < 0.0:
+			if sprite_2d.animation != "jumping":
+				sprite_2d.play("jumping")
+		else:
+			if sprite_2d.animation != "falling":
+				sprite_2d.play("falling")
 
 func die(animation_name = &"die"):
 	var level = get_tree().get_nodes_in_group("level").front()

@@ -187,4 +187,5 @@ texture = SubResource("ViewportTexture_3toxb")
 [editable path="Mask/GameElements/Platform3"]
 [editable path="Mask/GameElements/Platform4"]
 [editable path="Mask/GameElements/Box"]
+[editable path="Mask/GameElements/Box/BoxLogic/sfx"]
 [editable path="MaskCutOutForAnimation/sfx"]

@@ -2,6 +2,26 @@
 
 [ext_resource type="Script" uid="uid://c0nrfrhvhoem0" path="res://scenes/game_elements/goal/components/goal.gd" id="1_ee6xh"]
 [ext_resource type="Texture2D" uid="uid://doe8jxfy2vip2" path="res://scenes/game_elements/goal/components/proviescaleras.png" id="2_6gaqg"]
+[ext_resource type="Texture2D" uid="uid://dghdoxrrjinlb" path="res://assets/Puerta1.png" id="3_bt7v7"]
+[ext_resource type="Texture2D" uid="uid://w4u00gwpqdh3" path="res://assets/Puerta2.png" id="4_x7omd"]
+[ext_resource type="Texture2D" uid="uid://cmvwr700r3336" path="res://assets/Puerta3.png" id="5_b6wmk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_armf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bt7v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x7omd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b6wmk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Goal" type="Area2D" unique_id=1003504178]
 collision_mask = 2
@@ -11,8 +31,15 @@ script = ExtResource("1_ee6xh")
 clip_children = 1
 
 [node name="Polygon2D" type="Sprite2D" parent="Mask" unique_id=946546174]
+visible = false
 texture = ExtResource("2_6gaqg")
 centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mask" unique_id=282904718]
+sprite_frames = SubResource("SpriteFrames_armf5")
+autoplay = "default"
+centered = false
+offset = Vector2(-13, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=22604500]
 polygon = PackedVector2Array(0, 0, 0, 128, 92, 128, 92, 0)
